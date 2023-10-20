@@ -1,0 +1,68 @@
+:root {
+    --main-bg-color:#333533 ;
+    --main-text-color: #e8eddf;
+    --main-accent-color: #cfdbd5;
+    --main-accent-color2: #f5cb5c;
+    --main-accent-color3: #242423;
+  }
+
+
+
+* 
+{
+    background-color: var(--main-bg-color);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+ol {
+    list-style-type: none;
+    padding: 1rem;
+    overflow: hidden;
+    display: flex;
+    color: var(--main-text-color);
+
+}
+li{
+    padding: 0 0.5rem;
+}
+.logo {
+    padding: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--main-text-color);
+}
+
+
+/* Path: index.html */
+
+/* Path: gallery.html */
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 1rem;
+}
+
+.gallery-item {
+    flex: 1 0 21%;
+    margin: 1rem;
+    border: 1px solid var(--main-accent-color);
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 10px var(--main-accent-color);
+}
+
+.gallery-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+
