@@ -1,6 +1,6 @@
 :root {
-    --main-bg-color:#333533 ;
-    --main-text-color: #e8eddf;
+    --main-text-color:#333533 ;
+    --main-bg-color: #e8eddf;
     --main-accent-color: #cfdbd5;
     --main-accent-color2: #f5cb5c;
     --main-accent-color3: #242423;
@@ -11,6 +11,8 @@
 * 
 {
     background-color: var(--main-bg-color);
+    margin: 0;
+    padding: 0;
 }
 
 nav {
@@ -43,20 +45,22 @@ a {
 
 /* Path: gallery.html */
 
+.gallery-page {
+    display: flex;
+}
+
 .gallery {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 1rem;
+    /* justify-content: space-around; */
 }
 
 .gallery-item {
-    flex: 1 0 21%;
-    margin: 1rem;
-    border: 1px solid var(--main-accent-color);
-    border-radius: 5px;
+    width: 15rem;
+    height: 17rem;
     overflow: hidden;
-    box-shadow: 0 0 10px var(--main-accent-color);
+    text-align: center;
+    border: 1px solid var(--main-accent-color);
 }
 
 .gallery-image {
@@ -64,5 +68,16 @@ a {
     height: auto;
     object-fit: cover;
 }
+
+.filter {
+    display: flex;
+    padding: 1rem;
+    flex-direction: column;
+    border: var(--main-accent-color) 1px solid;
+    min-height:85vh;
+    margin-left: 1rem;
+
+}
+
 
 
