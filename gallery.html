@@ -17,79 +17,38 @@
     </nav>
     <section class="gallery-page">
         <div class="filter">
-            <input type="text" id="search" placeholder="Search for names..">
-
-            <div id="filterType">
-                <button id="filterAll">All</button>
-                <button id="filterCharacter">Character</button>
-                <button id="filterGirl">Girl</button>
+            <div class="search-container">
+                <input type="text" id="search" placeholder="Search for names..">
+                <svg class="loop-search" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="transparent" viewBox="0 0 20 20">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                </svg>
             </div>
-            
+            <div class="filter-container">
+                <div class="filter-button" id ="filterType">
+                    <button id="filterAll">Tous</button>
+                    <button id="filterGryffondor">Gryffondor</button>
+                    <button id="filterPoufsouffle">Poufsouffle</button>
+                    <button id="filterSerdaigle">Serdaigle</button>
+                    <button id="filterSerpentard">Serpentard</button>
+                </div>
+            </div>
             
         </div>
        
         <div class="gallery">
-            <div class="gallery-item" data-type="Character">
+            <div class="gallery-item" data-type="Gryffondor" data-id="1">
                 <img class="gallery-image" src="images/cartes/harrypotter.jpeg" alt="">
                 <p>Harry Potter</p>
             </div>
-            <div class="gallery-item" data-type="Girl">
+            <div class="gallery-item" data-type="Gryffondor">
                 <img class="gallery-image" src="images/cartes/herminegrandger.jpeg" alt="">
                 <p>Hermione Grandger</p>
             </div>
-            <div class="gallery-item" data-type="Character">
+            <div class="gallery-item" data-type="Gryffondor">
                 <img class="gallery-image" src="images/cartes/ronweasley.webp" alt="">
                 <p>Ron Weasley</p>
             </div>
-            <div class="gallery-item" data-type="Girl">
-                <img class="gallery-image" src="images/cartes/lunalovegood.jpg" alt="">
-                <p>Luna Lovegood</p>
-            </div>
-            <div class="gallery-item" data-type="Character">
-                <img class="gallery-image" src="images/cartes/harrypotter.jpeg" alt="">
-                <p>Harry Potter</p>
-            </div>
-            <div class="gallery-item" data-type="Girl">
-                <img class="gallery-image" src="images/cartes/herminegrandger.jpeg" alt="">
-                <p>Hermione Grandger</p>
-            </div>
-            <div class="gallery-item" data-type="Character">
-                <img class="gallery-image" src="images/cartes/ronweasley.webp" alt="">
-                <p>Ron Weasley</p>
-            </div>
-            <div class="gallery-item" data-type="Girl">
-                <img class="gallery-image" src="images/cartes/lunalovegood.jpg" alt="">
-                <p>Luna Lovegood</p>
-            </div>
-            <div class="gallery-item" data-type="Character">
-                <img class="gallery-image" src="images/cartes/harrypotter.jpeg" alt="">
-                <p>Harry Potter</p>
-            </div>
-            <div class="gallery-item" data-type="Girl">
-                <img class="gallery-image" src="images/cartes/herminegrandger.jpeg" alt="">
-                <p>Hermione Grandger</p>
-            </div>
-            <div class="gallery-item" data-type="Character">
-                <img class="gallery-image" src="images/cartes/ronweasley.webp" alt="">
-                <p>Ron Weasley</p>
-            </div>
-            <div class="gallery-item" data-type="Girl">
-                <img class="gallery-image" src="images/cartes/lunalovegood.jpg" alt="">
-                <p>Luna Lovegood</p>
-            </div>
-            <div class="gallery-item" data-type="Character">
-                <img class="gallery-image" src="images/cartes/harrypotter.jpeg" alt="">
-                <p>Harry Potter</p>
-            </div>
-            <div class="gallery-item" data-type="Girl">
-                <img class="gallery-image" src="images/cartes/herminegrandger.jpeg" alt="">
-                <p>Hermione Grandger</p>
-            </div>
-            <div class="gallery-item" data-type="Character">
-                <img class="gallery-image" src="images/cartes/ronweasley.webp" alt="">
-                <p>Ron Weasley</p>
-            </div>
-            <div class="gallery-item" data-type="Girl">
+            <div class="gallery-item" data-type="Poufsouffle">
                 <img class="gallery-image" src="images/cartes/lunalovegood.jpg" alt="">
                 <p>Luna Lovegood</p>
             </div>

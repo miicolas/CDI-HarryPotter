@@ -1,24 +1,32 @@
 // Filter function
 function filterType() {
   const filterAll = document.getElementById("filterAll");
-  const filterCharacter = document.getElementById("filterCharacter");
-  const filterGirl = document.getElementById("filterGirl");
+  const filterGryffondor = document.getElementById("filterGryffondor");
+  const filterPoufsouffle = document.getElementById("filterPoufsouffle");
+  const filterSerdaigle = document.getElementById("filterSerdaigle");
+  const filterSerpentard = document.getElementById("filterSerpentard");
 
   filterAll.addEventListener("click", function () {
-    filterCards("All");
+    filterCards("Tous");
   });
-  filterCharacter.addEventListener("click", function () {
-    filterCards("Character");
+  filterGryffondor.addEventListener("click", function () {
+    filterCards("Gryffondor");
   });
-  filterGirl.addEventListener("click", function () {
-    filterCards("Girl");
+  filterPoufsouffle.addEventListener("click", function () {
+    filterCards("Poufsouffle");
+  });
+  filterSerdaigle.addEventListener("click", function () {
+    filterCards("Serdaigle");
+  });
+  filterSerpentard.addEventListener("click", function () {
+    filterCards("Serpentard");
   });
 }
 function filterCards(selectedType) {
   const galleryItems = document.querySelectorAll(".gallery-item");
   galleryItems.forEach(function (item) {
     const itemType = item.getAttribute("data-type"); 
-    if (selectedType === "All" || selectedType === itemType) {
+    if (selectedType === "Tous" || selectedType === itemType) {
 
       item.style.display = "block";
     } else {
@@ -48,7 +56,26 @@ function searchCard() {
   });
 }
 
+// CardDetails function
+function CardDetails (){
+  const galleryItems = document.querySelectorAll(".gallery-item");
+
+  galleryItems.forEach(function (item) {
+    item.addEventListener("click", function () {
+      const cardid = item.dataset.id ; 
+      window.location.href = `///Users/nicolasbecharat/Documents/GitHub/harrypotter/cartes/${cardid}.html`
+      
+    });
+  });
+}
+
+
+// Call functions
 document.addEventListener("DOMContentLoaded", function () {
   filterType();
   searchCard();
+  CardDetails();
+
 });
+
+
