@@ -1,61 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gallery</title>
-    <link rel="stylesheet" href="style.css" type = 'text/css'>
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+  </head>
+  <body>
     <nav>
-        <img class="logo"src="images/logo.png" alt="" width="auto" height="50px">
-        <ol>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="index.html">Contact</a></li>
-        </ol>
+      <img
+        class="logo"
+        src="images/logo.png"
+        alt=""
+        width="auto"
+        height="50px"
+      />
+      <ol>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="index.html">Contact</a></li>
+      </ol>
     </nav>
     <section class="gallery-page">
-        <div class="filter">
-            <div class="search-container">
-                <input type="text" id="search" placeholder="Search for names..">
-                <svg class="loop-search" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="transparent" viewBox="0 0 20 20">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
-                </svg>
-            </div>
-            <div class="filter-container">
-                <div class="filter-button" id ="filterType">
-                    <button id="filterAll">Tous</button>
-                    <button id="filterGryffondor">Gryffondor</button>
-                    <button id="filterPoufsouffle">Poufsouffle</button>
-                    <button id="filterSerdaigle">Serdaigle</button>
-                    <button id="filterSerpentard">Serpentard</button>
-                </div>
-            </div>
-            
+      <div class="filter">
+        <div class="search-container">
+          <input type="text" id="search" placeholder="Search for names.." />
+          <svg
+            class="loop-search"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="transparent"
+            viewBox="0 0 20 20"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+            />
+          </svg>
         </div>
-       
-        <div class="gallery">
-            <div class="gallery-item" data-type="Gryffondor" data-id="1">
-                <img class="gallery-image" src="images/cartes/harrypotter.jpeg" alt="">
-                <p>Harry Potter</p>
-            </div>
-            <div class="gallery-item" data-type="Gryffondor">
-                <img class="gallery-image" src="images/cartes/herminegrandger.jpeg" alt="">
-                <p>Hermione Grandger</p>
-            </div>
-            <div class="gallery-item" data-type="Gryffondor">
-                <img class="gallery-image" src="images/cartes/ronweasley.webp" alt="">
-                <p>Ron Weasley</p>
-            </div>
-            <div class="gallery-item" data-type="Poufsouffle">
-                <img class="gallery-image" src="images/cartes/lunalovegood.jpg" alt="">
-                <p>Luna Lovegood</p>
-            </div>
+        <div class="filter-container">
+          <div class="filter-button" id="filterType">
+            <button id="filterAll" class="select">Tous</button>
+            <button id="filterGryffondor" class="unselect">Gryffondor</button>
+            <button id="filterPoufsouffle" class="unselect">Poufsouffle</button>
+            <button id="filterSerdaigle" class="unselect">Serdaigle</button>
+            <button id="filterSerpentard" class="unselect">Serpentard</button>
+          </div>
         </div>
-    </section>
-    
+      </div>
 
-        <script src="script.js"></script>
-</body>
+      <div class="gallery">
+        <div class="gallery-item" data-type="Gryffondor" data-id="1">
+          <img
+            class="gallery-image"
+            src="images/cartes/harrypotter.jpeg"
+            alt=""
+          />
+          <div class="details-card">
+            <p class="title-card">Harry Potter</p>
+            <p class="description-card">
+              Patronus en forme de cerf, expert en sortilèges de défense
+            </p>
+          </div>
+          <div class="interaction-card">
+            <div class="button">
+              <svg
+                class=""
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 18 18"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M1 5v11a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H1Zm0 0V2a1 1 0 0 1 1-1h5.443a1 1 0 0 1 .8.4l2.7 3.6H1Z"
+                />
+              </svg>
+            </div>
+            <div class="button">
+              <svg
+                class="w-6 h-6 text-gray-800 dark:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 18 20"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15.147 15.085a7.159 7.159 0 0 1-6.189 3.307A6.713 6.713 0 0 1 3.1 15.444c-2.679-4.513.287-8.737.888-9.548A4.373 4.373 0 0 0 5 1.608c1.287.953 6.445 3.218 5.537 10.5 1.5-1.122 2.706-3.01 2.853-6.14 1.433 1.049 3.993 5.395 1.757 9.117Z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-item" data-type="Gryffondor" data-id="2">
+          <img
+            class="gallery-image"
+            src="images/cartes/herminegranger.jpeg"
+            alt=""
+          />
+          <div class="details-card">
+            <p class="title-card">Hermione Granger</p>
+            <p class="description-card">
+              Excellente en études, maîtrise de nombreux sortilèges
+            </p>
+          </div>
+          <div class="interaction-card">
+            <div class="button">
+              <svg
+                class=""
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 18 18"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M1 5v11a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H1Zm0 0V2a1 1 0 0 1 1-1h5.443a1 1 0 0 1 .8.4l2.7 3.6H1Z"
+                />
+              </svg>
+            </div>
+            <div class="button">
+              <svg
+                class="w-6 h-6 text-gray-800 dark:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 18 20"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15.147 15.085a7.159 7.159 0 0 1-6.189 3.307A6.713 6.713 0 0 1 3.1 15.444c-2.679-4.513.287-8.737.888-9.548A4.373 4.373 0 0 0 5 1.608c1.287.953 6.445 3.218 5.537 10.5 1.5-1.122 2.706-3.01 2.853-6.14 1.433 1.049 3.993 5.395 1.757 9.117Z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-item" data-type="Gryffondor">
+          <img
+            class="gallery-image"
+            src="images/cartes/ronweasley.webp"
+            alt=""
+          />
+          <p>Ron Weasley</p>
+        </div>
+        <div class="gallery-item" data-type="Poufsouffle">
+          <img
+            class="gallery-image"
+            src="images/cartes/lunalovegood.jpg"
+            alt=""
+          />
+          <p>Luna Lovegood</p>
+        </div>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
 </html>

@@ -35,6 +35,22 @@ function filterCards(selectedType) {
   });
 }
 
+function updateFilterButtons() {
+  const filterButtons = [filterAll, filterGryffondor, filterPoufsouffle, filterSerdaigle, filterSerpentard]
+
+  filterButtons.forEach(function(button) {
+      button.addEventListener('click', function() {
+          filterButtons.forEach(function(btn) {
+              btn.classList.remove('select');
+              btn.classList.add('unselect');
+          });
+          button.classList.add('select');
+          button.classList.remove('unselect');
+      });
+  });
+}
+
+
 // Search function
 function searchCard() {
 
@@ -64,18 +80,15 @@ function CardDetails (){
     item.addEventListener("click", function () {
       const cardid = item.dataset.id ; 
       window.location.href = `///Users/nicolasbecharat/Documents/GitHub/harrypotter/cartes/${cardid}.html`
-      
     });
   });
 }
-
-
 // Call functions
 document.addEventListener("DOMContentLoaded", function () {
   filterType();
   searchCard();
   CardDetails();
-
+  updateFilterButtons();
 });
 
 
