@@ -90,7 +90,6 @@
 
 * 
 {
-    background-color: var(--main-bg-color);
     margin: 0;
     padding: 0;
     font-family: 'Alpino-Regular', sans-serif;
@@ -99,6 +98,7 @@
 nav {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 ol {
@@ -296,4 +296,146 @@ a {
     cursor: pointer;
     color : black;
     transition: ease-in-out 0.5s;
+}
+
+/* Path: profil.html* */
+
+.userprofile {
+    display: flex ;
+    padding: 2.5rem;
+    align-items: center;
+
+}
+
+.userprofile > * {
+    padding: 0.5rem;
+}
+
+.picture-profile {
+    width: 5rem;
+    height: 5rem;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Path: signup.html */
+
+.signup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    height: 81vh;
+}
+
+.signup-container {
+    background-color: var(--main-text-color);
+    border: var(--main-text-color2) 1px solid;
+    padding: 2.5rem;
+    border-radius: 0.25rem;
+    color: var(--main-text-color2);
+}
+
+form {
+    background-color: transparent;
+}
+
+form > button {
+    padding: 0.5rem;
+    margin-top: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--main-accent-color2);
+    color: var(--main-text-color2);
+    cursor: pointer;
+    transition: ease-in-out 0.5s;
+    max-width: fit-content;
+}
+
+form input {
+    display: block;
+    margin: 0.5rem 0;
+    border: 1px solid #E5E9F5;
+    background-color: transparent;
+    padding: 1rem;
+    border-radius: 0.25rem;
+    font-size: small;
+}
+
+form label, 
+form > p,
+form > a,
+.termsLink,
+.begin-signup {
+    background-color: transparent;
+    color: var(--main-text-color2);
+}
+
+.complete {
+    display: flex;
+    flex-direction: column;
+    padding-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.sign-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0.5rem 0;
+    justify-content: center;
+}
+.sign-btn > * {
+    margin-right: 0.5rem;
+}
+form button {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.25rem;
+    background-color: var(--main-accent-color);
+    color: var(--main-text-color2);
+    cursor: pointer;
+    transition: ease-in-out 0.5s;
+    max-width: fit-content;
+    margin-top: 1rem;
+    font-size: small;
+}
+.submit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.begin-signup {
+    font-size: medium;
+    font-weight: 800;
+}
+.signin-container {
+    display: flex; 
+    flex-direction: row ;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.have-account {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0.5rem 0.25rem;
+    justify-content: center;
+    font-size: smaller;
+}
+.signin-container .button {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.25rem;
+    background-color: var(--main-accent-color);
+    color: var(--main-text-color2);
+    cursor: pointer;
+    transition: ease-in-out 0.5s;
+    max-width: fit-content;
+    font-size: xx-small;
 }

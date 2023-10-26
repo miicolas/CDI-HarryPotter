@@ -52,7 +52,7 @@ function updateFilterButtons() {
 
 
 // Search function
-function searchCard() {
+function searchCard(selectedType) {
 
   const searchInput = document.getElementById("search");
   const galleryItems = document.querySelectorAll(".gallery-item");
@@ -62,7 +62,7 @@ function searchCard() {
 
     galleryItems.forEach(function (item) {
       const name = item.querySelector("p").textContent.toLowerCase(); // Get the text content of the paragraph element
-
+      const itemType = item.getAttribute("data-type"); 
       if (name.includes(searchValue)) {
         item.style.display = "block";
       } else {
