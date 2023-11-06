@@ -320,22 +320,7 @@ a {
 
 /* Path: signup.html */
 
-.signup {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-    height: 81vh;
-}
 
-.signup-container {
-    background-color: var(--main-text-color);
-    border: var(--main-text-color2) 1px solid;
-    padding: 2.5rem;
-    border-radius: 0.25rem;
-    color: var(--main-text-color2);
-}
 
 form {
     background-color: transparent;
@@ -429,6 +414,105 @@ form button {
     font-size: smaller;
 }
 .signin-container .button {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.25rem;
+    background-color: var(--main-accent-color);
+    color: var(--main-text-color2);
+    cursor: pointer;
+    transition: ease-in-out 0.5s;
+    max-width: fit-content;
+    font-size: xx-small;
+}
+
+/* Path: signin.html */
+
+
+.sign-container {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    margin: 5rem auto;
+    
+    background-color: var(--main-text-color);
+    border: var(--main-text-color2) 1px solid;
+    padding: 2.5rem;
+    border-radius: 0.25rem;
+    color: var(--main-text-color2);
+}
+
+form {
+    background-color: transparent;
+}
+
+form > button {
+    padding: 0.5rem;
+    margin-top: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--main-accent-color2);
+    color: var(--main-text-color2);
+    cursor: pointer;
+    transition: ease-in-out 0.5s;
+    max-width: fit-content;
+}
+
+form input {
+    display: block;
+    margin: 0.5rem 0;
+    border: 1px solid #E5E9F5;
+    background-color: transparent;
+    padding: 1rem;
+    border-radius: 0.25rem;
+    font-size: small;
+}
+
+form label,
+form > p,
+form > a,
+.termsLink,
+.begin-signin {
+    background-color: transparent;
+    color: var(--main-text-color2);
+}
+
+.complete {
+    display: flex;
+    flex-direction: column;
+    padding-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.submit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.begin-signin {
+    font-size: medium;
+    font-weight: 800;
+}
+
+.signup-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.no-account {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0.5rem 0.25rem;
+    justify-content: center;
+    font-size: smaller;
+}
+
+.signup-container .button {
     padding: 0.5rem;
     border: none;
     border-radius: 0.25rem;

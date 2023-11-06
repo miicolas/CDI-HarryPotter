@@ -3,39 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" type = 'text/css'>
+    <title>Sign In</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body>
     <nav>
-        <img class="logo"src="images/logo.png" alt="" width="auto" height="50px">
+        <img class="logo" src="images/logo.png" alt="" width="auto" height="50px">
         <ol>
             <li><a href="index.html">Home</a></li>
             <li><a href="gallery.html">Gallery</a></li>
             <li><a href="index.html">Contact</a></li>
             <li><a href="dashboard.html">Dashboard</a></li>
-            <li><a href="signup.html"><div class="signup-btn">Sign up</div></a></li>
-
         </ol>
     </nav>
     <section class="signin">
-        <div class="signin-container">
-            <p class="begin-signin">Vous reprenez l'aventure ?</p>
+        <div class="sign-container">
+            <p class="begin-signin">Connectez-vous à votre compte</p>
             <form action="/dashboard.html" method="post">
                 <div class="complete">
                     <input type="email" name="email" id="email" placeholder="Email">
                     <input type="password" name="password" id="password" placeholder="Password">
                 </div>  
                 <div class="submit">
-                    <button type="submit">Sign Up</button>
+                    <button type="submit">Sign In</button>
                 </div>
             </form>
             <div class="signup-container">
-                <p class="have-account">Vous n'avez pas de compte </p>
-                <a href="signup.html"><div class="button">Sign up</div></a> 
+                <p class="no-account">Pas encore de compte ?</p>
+                <a href="signup.html"><div class="button">Sign Up</div></a> 
             </div>
         </div>
     </section>
-    <script src="script.js"></script>
 </body>
 </html>
