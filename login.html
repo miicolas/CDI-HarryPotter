@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Login</title>
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
 <header>
@@ -16,18 +17,25 @@
     </ul>
   </nav>
 </header>
+<section class="form-section">
+
+
   <div class="log-container">
-    <h1>Login</h1>
-      <form action="index.html" method="post">
-          <label for="username">Username</label>
-          <input type="text" name="username" id="username" placeholder="Username">
-          <label for="password">Password</label>
-          <input type="password" name="password" id="password" placeholder="Password">
-          <input type="submit" value="Login">
-      </form>
-      <p>Si tu n'as pas de compte</p>
-      <button><a href="register.html">Register</a></button>
+      <div class="form-container">
+          <p class="login-description">Connecte-toi à ton compte pour pouvoir retrouver tes cartes ! </p>
+          <form action="index.html" method="post">
+              <label for="username">Nom</label>
+              <input type="text" name="username" id="username" placeholder="Username">
+              <label for="password">Password</label>
+              <input type="password" name="password" id="password" placeholder="Password">
+              <input class="button-input" type="submit" value="Login">
+          </form>
+          <p>Si tu n'as pas de compte</p>
+          <button><a href="register.html">Register</a></button>
+      </div>
+
   </div>
+</section>
 <script src="js/script.js"></script>
 </body>
 </html>
