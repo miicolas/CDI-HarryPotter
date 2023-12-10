@@ -56,9 +56,8 @@ function searchCard(selectedType) {
     const galleryItems = document.querySelectorAll(".gallery-item");
     searchInput.addEventListener("input", function () {
         const searchValue = searchInput.value.toLowerCase();
-
         galleryItems.forEach(function (item) {
-            const name = item.querySelector("p").textContent.toLowerCase(); // Get the text content of the paragraph element
+            const name = item.querySelector("p").textContent.toLowerCase();
             const itemType = item.getAttribute("data-type");
             if (name.includes(searchValue)) {
                 item.style.display = "block";
@@ -71,8 +70,7 @@ function searchCard(selectedType) {
 
 // CardDetails function
 function CardDetails (){
-    const galleryItems = document.querySelectorAll(".gallery-item");
-
+    const galleryItems = document.querySelectorAll(".gallery-image");
     galleryItems.forEach(function (item) {
         item.addEventListener("click", function () {
             const cardid = item.dataset.id ;
@@ -80,11 +78,37 @@ function CardDetails (){
         });
     });
 }
+
+function buttonAnimation (){
+    const scrollTo = document.getElementById("bouncebutton");
+    scrollTo.addEventListener("click", function () {
+        window.scrollBy ({
+            top : 40,
+            behavior : "smooth"
+        });
+    });
+}
+
 // Call functions
 document.addEventListener("DOMContentLoaded", function () {
     filterType();
     searchCard();
     CardDetails();
     updateFilterButtons();
+    buttonAnimation();
 });
 
+const bounceContainerButton = document.querySelector('.bounce-container');
+
+bounceContainerButton.addEventListener('click', function(e) {
+    e.preventDefault();
+    const tirageSection = document.getElementById('tirage');
+    tirageSection.scrollIntoView({ behavior: 'smooth' });
+});
+
+const heroButton = document.querySelector('.hero-button');
+heroButton.addEventListener('click', function(e) {
+    e.preventDefault();
+    const gallerySection = document.getElementById('gallery-section');
+    gallerySection.scrollIntoView({ behavior: 'smooth' });
+});

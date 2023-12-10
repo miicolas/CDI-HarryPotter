@@ -6,68 +6,325 @@
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-<header>
-    <nav>
-        <a href="index.html">
-            <img class="logo" src="public/images/logo.png" alt="Harry Potter Logo">
-        </a>
-        <ul>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="profil.html">Profil</a></li>
-        </ul>
-    </nav>
-</header>
-<section class="hero">
-    <div class="hero-container">
-        <div class="hero-intro">
-            <div>
-                <p class="hero-title">
-                    Bievenue à Poudlard
-                </p>
-                <p class="hero-subtitle">
-                    L'école de sorcellerie la plus réputée au monde
-                </p>
-            </div>
-
-            <div>
-                <p class="hero-description">
-                    Découvre le monde d'Harry Potter en collectionnant les cartes de tes personnages préférés
-                </p>
-                <button class="hero-button">
-                    <a href="gallery.html">Découvrir</a>
-                </button>
-            </div>
-
-        </div>
-
-        <div class ="hero-container-description">
-            <div class="top-boxes">
-                <div class="container-description">
-                    <p>Partage et échange tes cartes avec tes amis</p>
+    <header>
+        <nav>
+            <a href="index.html">
+                <img class="logo" src="public/images/logo.png" alt="Harry Potter Logo">
+            </a>
+            <ul>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="profil.html">Profil</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-intro">
+                <div>
+                    <p class="hero-title">
+                        Bievenue à Poudlard
+                    </p>
+                    <p class="hero-subtitle">
+                        L'école de sorcellerie la plus réputée au monde
+                    </p>
                 </div>
-                <div class="container-description">
-                    <p>Partage et échange tes cartes avec tes amis</p>
+                <div>
+                    <p class="hero-description">
+                        Découvre le monde d'Harry Potter en collectionnant les cartes de tes personnages préférés
+                    </p>
+                    <button class="hero-button">
+                        <a href="gallery.html">Découvrir</a>
+                    </button>
                 </div>
             </div>
-            <div class="bottom-boxes">
-                <div class="container-description">
-                    <p>Partage et échange tes cartes avec tes amis</p>
+            <div class ="hero-container-description">
+                <div class="top-boxes">
+                    <div class="container-description">
+                        <p>Partage et échange tes cartes avec tes amis</p>
+                    </div>
+                    <div class="container-description">
+                        <p>Partage et échange tes cartes avec tes amis</p>
+                    </div>
                 </div>
-                <div class="container-description">
-                    <p>Partage et échange tes cartes avec tes amis</p>
+                <div class="bottom-boxes">
+                    <div class="container-description">
+                        <p>Partage et échange tes cartes avec tes amis</p>
+                    </div>
+                    <div class="container-description">
+                        <p>Partage et échange tes cartes avec tes amis</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-<section class="tirage">
-    <div class="tirage-container">
-        <div>Tirez de nouvelles cartes tous les jours</div>
-        <img class=""src=""/>
-        <button>Tirez votre pack de cartes</button>
-    </div>
-</section>
+            <div class="bounce-container">
+                <div class="bounce" id="bouncebutton">
+                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1v12m0 0 4-4m-4 4L1 9"/>
+                    </svg>
+                </div>
+            </div>
+
+    </section>
+    <section class="tirage" id="tirage">
+        <div class="tirage-container">
+            <p class="tirage-title">Collectionne de nouvelles cartes tous les jours </p>
+            <div class="container-card-tirage">
+                <div class="card-tirage">
+                    <img src="public/images/cartes/harrypotter.jpg" alt="Harry Potter">
+                </div>
+                <div class="card-tirage">
+                    <img src="public/images/cartes/hermionegranger.jpg" alt="Harry Potter">
+                </div>
+                <div class="card-tirage">
+                    <img src="public/images/cartes/ronweasley.jpg" alt="Harry Potter">
+                </div>
+                <div class="card-tirage">
+                    <img src="public/images/cartes/cedricdiggory.jpg" alt="Harry Potter">
+                </div>
+                <div class="card-tirage">
+                    <img src="public/images/cartes/albusdumbledore.jpg" alt="Harry Potter">
+                </div>
+            </div>
+            <a class="button-tirage">
+                <svg class="swing" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M13.3333 2.66663H2.66666C1.93028 2.66663 1.33333 3.26358 1.33333 3.99996V12C1.33333 12.7363 1.93028 13.3333 2.66666 13.3333H13.3333C14.0697 13.3333 14.6667 12.7363 14.6667 12V3.99996C14.6667 3.26358 14.0697 2.66663 13.3333 2.66663Z" stroke="white" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M14.6667 4.66663L8.68666 8.46663C8.48084 8.59558 8.24287 8.66397 8 8.66397C7.75712 8.66397 7.51915 8.59558 7.31333 8.46663L1.33333 4.66663" stroke="white" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="button-text">Connecte toi pour collecter de nouvelles cartes</span>
+            </a>
+        </div>
+    </section>
+    <section class="infos">
+        <p>Tu peux suivre les nouveautés de la plateforme sur les réseaux sociaux</p>
+        <div class="socials-medias">
+            <a href="https://www.instagram.com/">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <path d="M16 18.8C14.5 18.8 13.2 17.6 13.2 16C13.2 14.5 14.4 13.2 16 13.2C17.5 13.2 18.8 14.4 18.8 16C18.8 17.5 17.5 18.8 16 18.8Z" fill="white"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M19.4 9.2H12.6C11.8 9.3 11.4 9.4 11.1 9.5C10.7 9.6 10.4 9.8 10.1 10.1C9.86261 10.3374 9.75045 10.5748 9.61489 10.8617C9.57916 10.9373 9.5417 11.0166 9.5 11.1C9.48453 11.1464 9.46667 11.1952 9.44752 11.2475C9.34291 11.5333 9.2 11.9238 9.2 12.6V19.4C9.3 20.2 9.4 20.6 9.5 20.9C9.6 21.3 9.8 21.6 10.1 21.9C10.3374 22.1374 10.5748 22.2495 10.8617 22.3851C10.9374 22.4209 11.0165 22.4583 11.1 22.5C11.1464 22.5155 11.1952 22.5333 11.2475 22.5525C11.5333 22.6571 11.9238 22.8 12.6 22.8H19.4C20.2 22.7 20.6 22.6 20.9 22.5C21.3 22.4 21.6 22.2 21.9 21.9C22.1374 21.6626 22.2495 21.4252 22.3851 21.1383C22.4209 21.0626 22.4583 20.9835 22.5 20.9C22.5155 20.8536 22.5333 20.8048 22.5525 20.7525C22.6571 20.4667 22.8 20.0762 22.8 19.4V12.6C22.7 11.8 22.6 11.4 22.5 11.1C22.4 10.7 22.2 10.4 21.9 10.1C21.6626 9.86261 21.4252 9.75045 21.1383 9.61488C21.0627 9.57918 20.9833 9.54167 20.9 9.5C20.8536 9.48453 20.8048 9.46666 20.7525 9.44752C20.4667 9.3429 20.0762 9.2 19.4 9.2ZM16 11.7C13.6 11.7 11.7 13.6 11.7 16C11.7 18.4 13.6 20.3 16 20.3C18.4 20.3 20.3 18.4 20.3 16C20.3 13.6 18.4 11.7 16 11.7ZM21.4 11.6C21.4 12.1523 20.9523 12.6 20.4 12.6C19.8477 12.6 19.4 12.1523 19.4 11.6C19.4 11.0477 19.8477 10.6 20.4 10.6C20.9523 10.6 21.4 11.0477 21.4 11.6Z" fill="white"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 5C0 2.23858 2.23858 0 5 0H27C29.7614 0 32 2.23858 32 5V27C32 29.7614 29.7614 32 27 32H5C2.23858 32 0 29.7614 0 27V5ZM12.6 7.7H19.4C20.3 7.8 20.9 7.9 21.4 8.1C22 8.4 22.4 8.6 22.9 9.1C23.4 9.6 23.7 10.1 23.9 10.6C24.1 11.1 24.3 11.7 24.3 12.6V19.4C24.2 20.3 24.1 20.9 23.9 21.4C23.6 22 23.4 22.4 22.9 22.9C22.4 23.4 21.9 23.7 21.4 23.9C20.9 24.1 20.3 24.3 19.4 24.3H12.6C11.7 24.2 11.1 24.1 10.6 23.9C10 23.6 9.6 23.4 9.1 22.9C8.6 22.4 8.3 21.9 8.1 21.4C7.9 20.9 7.7 20.3 7.7 19.4V12.6C7.8 11.7 7.9 11.1 8.1 10.6C8.4 10 8.6 9.6 9.1 9.1C9.6 8.6 10.1 8.3 10.6 8.1C11.1 7.9 11.7 7.7 12.6 7.7Z" fill="white"/>
+                </svg>
+            </a>
+            <a href="https://twitter.com/">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 5C0 2.23858 2.23858 0 5 0H27C29.7614 0 32 2.23858 32 5V27C32 29.7614 29.7614 32 27 32H5C2.23858 32 0 29.7614 0 27V5ZM22.1 11.5C22.8 11.4 23.4 11.3 24 11C23.6 11.7 23 12.3 22.3 12.7C22.5 17.4 19.1 22.5 13 22.5C11.2 22.5 9.5 21.9 8 21C9.7 21.2 11.5 20.7 12.7 19.8C11.2 19.8 10 18.8 9.6 17.5C10.1 17.6 10.6 17.5 11.1 17.4C9.6 17 8.5 15.6 8.5 14.1C9 14.3 9.5 14.5 10 14.5C8.6 13.5 8.1 11.6 9 10.1C10.7 12.1 13.1 13.4 15.8 13.5C15.3 11.5 16.9 9.5 19 9.5C19.9 9.5 20.8 9.9 21.4 10.5C22.2 10.3 22.9 10.1 23.5 9.7C23.3 10.5 22.8 11.1 22.1 11.5Z" fill="white"/>
+                </svg>
+            </a>
+        </div>
+    </section>
+    <section class="gallery-section" >
+        <div class="container-gallery" id="gallery-section">
+            <div class="left-gallery">
+                <p class="left-gallery-title">MAISONS</p>
+                <div class="search-container">
+                    <input type="text" id="search" placeholder="Search for names.." />
+                    <svg
+                            class="loop-search"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="transparent"
+                            viewBox="0 0 20 20"
+                    >
+                        <path
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                        />
+                    </svg>
+                </div>
+                <div class="filter-container">
+                    <div class="filter-button" id="filterType">
+                        <button id="filterAll" class="select">Tous</button>
+                        <button id="filterGryffondor" class="unselect">Gryffondor</button>
+                        <button id="filterPoufsouffle" class="unselect">Poufsouffle</button>
+                        <button id="filterSerdaigle" class="unselect">Serdaigle</button>
+                        <button id="filterSerpentard" class="unselect">Serpentard</button>
+                    </div>
+                </div>
+            </div>
+            <div class="right-gallery">
+                <div class="gallery">
+                    <div class="gallery-item" data-type="Gryffondor" data-id="harrypotter">
+                        <img
+                                class="gallery-image"
+                                src="public/images/cartes/harrypotter.jpg"
+                                alt=""
+                        />
+                        <div class="interaction-card">
+                            <div class="button">
+                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 21 19">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4C5.5-1.5-1.5 5.5 4 11l7 7 7-7c5.458-5.458-1.542-12.458-7-7Z"/>
+                                </svg>
+                            </div>
+                            <div class="button">
+                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 15">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 7.5h11m0 0L8 3.786M12 7.5l-4 3.714M12 1h3c.53 0 1.04.196 1.414.544.375.348.586.82.586 1.313v9.286c0 .492-.21.965-.586 1.313A2.081 2.081 0 0 1 15 14h-3"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-type="Gryffondor" data-id="harrypotter">
+                        <img
+                                class="gallery-image"
+                                src="public/images/cartes/harrypotter.jpg"
+                                alt=""
+                        />
+                        <div class="interaction-card">
+                            <div class="button">
+                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 21 19">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4C5.5-1.5-1.5 5.5 4 11l7 7 7-7c5.458-5.458-1.542-12.458-7-7Z"/>
+                                </svg>
+                            </div>
+                            <div class="button">
+                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 15">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 7.5h11m0 0L8 3.786M12 7.5l-4 3.714M12 1h3c.53 0 1.04.196 1.414.544.375.348.586.82.586 1.313v9.286c0 .492-.21.965-.586 1.313A2.081 2.081 0 0 1 15 14h-3"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-type="Gryffondor" data-id="harrypotter">
+                        <img
+                                class="gallery-image"
+                                src="public/images/cartes/harrypotter.jpg"
+                                alt=""
+                        />
+                        <div class="interaction-card">
+                            <div class="button">
+                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 21 19">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4C5.5-1.5-1.5 5.5 4 11l7 7 7-7c5.458-5.458-1.542-12.458-7-7Z"/>
+                                </svg>
+                            </div>
+                            <div class="button">
+                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 15">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 7.5h11m0 0L8 3.786M12 7.5l-4 3.714M12 1h3c.53 0 1.04.196 1.414.544.375.348.586.82.586 1.313v9.286c0 .492-.21.965-.586 1.313A2.081 2.081 0 0 1 15 14h-3"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-type="Gryffondor" data-id="harrypotter">
+                        <img
+                                class="gallery-image"
+                                src="public/images/cartes/harrypotter.jpg"
+                                alt=""
+                        />
+                        <div class="interaction-card">
+                            <div class="button">
+                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 21 19">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4C5.5-1.5-1.5 5.5 4 11l7 7 7-7c5.458-5.458-1.542-12.458-7-7Z"/>
+                                </svg>
+                            </div>
+                            <div class="button">
+                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 15">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 7.5h11m0 0L8 3.786M12 7.5l-4 3.714M12 1h3c.53 0 1.04.196 1.414.544.375.348.586.82.586 1.313v9.286c0 .492-.21.965-.586 1.313A2.081 2.081 0 0 1 15 14h-3"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-type="Gryffondor" data-id="harrypotter">
+                        <img
+                                class="gallery-image"
+                                src="public/images/cartes/harrypotter.jpg"
+                                alt=""
+                        />
+                        <div class="interaction-card">
+                            <div class="button">
+                                <svg id="svg-button" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 21 19">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4C5.5-1.5-1.5 5.5 4 11l7 7 7-7c5.458-5.458-1.542-12.458-7-7Z"/>
+                                </svg>
+                            </div>
+                            <div class="button">
+                                <svg id="svg-button" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 15">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 7.5h11m0 0L8 3.786M12 7.5l-4 3.714M12 1h3c.53 0 1.04.196 1.414.544.375.348.586.82.586 1.313v9.286c0 .492-.21.965-.586 1.313A2.081 2.081 0 0 1 15 14h-3"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-type="Gryffondor" data-id="harrypotter">
+                        <img
+                                class="gallery-image"
+                                src="public/images/cartes/harrypotter.jpg"
+                                alt=""
+                        />
+                        <div class="interaction-card">
+                            <div class="button">
+                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 21 19">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4C5.5-1.5-1.5 5.5 4 11l7 7 7-7c5.458-5.458-1.542-12.458-7-7Z"/>
+                                </svg>
+                            </div>
+                            <div class="button">
+                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 15">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 7.5h11m0 0L8 3.786M12 7.5l-4 3.714M12 1h3c.53 0 1.04.196 1.414.544.375.348.586.82.586 1.313v9.286c0 .492-.21.965-.586 1.313A2.081 2.081 0 0 1 15 14h-3"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-type="Gryffondor" data-id="harrypotter">
+                        <img
+                                class="gallery-image"
+                                src="public/images/cartes/harrypotter.jpg"
+                                alt=""
+                        />
+                        <div class="interaction-card">
+                            <div class="button">
+                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 21 19">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4C5.5-1.5-1.5 5.5 4 11l7 7 7-7c5.458-5.458-1.542-12.458-7-7Z"/>
+                                </svg>
+                            </div>
+                            <div class="button">
+                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 15">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 7.5h11m0 0L8 3.786M12 7.5l-4 3.714M12 1h3c.53 0 1.04.196 1.414.544.375.348.586.82.586 1.313v9.286c0 .492-.21.965-.586 1.313A2.081 2.081 0 0 1 15 14h-3"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-type="Gryffondor" data-id="harrypotter">
+                        <img
+                                class="gallery-image"
+                                src="public/images/cartes/harrypotter.jpg"
+                                alt=""
+                        />
+                        <div class="interaction-card">
+                            <div class="button">
+                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 21 19">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4C5.5-1.5-1.5 5.5 4 11l7 7 7-7c5.458-5.458-1.542-12.458-7-7Z"/>
+                                </svg>
+                            </div>
+                            <div class="button">
+                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 15">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 7.5h11m0 0L8 3.786M12 7.5l-4 3.714M12 1h3c.53 0 1.04.196 1.414.544.375.348.586.82.586 1.313v9.286c0 .492-.21.965-.586 1.313A2.081 2.081 0 0 1 15 14h-3"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-type="Gryffondor" data-id="harrypotter">
+                        <img
+                                class="gallery-image"
+                                src="public/images/cartes/harrypotter.jpg"
+                                alt=""
+                        />
+                        <div class="interaction-card">
+                            <div class="button">
+                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 21 19">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4C5.5-1.5-1.5 5.5 4 11l7 7 7-7c5.458-5.458-1.542-12.458-7-7Z"/>
+                                </svg>
+                            </div>
+                            <div class="button">
+                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 15">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 7.5h11m0 0L8 3.786M12 7.5l-4 3.714M12 1h3c.53 0 1.04.196 1.414.544.375.348.586.82.586 1.313v9.286c0 .492-.21.965-.586 1.313A2.081 2.081 0 0 1 15 14h-3"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
+<script>
+
+</script>
+
 <script src="js/script.js"></script>
 </html>

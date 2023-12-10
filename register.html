@@ -2,32 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Register</title>
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
 <header>
-  <nav>
-      <a href="index.html">
-          <img class="logo" src="public/images/logo.png" alt="Harry Potter Logo">
-      </a>
-    <ul>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="login.html">Login</a></li>
-    </ul>
-  </nav>
+    <nav>
+        <a href="index.html">
+            <img class="logo" src="public/images/logo.png" alt="Harry Potter Logo">
+        </a>
+        <ul>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
 </header>
-<div class="log-container">
-    <h1>Register</h1>
-  <form action="index.html" method="post">
-      <label for="username">Username</label>
-      <input type="text" name="username" id="username" placeholder="Username">
-      <label for="password">Password</label>
-      <input type="password" name="password" id="password" placeholder="Password">
-      <input type="submit" value="Login">
-  </form>
-    <p>Si tu as un compte</p>
-    <button><a href="login.html">Connecte toi</a></button>
-</div>
+<section class="form-section">
+    <div class="log-container">
+        <div class="form-container">
+            <img src="public/images/hplogo.png" alt="Harry Potter Logo"/>
+            <p class="login-description">Crée toi un compte pour pouvoir retrouver collectionner des cartes ! </p>
+            <form action="index.html" method="post">
+                <label for="name">Name</label>
+                <input type="text" name="Name" id="name" placeholder="Name">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" placeholder="Username">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" placeholder="Password">
+                <input class="button-input" type="submit" value="Register">
+            </form>
+            <div class="hr"></div>
+            <div class="account-register">
+                <a href="login.html"><p>Si tu as déjà un compte</p></a>
+            </div>
+        </div>
+    </div>
+</section>
 <script src="js/script.js"></script>
 </body>
 </html>
