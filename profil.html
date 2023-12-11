@@ -16,14 +16,13 @@
           />
         </a>
         <ul>
-          <li><a href="gallery.html">Gallery</a></li>
           <li><a href="login.html">Login</a></li>
           <li><a href="profil.html">Profil</a></li>
         </ul>
       </nav>
     </header>
     <section class="profile-section">
-      <div class="profile-container">
+      <aside class="profile-container">
         <div class="profile-header">
           <img class="profile-image" src="public/images/IMG_5169.heic" alt="" />
           <h1 class="profile-username">@Username</h1>
@@ -67,36 +66,46 @@
             </svg>
           </div>
         </div>
-      </div>
-      <div class="search-container">
-        <input type="text" id="search" placeholder="Search for names.." />
-        <svg
-                class="loop-search"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="transparent"
-                viewBox="0 0 20 20"
-        >
-            <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
-            />
-        </svg>
-    </div>
-    <div class="filter-container">
-        <div class="filter-button" id="filterType">
-            <button id="filterAll" class="select">Tous</button>
-            <button id="filterGryffondor" class="unselect">Gryffondor</button>
-            <button id="filterPoufsouffle" class="unselect">Poufsouffle</button>
-            <button id="filterSerdaigle" class="unselect">Serdaigle</button>
-            <button id="filterSerpentard" class="unselect">Serpentard</button>
+      </aside>
+      <div class="profile-personalisation-container">
+        <div class="interaction-search-filter">
+          <div class="search-container">
+            <input type="text" id="search" placeholder="Search for names.." />
+            <svg
+              class="loop-search"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="transparent"
+              viewBox="0 0 20 20"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+              />
+            </svg>
+          </div>
+          <div class="filter-container">
+            <div class="filter-button" id="filterType">
+              <button id="filterAll" class="select">Tous</button>
+              <button id="filterGryffondor" class="unselect">Gryffondor</button>
+              <button id="filterPoufsouffle" class="unselect">
+                Poufsouffle
+              </button>
+              <button id="filterSerdaigle" class="unselect">Serdaigle</button>
+              <button id="filterSerpentard" class="unselect">Serpentard</button>
+            </div>
+          </div>
         </div>
-    </div>
+        <div class="mycards">
+        </div>
+        <div class="myfriends"></div>
+        <div class="favorites"></div>
+      </div>
     </section>
 
-    <script src="js/script.js"></script>
+    <script src="js/script.js" defer></script>
   </body>
 </html>

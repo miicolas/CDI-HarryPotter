@@ -130,8 +130,10 @@ nav li a:hover {
     border: none;
     cursor: pointer;
     transition: ease-in 0.5s;
+    color: white;
 
 }
+
 .hero-button:hover {
     transform: scale(0.98);
     transition: ease-in 0.2s;
@@ -551,7 +553,7 @@ nav li a:hover {
     width: 100%;
 }
 
-.interaction-card .button {
+.interaction-card .button-card {
     font-size: 1.25em;
     font-weight: bold;
     color: var(--main-text-color);
@@ -560,7 +562,7 @@ nav li a:hover {
     transition: background 0.3s;
 
 }
-.button {
+.button-card {
     margin: auto;
     border : #E2E8F0 1px solid;
     border-radius: 1.25rem;
@@ -573,15 +575,18 @@ nav li a:hover {
     margin: auto;
 
 }
+.like-button--active {
+    fill : red;
+}
 
-.button:hover {
+.button-card:hover {
     background: rgba(217, 217, 217, 0.30);
     padding: 0.2rem;
     transition: ease-in-out 0.2s;
     margin: auto;
 }
 
-.button > svg {
+.button-card > svg {
     height: 1.5rem;
     width: auto;
     padding: 0.25rem;
@@ -590,7 +595,7 @@ nav li a:hover {
     transition: ease-in-out 0.5s;
 }
 
-.button > svg:hover {
+.button-card > svg:hover {
     color: red;
     transition: ease-in-out 0.2s;
 
@@ -742,6 +747,7 @@ form input {
     display: flex;
     width: 100%;
     align-items: flex-start; 
+    justify-content: center;
 }
 .profile-container {
 
@@ -763,6 +769,17 @@ form input {
     margin-top: 2rem;
     position: relative;
 
+}
+.profile-personalisation-container {
+    width: 65%;
+    margin-left: 2rem;
+    margin-top: 2rem;
+}
+.interaction-search-filter {
+    display: flex;
+    color: white;
+    background: rgba(217, 217, 217, 0.30);
+    border-radius: 1.25rem;
 }
 
 .profile-image {
@@ -807,3 +824,4 @@ form input {
     justify-content: space-between;
     padding: 1rem 2rem;
 }
+

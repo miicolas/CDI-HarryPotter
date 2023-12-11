@@ -112,3 +112,12 @@ heroButton.addEventListener('click', function(e) {
     const gallerySection = document.getElementById('gallery-section');
     gallerySection.scrollIntoView({ behavior: 'smooth' });
 });
+
+const likeButton = document.querySelectorAll('.like-button');
+likeButton.forEach(function(button) {
+    button.addEventListener('click', function() {
+        button.classList.toggle('like-button--active');
+    }
+)
+     
+});
