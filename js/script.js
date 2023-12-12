@@ -7,64 +7,61 @@ function filterType() {
   const filterSerpentard = document.getElementById("filterSerpentard");
 
   filterAll.addEventListener("click", function () {
-    filterCards("Tous");
+      filterCards("Tous");
   });
   filterGryffondor.addEventListener("click", function () {
-    filterCards("Gryffondor");
+      filterCards("Gryffondor");
   });
   filterPoufsouffle.addEventListener("click", function () {
-    filterCards("Poufsouffle");
+      filterCards("Poufsouffle");
   });
   filterSerdaigle.addEventListener("click", function () {
-    filterCards("Serdaigle");
+      filterCards("Serdaigle");
   });
   filterSerpentard.addEventListener("click", function () {
-    filterCards("Serpentard");
+      filterCards("Serpentard");
   });
 }
 function filterCards(selectedType) {
   const galleryItems = document.querySelectorAll(".gallery-item");
   galleryItems.forEach(function (item) {
-    const itemType = item.getAttribute("data-type");
-    if (selectedType === "Tous" || selectedType === itemType) {
-      item.style.display = "block";
-    } else {
-      item.style.display = "none";
-    }
+      const itemType = item.getAttribute("data-type");
+      if (selectedType === "Tous" || selectedType === itemType) {
+          item.style.display = "block";
+      } else {
+          item.style.display = "none";
+      }
   });
 }
 
 function updateFilterButtons() {
-  const filterButtons = [
-    filterAll,
-    filterGryffondor,
-    filterPoufsouffle,
-    filterSerdaigle,
-    filterSerpentard,
-  ];
+  const filterButtons = [filterAll, filterGryffondor, filterPoufsouffle, filterSerdaigle, filterSerpentard]
 
-  filterButtons.forEach(function (button) {
-    button.addEventListener("click", function () {
-      filterButtons.forEach(function (btn) {
-        btn.classList.remove("select");
-        btn.classList.add("unselect");
+  filterButtons.forEach(function(button) {
+      button.addEventListener('click', function() {
+          filterButtons.forEach(function(btn) {
+              btn.classList.remove('select');
+              btn.classList.add('unselect');
+          });
+          button.classList.add('select');
+          button.classList.remove('unselect');
       });
-      button.classList.add("select");
-      button.classList.remove("unselect");
-    });
   });
 }
 
+
 // Search function
-function searchCard(selectedType) {
+function searchCard() {
   const searchInput = document.getElementById("search");
   const galleryItems = document.querySelectorAll(".gallery-item");
+
   searchInput.addEventListener("input", function () {
-    const searchValue = searchInput.value.toLowerCase();
+    const searchValue = searchInput.value.trim().toLowerCase();
+
     galleryItems.forEach(function (item) {
-      const name = item.querySelector("p").textContent.toLowerCase();
-      const itemType = item.getAttribute("data-type");
-      if (name.includes(searchValue)) {
+      const dataId = item.getAttribute("data-id").toLowerCase();
+
+      if (dataId.includes(searchValue)) {
         item.style.display = "block";
       } else {
         item.style.display = "none";
@@ -74,33 +71,22 @@ function searchCard(selectedType) {
 }
 
 // CardDetails function
-function CardDetails() {
-  const galleryItems = document.querySelectorAll(".gallery-image");
+function CardDetails (){
+  const galleryItems = document.querySelectorAll(".gallery-item");
+
   galleryItems.forEach(function (item) {
-    item.addEventListener("click", function () {
-      const cardid = item.dataset.id;
-      window.location.href = `///Users/nicolasbecharat/Documents/GitHub/harrypotter/cartes/${cardid}.html`;
-    });
+      item.addEventListener("click", function () {
+          const cardid = item.dataset.id ;
+          window.location.href = `///Users/nicolasbecharat/Documents/GitHub/harrypotter/cartes/${cardid}.html`
+      });
   });
 }
-
-function buttonAnimation() {
-  const scrollTo = document.getElementById("bouncebutton");
-  scrollTo.addEventListener("click", function () {
-    window.scrollBy({
-      top: 40,
-      behavior: "smooth",
-    });
-  });
-}
-
 // Call functions
 document.addEventListener("DOMContentLoaded", function () {
   filterType();
   searchCard();
   CardDetails();
   updateFilterButtons();
-  buttonAnimation();
 });
 
 const bounceContainerButton = document.querySelector(".bounce-container");
@@ -125,18 +111,19 @@ likeButton.forEach(function (button) {
   });
 });
 
-const menuIcon = document.querySelector('.menu-icon');
-const closeIcon = document.querySelector('.close-icon');
-const overlay = document.querySelector('.overlay');
 
-    menuIcon.addEventListener('click', () => {
-      overlay.style.display = 'block';
-      menuIcon.style.display = 'none';
-      closeIcon.style.display = 'block';
-    });
+  const menuIcon = document.getElementById('menuIcon');
+  const closeIcon = document.getElementById('closeIcon');
+  const overlay = document.querySelector('.overlay');
 
-    closeIcon.addEventListener('click', () => {
-      overlay.style.display = 'none';
-      closeIcon.style.display = 'none';
-      menuIcon.style.display = 'block';
-    });
+  menuIcon.addEventListener('click', () => {
+    overlay.style.display = 'block';
+    menuIcon.style.display = 'none';
+    closeIcon.style.display = 'block';
+  });
+
+  closeIcon.addEventListener('click', () => {
+    overlay.style.display = 'none';
+    closeIcon.style.display = 'none';
+    menuIcon.style.display = 'block';
+  });
