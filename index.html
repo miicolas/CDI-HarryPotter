@@ -13,16 +13,18 @@
             <a href="index.html">
               <img class="logo" src="public/images/logo.png" alt="Harry Potter Logo" />
             </a>
-            <div class="menu-icon">&#9776;</div>
+            <div class="menu-icon"id="menuIcon"> &#9776;</div>
             <ul class="nav-links">
               <li><a href="login.html">Login</a></li>
               <li><a href="profil.html">Profil</a></li>
+              <li><a href="about.html">About</a></li>
             </ul>
             <div class="overlay">
-                <div class="close-icon">&times;</div>
+                <div class="close-icon" id="closeIcon">&times;</div>
                 <ul class="overlay-content">
                     <li><a href="login.html">Login</a></li>
                     <li><a href="profil.html">Profil</a></li>
+                    <li><a href="about.html">About</a></li>
             </ul>
             </div>
         </nav>
@@ -143,12 +145,16 @@
                 <div class="left-gallery">
                     <p class="left-gallery-title">MAISONS</p>
                     <div class="search-container">
+            
                         <input type="text" id="search" placeholder="Search for names.." />
-                        <svg class="loop-search" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                            fill="transparent" viewBox="0 0 20 20">
+                        <button type="submit">
+                          <svg class="loop-search" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="transparent"
+                            viewBox="0 0 20 20">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-                        </svg>
+                              d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                          </svg>
+                        </button>
+                      
                     </div>
                     <div class="filter-container">
                         <div class="filter-button" id="filterType">
@@ -168,7 +174,8 @@
                 </div>
                 <div class="right-gallery">
                     <div class="gallery">
-                        <div class="gallery-item" data-type="Gryffondor" data-id="harrypotter">
+                        <div class="gallery-item" data-type="Poufsouffle" data-id="Harry Potter">
+                            
                             <img class="gallery-image" src="public/images/cartes/harrypotter.jpg" alt="" />
                             <div class="interaction-card">
                                 <div class="button-card">
@@ -189,8 +196,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="gallery-item" data-type="Gryffondor" data-id="harrypotter">
-                            <img class="gallery-image" src="public/images/cartes/harrypotter.jpg" alt="" />
+                        <div class="gallery-item" data-type="Gryffondor" data-id="Hermione Granger">
+                            <img class="gallery-image" src="public/images/cartes/hermionegranger.jpg" alt="" />
                             <div class="interaction-card">
                                 <div class="button-card">
                                     <svg class="like-button" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -210,7 +217,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="gallery-item" data-type="Gryffondor" data-id="harrypotter">
+                        <div class="gallery-item" data-type="Gryffondor" data-id="hermionegranger">
                             <img class="gallery-image" src="public/images/cartes/harrypotter.jpg" alt="" />
                             <div class="interaction-card">
                                 <div class="button-card">
@@ -231,7 +238,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="gallery-item" data-type="Gryffondor" data-id="harrypotter">
+                        <div class="gallery-item" data-type="Gryffondor" data-id="hermionegranger">
                             <img class="gallery-image" src="public/images/cartes/harrypotter.jpg" alt="" />
                             <div class="interaction-card">
                                 <div class="button-card">
@@ -363,8 +370,5 @@
         </section>
     </main>
 </body>
-<script></script>
-
 <script src="js/script.js" defer></script>
-
 </html>
