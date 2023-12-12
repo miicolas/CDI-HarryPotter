@@ -1,43 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Register</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
+
 <body>
-<header>
-    <nav>
-        <a href="index.html">
-            <img class="logo" src="public/images/logo.png" alt="Harry Potter Logo">
-        </a>
-        <ul>
-            <li><a href="profil.html">Profil</a></li>
-            <li><a href="login.html">Login</a></li>
-        </ul>
-    </nav>
-</header>
-<section class="form-section">
-    <div class="log-container">
-        <div class="form-container">
-            <img src="public/images/hplogo.png" alt="Harry Potter Logo"/>
-            <p class="login-description">Crée toi un compte pour pouvoir retrouver collectionner des cartes ! </p>
-            <form action="index.html" method="post">
-                <label for="name">Name</label>
-                <input type="text" name="Name" id="name" placeholder="Name">
-                <label for="username">Username</label>
-                <input type="text" name="username" id="username" placeholder="Username">
-                <label for="password">Password</label>
-                <input type="password" name="password" id="password" placeholder="Password">
-                <input class="button-input" type="submit" value="Register">
-            </form>
-            <div class="hr"></div>
-            <div class="account-register">
-                <a href="login.html"><p>Si tu as déjà un compte</p></a>
+    <header>
+        <nav>
+            <a href="index.html">
+              <img class="logo" src="public/images/logo.png" alt="Harry Potter Logo" />
+            </a>
+            <div class="menu-icon">&#9776;</div>
+            <ul class="nav-links">
+              <li><a href="login.html">Login</a></li>
+              <li><a href="profil.html">Profil</a></li>
+            </ul>
+            <div class="overlay">
+                <div class="close-icon">&times;</div>
+                <ul class="overlay-content">
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="profil.html">Profil</a></li>
+            </ul>
             </div>
-        </div>
-    </div>
-</section>
-<script src="js/script.js" defer></script>
+        </nav>
+    </header>
+    <main>
+        <section class="form-section">
+            <div class="log-container">
+                <div class="form-container">
+                    <img src="public/images/hplogo.png" alt="Harry Potter Logo" />
+                    <p class="login-description">Crée toi un compte pour pouvoir retrouver collectionner des cartes ! </p>
+                    <form action="index.html" method="post">
+                        <label for="name">Name</label>
+                        <input type="text" name="Name" id="name" placeholder="Name">
+                        <label for="username">Username</label>
+                        <input type="text" name="username" id="username" placeholder="Username">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password" placeholder="Password">
+                        <input class="button-input" type="submit" value="Register">
+                    </form>
+                    <div class="hr"></div>
+                    <div class="account-register">
+                        <a href="login.html">
+                            <p>Si tu as déjà un compte</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="js/script.js" defer></script>
 </body>
+
 </html>
