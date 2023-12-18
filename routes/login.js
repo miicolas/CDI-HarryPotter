@@ -7,9 +7,11 @@ const router = express.Router();
 router.post("/login", async (req, res) => {
   try {
     const { username, password } = req.body;
+    
     const result = await query("SELECT * FROM account WHERE username = ?", [
       username,
     ]);
+    
 
     if (result.length === 0) {
       return res.status(400).json({ error: "Invalid username or password" });

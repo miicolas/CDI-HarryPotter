@@ -9,11 +9,13 @@ router.use(bodyParser.json());
 
 router.post("/signup", async (req, res) => {
   try {
+
     const { username, password, name } = req.body;
     const confirmUsername = await query(
       "SELECT username FROM account WHERE username = ?",
       [username]
     );
+  
     if (!(username.length > 0) || !(password.length > 7) || !(name.length>0)) { // Check if username and password are valid
       if (!(password.length > 8)) { // Check if password is at least 8 characters
         return res

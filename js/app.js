@@ -125,23 +125,30 @@
 
 
 // app.js
+require("dotenv").config();
 const express = require("express");
 const app = express();
 const signupRoute = require("../routes/signup");
 const loginRoute = require("../routes/login");
+const cardRoute = require("../routes/card");
+const session = require("express-session");
 // const usernamesRoute = require("../routes/usernames");
 const path = require("path");
 
-const port = process.env.PORT || 3000; 
+const port = process.env.PORT || 3000;
+
+app.set("view engine", "ejs"); // Définir EJS comme moteur de modèle
+
 app.use(express.static(path.join(__dirname, '../public')));
 
 app.get("/", (req, res) => {
-    
-  res.sendFile(path.join(__dirname, "../public/")); // Send the index.html file
+  res.sendFile(path.join(__dirname, "../index.html")); // Envoyer le fichier index.html
 });
 
-app.use("/", signupRoute); // Use the addRoute middleware
-app.use("/", loginRoute);  // Use the loginRoute middleware
-// app.use("/", usernamesRoute); // Use the usernamesRoute middleware
+app.use("/", signupRoute); // Utiliser le middleware signupRoute
+app.use("/", loginRoute);  // Utiliser le middleware loginRoute
+// app.use("/", cardRoute);  // Utiliser le middleware cardRoute
+
+// app.use("/", usernamesRoute); // Utiliser le middleware usernamesRoute
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
