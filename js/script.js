@@ -71,37 +71,24 @@ function searchCard() {
 }
 
 // CardDetails function
-function CardDetails (){
-  const galleryItems = document.querySelectorAll(".gallery-item");
+// function CardDetails (){
+//   const galleryItems = document.querySelectorAll(".gallery-item");
 
-  galleryItems.forEach(function (item) {
-      item.addEventListener("click", function () {
-          const cardid = item.dataset.id ;
-          window.location.href = `///Users/nicolasbecharat/Documents/GitHub/harrypotter/cartes/${cardid}.html`
-      });
-  });
-}
+//   galleryItems.forEach(function (item) {
+//       item.addEventListener("click", function () {
+//           const cardid = item.dataset.id ;
+//           window.location.href = `///Users/nicolasbecharat/Documents/GitHub/harrypotter/cartes/${cardid}.html`
+//       });
+//   });
+// }
+
+  
 // Call functions
 document.addEventListener("DOMContentLoaded", function () {
   filterType();
   searchCard();
-  CardDetails();
+  // CardDetails();
   updateFilterButtons();
-});
-
-const bounceContainerButton = document.querySelector(".bounce-container");
-
-bounceContainerButton.addEventListener("click", function (e) {
-  e.preventDefault();
-  const tirageSection = document.getElementById("tirage");
-  tirageSection.scrollIntoView({ behavior: "smooth" });
-});
-
-const heroButton = document.querySelector(".hero-button");
-heroButton.addEventListener("click", function (e) {
-  e.preventDefault();
-  const gallerySection = document.getElementById("gallery-section");
-  gallerySection.scrollIntoView({ behavior: "smooth" });
 });
 
 const likeButton = document.querySelectorAll(".like-button");
@@ -112,18 +99,34 @@ likeButton.forEach(function (button) {
 });
 
 
-  const menuIcon = document.getElementById('menuIcon');
-  const closeIcon = document.getElementById('closeIcon');
-  const overlay = document.querySelector('.overlay');
+const menuIcon = document.getElementById('menuIcon');
+const closeIcon = document.getElementById('closeIcon');
+const overlay = document.querySelector('.overlay');
 
-  menuIcon.addEventListener('click', () => {
-    overlay.style.display = 'block';
-    menuIcon.style.display = 'none';
-    closeIcon.style.display = 'block';
+
+menuIcon.addEventListener('click', () => {
+  overlay.style.display = 'block';
+  menuIcon.style.display = 'none';
+  closeIcon.style.display = 'block';
+  console.log('click');
+});
+
+closeIcon.addEventListener('click', () => {
+  overlay.style.display = 'none';
+  closeIcon.style.display = 'none';
+  menuIcon.style.display = 'block';
+});
+
+
+const profileOption = document.querySelectorAll(".profile-option");
+
+profileOption.forEach(function(option) {
+  option.addEventListener("click", function() {
+    profileOption.forEach(function(el) {
+      el.classList.remove("profile-option-selected");
+    });
+    option.classList.add("profile-option-selected");
+
+    });
   });
 
-  closeIcon.addEventListener('click', () => {
-    overlay.style.display = 'none';
-    closeIcon.style.display = 'none';
-    menuIcon.style.display = 'block';
-  });

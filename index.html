@@ -8,48 +8,51 @@
 </head>
 
 <body>
-    <header>
-        <nav>
+
+    <header id="header"> <!-- Header :  -->
+        <nav> <!-- Navigation :  -->
             <a href="index.html">
-              <img class="logo" src="public/images/logo.png" alt="Harry Potter Logo" />
+                <img class="logo" src="public/images/logo.png" alt="Harry Potter Logo" />
+                <!-- Logo avec lien vers la page d'accueil -->
             </a>
-            <div class="menu-icon"id="menuIcon"> &#9776;</div>
-            <ul class="nav-links">
-              <li><a href="login.html">Login</a></li>
-              <li><a href="profil.html">Profil</a></li>
-              <li><a href="about.html">About</a></li>
+            <div class="menu-icon" id="menuIcon"> &#9776;</div> <!-- Icone du menu burger -->
+            <ul class="nav-links"> <!-- Liste des liens de la navigation -->
+                <li><a href="profil.html">Profil</a></li>
+                <li><a href="login.html">Connection</a></li>
             </ul>
-            <div class="overlay">
+            <div class="overlay"> <!-- Overlay du menu burger -->
                 <div class="close-icon" id="closeIcon">&times;</div>
-                <ul class="overlay-content">
-                    <li><a href="login.html">Login</a></li>
+                <ul class="overlay-content"> <!-- Liste des liens du menu burger -->
+                    <li><a href="index.html">Accueil</a></li>
                     <li><a href="profil.html">Profil</a></li>
-                    <li><a href="about.html">About</a></li>
-            </ul>
+                    <li><a href="login.html">Connexion</a></li>
+                </ul>
             </div>
         </nav>
     </header>
-    <main>
-        <section class="hero">
-            <div class="hero-container">
+
+    <main> <!-- Main :  -->
+
+        <section class="hero"> <!-- Section hero :  -->
+            <div class="hero-container"> <!-- Container du hero :  -->
                 <div class="hero-intro">
-                    <div>
+                    <div> <!-- Div du titre et du sous-titre :  -->
                         <p class="hero-title">Bievenue à Poudlard</p>
                         <p class="hero-subtitle">
                             L'école de sorcellerie la plus réputée au monde
                         </p>
                     </div>
-                    <div>
+                    <div> <!-- Div de la description et du bouton :  -->
                         <p class="hero-description">
                             Découvre le monde d'Harry Potter en collectionnant les cartes de
                             tes personnages préférés
                         </p>
-                        <button class="hero-button">
+                        <a class="hero-button" href="#gallery-section"> <!-- Bouton de redirection vers gallery de cartes :  -->
                             Découvrir
-                        </button>
+                        </a>
                     </div>
                 </div>
-                <div class="hero-container-description">
+                <div class="hero-container-description"> <!-- Container de la description :  -->
                     <div class="top-boxes">
                         <div class="container-description">
                             <p>Partage et échange tes cartes avec tes amis</p>
@@ -69,37 +72,41 @@
                 </div>
             </div>
         </section>
-        <div class="bounce-container">
-            <div class="bounce" id="bouncebutton">
-                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 14">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M5 1v12m0 0 4-4m-4 4L1 9" />
-                </svg>
-            </div>
+<!-- Container du bouton de redirection vers la section tirage de cartes :  -->
+        <div class="bounce-container"> 
+            <a href="#tirage">
+                <div class="bounce" id="bouncebutton">
+                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M5 1v12m0 0 4-4m-4 4L1 9" />
+                    </svg>
+                </div>
+            </a>
         </div>
-        <section class="tirage" id="tirage">
-            <div class="tirage-container">
-                <p class="tirage-title">
+
+        <section class="tirage" id="tirage"> <!-- Section tirage de cartes :  -->
+            <div class="tirage-container"> <!-- Container du tirage de cartes :  -->
+                <p class="tirage-title"> <!-- Titre de la section :  -->
                     Collectionne de nouvelles cartes tous les jours
                 </p>
-                <div class="container-card-tirage">
-                    <div class="card-tirage">
+                <div class="container-card-tirage"> <!-- Container des cartes :  -->
+                    <div class="card-tirage"> <!-- Carte :  -->
                         <img src="public/images/cartes/harrypotter.jpg" alt="Harry Potter" />
                     </div>
-                    <div class="card-tirage">
+                    <div class="card-tirage"> <!-- Carte :  -->
                         <img src="public/images/cartes/hermionegranger.jpg" alt="Hermione Granger" />
                     </div>
-                    <div class="card-tirage">
+                    <div class="card-tirage"> <!-- Carte :  -->
                         <img src="public/images/cartes/ronweasley.jpg" alt="Row Weasley" />
                     </div>
-                    <div class="card-tirage">
+                    <div class="card-tirage"> <!-- Carte :  -->
                         <img src="public/images/cartes/cedricdiggory.jpg" alt="Cedric Diggory" />
                     </div>
-                    <div class="card-tirage">
+                    <div class="card-tirage"> <!-- Carte :  -->
                         <img src="public/images/cartes/albusdumbledore.jpg" alt="Albus Dumbledore" />
                     </div>
                 </div>
-                <a class="button-tirage">
+                <a class="button-tirage"> <!-- Bouton de tirage de cartes :  -->
                     <svg class="swing" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
                         fill="none">
                         <path
@@ -113,11 +120,12 @@
                 </a>
             </div>
         </section>
-        <section class="infos">
-            <p>
+
+        <section class="infos"> <!-- Section infos :  -->
+            <p> <!-- Titre de la section :  -->
                 Tu peux suivre les nouveautés de la plateforme sur les réseaux sociaux
             </p>
-            <div class="socials-medias">
+            <div class="socials-medias"> <!-- Container des réseaux sociaux :  -->
                 <a href="https://www.instagram.com/">
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
                         <path
@@ -140,24 +148,24 @@
                 </a>
             </div>
         </section>
-        <section class="gallery-section">
-            <div class="container-gallery" id="gallery-section">
-                <div class="left-gallery">
+
+        <section class="gallery-section"> <!-- Section gallery de cartes :  -->
+            <div class="container-gallery" id="gallery-section"> <!-- Container de la gallery de cartes :  -->
+                <div class="left-gallery"> <!-- Container de la partie gauche de la gallery de cartes :  -->
                     <p class="left-gallery-title">MAISONS</p>
-                    <div class="search-container">
-            
+                    <div class="search-container"> <!-- Container de la barre de recherche :  -->
                         <input type="text" id="search" placeholder="Search for names.." />
                         <button type="submit">
-                          <svg class="loop-search" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="transparent"
-                            viewBox="0 0 20 20">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-                          </svg>
+                            <svg class="loop-search" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="transparent" viewBox="0 0 20 20">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                            </svg>
                         </button>
-                      
+
                     </div>
-                    <div class="filter-container">
-                        <div class="filter-button" id="filterType">
+                    <div class="filter-container"> <!-- Container des filtres :  -->
+                        <div class="filter-button" id="filterType"> <!-- Container des filtres par type :  -->
                             <button id="filterAll" class="select">Tous</button>
                             <button id="filterGryffondor" class="unselect">
                                 Gryffondor
@@ -172,13 +180,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="right-gallery">
-                    <div class="gallery">
-                        <div class="gallery-item" data-type="Poufsouffle" data-id="Harry Potter">
-                            
-                            <img class="gallery-image" src="public/images/cartes/harrypotter.jpg" alt="" />
-                            <div class="interaction-card">
-                                <div class="button-card">
+                <div class="right-gallery"> <!-- Container de la partie droite de la gallery de cartes :  -->
+                    <div class="gallery" > <!-- Container des cartes :  -->
+                        <div class="gallery-item" data-type="Gryffondor" data-id="Harry Potter"> <!-- Carte :  -->
+
+                            <img class="gallery-image" src="public/images/cartes/harrypotter.jpg" alt="Harry Potter" />
+                            <div class="interaction-card"> <!-- Container des boutons d'interaction :  -->
+                                <div class="button-card"> <!-- Bouton de like :  -->
                                     <svg class="like-button" zaria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                         fill="none" viewBox="0 0 21 19">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -186,7 +194,7 @@
                                             d="M11 4C5.5-1.5-1.5 5.5 4 11l7 7 7-7c5.458-5.458-1.542-12.458-7-7Z" />
                                     </svg>
                                 </div>
-                                <div class="button-card">
+                                <div class="button-card"> <!-- Bouton de partage :  -->
                                     <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                                         viewBox="0 0 18 15">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -197,7 +205,8 @@
                             </div>
                         </div>
                         <div class="gallery-item" data-type="Gryffondor" data-id="Hermione Granger">
-                            <img class="gallery-image" src="public/images/cartes/hermionegranger.jpg" alt="" />
+                            <img class="gallery-image" src="public/images/cartes/hermionegranger.jpg"
+                                alt="Hermione Granger" />
                             <div class="interaction-card">
                                 <div class="button-card">
                                     <svg class="like-button" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -217,8 +226,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="gallery-item" data-type="Gryffondor" data-id="hermionegranger">
-                            <img class="gallery-image" src="public/images/cartes/harrypotter.jpg" alt="" />
+                        <div class="gallery-item" data-type="Gryffondor" data-id="Albus Dumbledore">
+                            <img class="gallery-image" src="public/images/cartes/albusdumbledore.jpg"
+                                alt="Albus Dumbledore" />
                             <div class="interaction-card">
                                 <div class="button-card">
                                     <svg class="like-button" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -238,8 +248,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="gallery-item" data-type="Gryffondor" data-id="hermionegranger">
-                            <img class="gallery-image" src="public/images/cartes/harrypotter.jpg" alt="" />
+                        <div class="gallery-item" data-type="Poufsouffle" data-id="Cedric Diggory">
+                            <img class="gallery-image" src="public/images/cartes/cedricdiggory.jpg"
+                                alt="Cedric Diggory" />
                             <div class="interaction-card">
                                 <div class="button-card">
                                     <svg class="like-button" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -259,8 +270,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="gallery-item" data-type="Gryffondor" data-id="harrypotter">
-                            <img class="gallery-image" src="public/images/cartes/harrypotter.jpg" alt="" />
+                        <div class="gallery-item" data-type="Serpentard" data-id="Drago Malfoy">
+                            <img class="gallery-image" src="public/images/cartes/dragomalfoy.jpg" alt="Drago Malfoy" />
                             <div class="interaction-card">
                                 <div class="button-card">
                                     <svg class="like-button" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -280,8 +291,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="gallery-item" data-type="Gryffondor" data-id="harrypotter">
-                            <img class="gallery-image" src="public/images/cartes/harrypotter.jpg" alt="" />
+                        <div class="gallery-item" data-type="Serpentard" data-id="Gregory Goyle">
+                            <img class="gallery-image" src="public/images/cartes/gregorygoyle.jpg"
+                                alt="Gregory Goyle" />
                             <div class="interaction-card">
                                 <div class="button-card">
                                     <svg class="like-button" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -301,8 +313,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="gallery-item" data-type="Gryffondor" data-id="harrypotter">
-                            <img class="gallery-image" src="public/images/cartes/harrypotter.jpg" alt="" />
+                        <div class="gallery-item" data-type="Serdaigle" data-id="Luna Lovegood">
+                            <img class="gallery-image" src="public/images/cartes/lunalovegood.jpg"
+                                alt="Luna Lovegood" />
                             <div class="interaction-card">
                                 <div class="button-card">
                                     <svg class="like-button" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -322,8 +335,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="gallery-item" data-type="Gryffondor" data-id="harrypotter">
-                            <img class="gallery-image" src="public/images/cartes/harrypotter.jpg" alt="" />
+                        <div class="gallery-item" data-type="Gryffondor" data-id="McGonagall">
+                            <img class="gallery-image" src="public/images/cartes/mcgonagall.jpg" alt="McGonagall" />
                             <div class="interaction-card">
                                 <div class="button-card">
                                     <svg class="like-button" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -343,8 +356,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="gallery-item" data-type="Gryffondor" data-id="harrypotter">
-                            <img class="gallery-image" src="public/images/cartes/harrypotter.jpg" alt="" />
+                        <div class="gallery-item" data-type="Gryffondor" data-id="Neville Longbottom">
+                            <img class="gallery-image" src="public/images/cartes/nevillelongbottom.jpg"
+                                alt="Neville Longbottom" />
                             <div class="interaction-card">
                                 <div class="button-card">
                                     <svg class="like-button" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -367,8 +381,31 @@
                     </div>
                 </div>
             </div>
+
         </section>
+
     </main>
+
+    <footer class="footer-container">
+        <div class="footer-content">
+            <a href="#header"> <!-- Bouton de retour en haut de page :  -->
+                <div class="footer-backtop">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M13.2071 8C12.832 7.62506 12.3234 7.41443 11.7931 7.41443C11.2628 7.41443 10.7541 7.62506 10.3791 8L4.79309 13.586C4.51347 13.8657 4.32306 14.222 4.24593 14.6099C4.16879 14.9978 4.2084 15.3999 4.35974 15.7653C4.51108 16.1307 4.76736 16.443 5.09618 16.6628C5.425 16.8826 5.81159 16.9999 6.20709 17H17.3791C17.7746 16.9999 18.1612 16.8826 18.49 16.6628C18.8188 16.443 19.0751 16.1307 19.2264 15.7653C19.3778 15.3999 19.4174 14.9978 19.3403 14.6099C19.2631 14.222 19.0727 13.8657 18.7931 13.586L13.2071 8Z"
+                            fill="white" />
+                    </svg>
+                </div>
+            </a>
+
+            <span>© 2023 <a href="#">Harry Potter Game</a> - Tous droits réservés</span>
+        </div>
+        <ul>
+            <li><a href="#">Mentions légales</a></li>
+            <li><a href="#">Politique de confidentialité</a></li>
+        </ul>
+    </footer>
 </body>
 <script src="js/script.js" defer></script>
+
 </html>

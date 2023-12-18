@@ -7,10 +7,9 @@
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #f5f5f5;
-    scroll-behavior: smooth;
 }
 
-:root {
+/* :root {
     --main-text-color: #333533;
     --main-text-color2: #ffffff;
     --main-bg-color: #f5f5f5;
@@ -18,7 +17,7 @@ body {
     --main-accent-color: #bbb8b8;
     --main-accent-color2: #f94554;
 
-}
+} */
 html {
     scroll-behavior: smooth;
 }
@@ -69,6 +68,7 @@ nav li a:hover {
     cursor: pointer;
     color: white;
     font-size: 1.5rem;
+   
 }
 .overlay {
     display: none;
@@ -176,7 +176,7 @@ nav li a:hover {
 
 .hero-button {
     display: inline-flex;
-    padding: 0.5rem 1rem;
+    padding: 1rem 1.5rem;
     justify-content: center;
     align-items: center;
     gap: 0.625rem;
@@ -186,6 +186,7 @@ nav li a:hover {
     cursor: pointer;
     transition: ease-in 0.5s;
     color: white;
+    font-size: 1.25rem;
 
 }
 
@@ -478,6 +479,9 @@ nav li a:hover {
     padding: 1rem;
 }
 
+
+/* Gallery */
+
 .gallery-section {
     padding: 5rem 0;
 
@@ -532,16 +536,10 @@ nav li a:hover {
 
 .search-container form {
     display: flex;
-    align-items: stretch; /* Pour que le bouton prenne la même hauteur que l'input */
-    margin: 0; /* Supprime la marge par défaut du formulaire */
+    align-items: stretch; 
+    margin: 0; 
 }
 
-#search {
-    border: none;
-    outline: none;
-    font-size: 0.75rem;
-    border-radius: 1.25rem 0 0 1.25rem;
-}
 
 .search-container button {
     border: none;
@@ -550,6 +548,7 @@ nav li a:hover {
     border-radius: 0 1.25rem 1.25rem 0;
     padding:  0 0.5rem ;
     background-color: white;
+    height: 100%;
 }
 
 .loop-search {
@@ -557,8 +556,6 @@ nav li a:hover {
     width: auto;
     color: var(--main-accent-color);
 }
-
-
 
 .filter-container {
     display: flex;
@@ -573,6 +570,7 @@ nav li a:hover {
     padding: 1rem;
     font-size: 0.75rem;
     border-radius: 1.25rem 0 0 1.25rem;
+
 }
 
 .filters-container {
@@ -622,7 +620,16 @@ nav li a:hover {
     overflow-y: scroll;
     height: 40rem;
     gap: 1.25rem;
+    padding: 1rem;
+    justify-content: space-between;
+    -ms-overflow-style: none;  
+    scrollbar-width: none;
+    
 }
+
+.gallery::-webkit-scrollbar {
+    display: none;
+  }
 
 .interaction-card {
     display: flex;
@@ -684,7 +691,6 @@ nav li a:hover {
     border: #E2E8F0 1px solid;
     border-radius: 1.25rem;
     height: fit-content;
-
 }
 
 /* Responsive Gallery */
@@ -710,6 +716,12 @@ nav li a:hover {
     .right-gallery {
         padding: 2rem 0;
     }
+    .search-container button {
+        display: none;
+    }
+    #search {
+        border-radius: 1.25rem;
+    }
 }
 
 
@@ -719,7 +731,7 @@ nav li a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 85vh;
+    height: 100vh;
     width: 100%;
 }
 
@@ -800,14 +812,13 @@ form input {
     background-color: #E2E8F0;
     margin: auto;
     padding: 0 2rem;
-}
+} 
 
 .account-register {
-    display: flex;
     margin: auto;
+    display: flex;
     justify-content: center;
     align-items: center;
-    gap: 0.625rem;
     color: black;
     font-size: 0.8rem;
     font-style: normal;
@@ -819,7 +830,9 @@ form input {
     background: white;
     border: #E2E8F0 1px solid;
     transition: ease-in-out 0.5s;
+
 }
+
 
 /* Profil */
 
@@ -836,7 +849,7 @@ form input {
     justify-content: center;
     align-items: center;
     padding: 5rem 0;
-    flex: 0 0 25%;
+    flex: 0 0 20%;
     color: white;
     background: rgba(217, 217, 217, 0.30);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -845,15 +858,14 @@ form input {
     line-height: normal;
     text-align: center;
     border-radius: 1.25rem;
-    margin-left: 2rem;
     margin-top: 2rem;
     position: relative;
-    height: 80vh;
+    height: 100%;
 
 }
 .profile-personalisation-container {
-    width: 65%;
-    margin-left: 2rem;
+    width: 75%;
+    margin-left: 2rem ;
     margin-top: 2rem;
 }
 .interaction-search-filter {
@@ -861,6 +873,7 @@ form input {
     color: white;
     background: rgba(217, 217, 217, 0.30);
     border-radius: 1.25rem;
+    padding: 1rem;
 }
 
 .profile-image {
@@ -889,12 +902,20 @@ form input {
     padding: 0 2rem;
     color: black;
 }
-.profile-options-container > *{
+.profile-option{
     padding: 0.5rem 0 ;
     border-radius: 1.25rem;
-    background: #D9D9D9;
+    transition: ease-in-out 0.3s;
     width:100%; 
     margin-bottom: 0.5rem;
+}
+
+.profile-option:hover {
+    background: #D9D9D9;
+    transition: ease-in-out 0.3s;
+}
+ .profile-option-selected {
+    background: #D9D9D9;
 }
 
 .profile-navigation {
@@ -913,7 +934,6 @@ form input {
     justify-content: center;
     align-items: center;
     padding: 1rem 0;
-    width: fit-content;
     color: black;
     background:white;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -923,20 +943,9 @@ form input {
     border-radius: 1.25rem;
     margin-top: 2rem;
     height: 70vh;
+
     }
     
-
-.mycards .gallery {
-    margin-top: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    scroll-behavior: smooth;
-    overflow-y: scroll;
-    height: 40rem;
-    gap: 1.25rem;
-    padding: 1rem;
-}
-
 /* Responsive Profil */
 
 @media (max-width: 780px) {
@@ -956,7 +965,7 @@ form input {
         
     }
     .profile-personalisation-container {
-        width: 100%;
+        flex: 1;
         margin: auto;
         margin-top: 2rem;
         margin-bottom: 2rem;
@@ -980,4 +989,59 @@ form input {
         gap: 1.25rem;
         padding: 1rem;
     }
+}
+
+
+/* Footer */
+
+.footer-container{
+    display: flex;
+    align-items: center;
+    padding: 2rem 0.5rem;
+    width: 100%;
+    color: white;
+    background: #111;
+    font-size: 0.75rem;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    margin-top: 2rem;
+    
+}
+
+.footer-content {
+    padding:  0.5rem 2rem;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer-content > * {
+    padding: 0.5rem;
+
+}
+
+.footer-container ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    list-style: none;
+    gap: 0.5rem;
+    flex: 1;
+}
+.footer-container li {
+    padding: 0.5rem;
+}
+
+.footer-backtop {
+    padding: 0.25rem;
+    border: #FFF 1px solid;
+    border-radius: 0.5rem;
+}
+.footer-content span a {
+    text-decoration: underline;
+}
+
+.hidden {
+    display: none;
 }
