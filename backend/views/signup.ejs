@@ -4,54 +4,72 @@
 <head>
   <meta charset="UTF-8">
   <title>Login</title>
-  <link rel="stylesheet" href="/styles/style.css">
+  <link rel="stylesheet" href="styles/style.css">
   <script src="js/script.js" defer></script>
 </head>
 
 <body>
 
-  <header id="header"> <!-- Header :  -->
-    <nav> <!-- Navigation :  -->
-        <a href="index.html">
-            <img class="logo" src="/images/logo.png" alt="Harry Potter Logo" />
-            <!-- Logo avec lien vers la page d'accueil -->
-        </a>
-        <div class="menu-icon" id="menuIcon"> &#9776;</div> <!-- Icone du menu burger -->
-        <ul class="nav-links"> <!-- Liste des liens de la navigation -->
-            <li><a href="profil.html">Profil</a></li>
-            <li><a href="login.html">Connection</a></li>
+  <header id="header">
+    <!-- Header :  -->
+    <nav>
+      <!-- Navigation :  -->
+      <a href="/">
+        <img class="logo" src="/images/logo.png" alt="Harry Potter Logo" />
+        <!-- Logo avec lien vers la page d'accueil -->
+      </a>
+      <div class="menu-icon" id="menuIcon">&#9776;</div>
+      <!-- Icone du menu burger -->
+      <ul class="nav-links">
+        <!-- Liste des liens de la navigation -->
+        <% if (!userLoggedIn) { %>
+        <!-- Si l'utilisateur n'est pas connecté :  -->
+        <li><a href="/login">Connexion</a></li>
+        <% } else { %>
+        <!-- Si l'utilisateur est connecté :  -->
+        <li><a href="/profil">Profil</a></li>
+        <% } %>
+      </ul>
+      <div class="overlay">
+        <!-- Overlay du menu burger -->
+        <div class="close-icon" id="closeIcon">&times;</div>
+        <ul class="overlay-content">
+          <!-- Liste des liens du menu burger -->
+          <li><a href="/">Accueil</a></li>
+          <% if (!userLoggedIn) { %>
+          <!-- Si l'utilisateur n'est pas connecté :  -->
+          <li><a href="/login">Connexion</a></li>
+          <% } else { %>
+          <!-- Si l'utilisateur est connecté :  -->
+          <li><a href="/profil">Profil</a></li>
+          <% } %>
         </ul>
-        <div class="overlay"> <!-- Overlay du menu burger -->
-            <div class="close-icon" id="closeIcon">&times;</div>
-            <ul class="overlay-content"> <!-- Liste des liens du menu burger -->
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="profil.html">Profil</a></li>
-                <li><a href="login.html">Connexion</a></li>
-            </ul>
-        </div>
+      </div>
     </nav>
-</header>
+  </header>
 
   <main>
     <section class="form-section"> <!-- Section du formulaire de login -->
       <div class="log-container"> <!-- Container du formulaire de login -->
         <div class="form-container"> <!-- Formulaire de login -->
           <img src="/images/hplogo.png" alt="Harry Potter Logo" /> <!-- Logo de Harry Potter -->
-          <p class="login-description">Connecte-toi à ton compte pour pouvoir retrouver tes cartes ! </p>
+          <p class="login-description">Inscris toi pour collectioner tes cartes</p>
 
 
-          <form action="/login" method="post"> <!-- Formulaire de login -->
+          <form action="/signup" method="post"> <!-- Formulaire de login -->
             <label for="username">Nom d'utilisateur</label> <!-- Champ de saisie du nom d'utilisateur -->
             <input type="text" name="username" id="username" placeholder="Nom d'utilisateur"> <!-- Champ de saisie du nom d'utilisateur -->
+            <label for="name">Nom</label> <!-- Champ de saisie du nom d'utilisateur -->
+            <input type="text" name="name" id="name" placeholder="Nom"> <!-- Champ de saisie du nom d'utilisateur -->
             <label for="password">Mot de passe</label>  <!-- Champ de saisie du mot de passe -->
             <input type="password" name="password" id="password" placeholder="Mot de passe"> <!-- Champ de saisie du mot de passe -->
-            <input class="button-input" type="submit" value="Connexion"> <!-- Bouton de validation du formulaire -->
+            <input class="button-input" type="submit" value="Inscription"> <!-- Bouton de validation du formulaire -->
           </form>
 
           <div class="hr"></div> <!-- Ligne de séparation -->
-          <a href="register.html" class="register-account-btn">
+          <a href="login.html" class="register-account-btn">
             <div class="account-register"> <!-- Lien vers la page de création de compte -->
-                <p>Inscription</p>
+                <p>Connexion</p>
             </div>
           </a>
         </div>

@@ -11,21 +11,19 @@
 
   <header id="header"> <!-- Header :  -->
     <nav> <!-- Navigation :  -->
-      <a href="index.html">
+      <a href="/">
         <img class="logo" src="/images/logo.png" alt="Harry Potter Logo" />
         <!-- Logo avec lien vers la page d'accueil -->
       </a>
       <div class="menu-icon" id="menuIcon"> &#9776;</div> <!-- Icone du menu burger -->
       <ul class="nav-links"> <!-- Liste des liens de la navigation -->
-        <li><a href="profil.html">Profil</a></li>
-        <li><a href="login.html">Connection</a></li>
+        <li><a href="/profil">Profil</a></li>
       </ul>
       <div class="overlay"> <!-- Overlay du menu burger -->
         <div class="close-icon" id="closeIcon">&times;</div>
         <ul class="overlay-content"> <!-- Liste des liens du menu burger -->
-          <li><a href="index.html">Accueil</a></li>
-          <li><a href="profil.html">Profil</a></li>
-          <li><a href="login.html">Connexion</a></li>
+          <li><a href="/">Accueil</a></li>
+          <li><a href="/profil">Profil</a></li>
         </ul>
       </div>
     </nav>
@@ -35,9 +33,9 @@
     <section class="profile-section"> <!-- Section du profil -->
       <section class="profile-container"> <!-- Container du profil -->
         <div class="profile-header"> <!-- Header du profil -->
-          <img class="profile-image" src="public/images/IMG_5169.heic" alt="" /> <!-- Image de profil -->
-          <h1 class="profile-username">@Username</h1>
-          <h3 class="profile-name">Name</h3>
+          <img class="profile-image" src="-/images/IMG_5169.heic" alt="" /> <!-- Image de profil -->
+          <h1 class="profile-username"> <%= username %></h1>
+          <h3 class="profile-name"><%= name %></h3>
         </div>
         <div class="profile-options-container">
           <div class="profile-option profile-option-selected" data-target="my-cards">My cards</div>
@@ -95,7 +93,7 @@
           <div class="gallery">
             <div class="gallery-item" data-type="Gryffondor" data-id="Harry Potter"> <!-- Carte :  -->
 
-              <img class="gallery-image" src="public/images/cartes/harrypotter.jpg" alt="Harry Potter" />
+              <img class="gallery-image" src="/images/cartes/harrypotter.jpg" alt="Harry Potter" />
               <div class="interaction-card"> <!-- Container des boutons d'interaction :  -->
                 <div class="button-card"> <!-- Bouton de like :  -->
                   <svg class="like-button" zaria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -113,7 +111,7 @@
               </div>
             </div>
             <div class="gallery-item" data-type="Gryffondor" data-id="Hermione Granger">
-              <img class="gallery-image" src="public/images/cartes/hermionegranger.jpg" alt="Hermione Granger" />
+              <img class="gallery-image" src="/images/cartes/hermionegranger.jpg" alt="Hermione Granger" />
               <div class="interaction-card">
                 <div class="button-card">
                   <svg class="like-button" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -131,7 +129,7 @@
               </div>
             </div>
             <div class="gallery-item" data-type="Gryffondor" data-id="Albus Dumbledore">
-              <img class="gallery-image" src="public/images/cartes/albusdumbledore.jpg" alt="Albus Dumbledore" />
+              <img class="gallery-image" src="/images/cartes/albusdumbledore.jpg" alt="Albus Dumbledore" />
               <div class="interaction-card">
                 <div class="button-card">
                   <svg class="like-button" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -150,7 +148,7 @@
               </div>
             </div>
             <div class="gallery-item" data-type="Poufsouffle" data-id="Cedric Diggory">
-              <img class="gallery-image" src="public/images/cartes/cedricdiggory.jpg" alt="Cedric Diggory" />
+              <img class="gallery-image" src="/images/cartes/cedricdiggory.jpg" alt="Cedric Diggory" />
               <div class="interaction-card">
                 <div class="button-card">
                   <svg class="like-button" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -168,7 +166,7 @@
               </div>
             </div>
             <div class="gallery-item" data-type="Serpentard" data-id="Drago Malfoy">
-              <img class="gallery-image" src="public/images/cartes/dragomalfoy.jpg" alt="Drago Malfoy" />
+              <img class="gallery-image" src="/images/cartes/dragomalfoy.jpg" alt="Drago Malfoy" />
               <div class="interaction-card">
                 <div class="button-card">
                   <svg class="like-button" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -186,7 +184,7 @@
               </div>
             </div>
             <div class="gallery-item" data-type="Serpentard" data-id="Gregory Goyle">
-              <img class="gallery-image" src="public/images/cartes/gregorygoyle.jpg" alt="Gregory Goyle" />
+              <img class="gallery-image" src="/images/cartes/gregorygoyle.jpg" alt="Gregory Goyle" />
               <div class="interaction-card">
                 <div class="button-card">
                   <svg class="like-button" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -204,7 +202,7 @@
               </div>
             </div>
             <div class="gallery-item" data-type="Serdaigle" data-id="Luna Lovegood">
-              <img class="gallery-image" src="public/images/cartes/lunalovegood.jpg" alt="Luna Lovegood" />
+              <img class="gallery-image" src="/images/cartes/lunalovegood.jpg" alt="Luna Lovegood" />
               <div class="interaction-card">
                 <div class="button-card">
                   <svg class="like-button" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -222,7 +220,7 @@
               </div>
             </div>
             <div class="gallery-item" data-type="Gryffondor" data-id="McGonagall">
-              <img class="gallery-image" src="public/images/cartes/mcgonagall.jpg" alt="McGonagall" />
+              <img class="gallery-image" src="/images/cartes/mcgonagall.jpg" alt="McGonagall" />
               <div class="interaction-card">
                 <div class="button-card">
                   <svg class="like-button" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -240,7 +238,7 @@
               </div>
             </div>
             <div class="gallery-item" data-type="Gryffondor" data-id="Neville Longbottom">
-              <img class="gallery-image" src="public/images/cartes/nevillelongbottom.jpg" alt="Neville Longbottom" />
+              <img class="gallery-image" src="/images/cartes/nevillelongbottom.jpg" alt="Neville Longbottom" />
               <div class="interaction-card">
                 <div class="button-card">
                   <svg class="like-button" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -263,7 +261,7 @@
             <div class="gallery">
               <div class="gallery-item" data-type="Gryffondor" data-id="Harry Potter"> <!-- Carte :  -->
 
-                <img class="gallery-image" src="public/images/cartes/harrypotter.jpg" alt="Harry Potter" />
+                <img class="gallery-image" src="/images/cartes/harrypotter.jpg" alt="Harry Potter" />
                 <div class="interaction-card"> <!-- Container des boutons d'interaction :  -->
                   <div class="button-card"> <!-- Bouton de like :  -->
                     <svg class="like-button" zaria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -281,7 +279,7 @@
                 </div>
               </div>
               <div class="gallery-item" data-type="Gryffondor" data-id="Hermione Granger">
-                <img class="gallery-image" src="public/images/cartes/hermionegranger.jpg" alt="Hermione Granger" />
+                <img class="gallery-image" src="/images/cartes/hermionegranger.jpg" alt="Hermione Granger" />
                 <div class="interaction-card">
                   <div class="button-card">
                     <svg class="like-button" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -299,7 +297,7 @@
                 </div>
               </div>
               <div class="gallery-item" data-type="Gryffondor" data-id="Albus Dumbledore">
-                <img class="gallery-image" src="public/images/cartes/albusdumbledore.jpg" alt="Albus Dumbledore" />
+                <img class="gallery-image" src="/images/cartes/albusdumbledore.jpg" alt="Albus Dumbledore" />
                 <div class="interaction-card">
                   <div class="button-card">
                     <svg class="like-button" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -318,7 +316,7 @@
                 </div>
               </div>
               <div class="gallery-item" data-type="Poufsouffle" data-id="Cedric Diggory">
-                <img class="gallery-image" src="public/images/cartes/cedricdiggory.jpg" alt="Cedric Diggory" />
+                <img class="gallery-image" src="/images/cartes/cedricdiggory.jpg" alt="Cedric Diggory" />
                 <div class="interaction-card">
                   <div class="button-card">
                     <svg class="like-button" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -336,7 +334,7 @@
                 </div>
               </div>
               <div class="gallery-item" data-type="Serpentard" data-id="Drago Malfoy">
-                <img class="gallery-image" src="public/images/cartes/dragomalfoy.jpg" alt="Drago Malfoy" />
+                <img class="gallery-image" src="/images/cartes/dragomalfoy.jpg" alt="Drago Malfoy" />
                 <div class="interaction-card">
                   <div class="button-card">
                     <svg class="like-button" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -354,7 +352,7 @@
                 </div>
               </div>
               <div class="gallery-item" data-type="Serpentard" data-id="Gregory Goyle">
-                <img class="gallery-image" src="public/images/cartes/gregorygoyle.jpg" alt="Gregory Goyle" />
+                <img class="gallery-image" src="/images/cartes/gregorygoyle.jpg" alt="Gregory Goyle" />
                 <div class="interaction-card">
                   <div class="button-card">
                     <svg class="like-button" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -372,7 +370,7 @@
                 </div>
               </div>
               <div class="gallery-item" data-type="Serdaigle" data-id="Luna Lovegood">
-                <img class="gallery-image" src="public/images/cartes/lunalovegood.jpg" alt="Luna Lovegood" />
+                <img class="gallery-image" src="/images/cartes/lunalovegood.jpg" alt="Luna Lovegood" />
                 <div class="interaction-card">
                   <div class="button-card">
                     <svg class="like-button" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -390,7 +388,7 @@
                 </div>
               </div>
               <div class="gallery-item" data-type="Gryffondor" data-id="McGonagall">
-                <img class="gallery-image" src="public/images/cartes/mcgonagall.jpg" alt="McGonagall" />
+                <img class="gallery-image" src="/images/cartes/mcgonagall.jpg" alt="McGonagall" />
                 <div class="interaction-card">
                   <div class="button-card">
                     <svg class="like-button" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -408,7 +406,7 @@
                 </div>
               </div>
               <div class="gallery-item" data-type="Gryffondor" data-id="Neville Longbottom">
-                <img class="gallery-image" src="public/images/cartes/nevillelongbottom.jpg" alt="Neville Longbottom" />
+                <img class="gallery-image" src="/images/cartes/nevillelongbottom.jpg" alt="Neville Longbottom" />
                 <div class="interaction-card">
                   <div class="button-card">
                     <svg class="like-button" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -431,7 +429,7 @@
               <div class="gallery">
                 <div class="gallery-item" data-type="Gryffondor" data-id="Harry Potter"> <!-- Carte :  -->
 
-                  <img class="gallery-image" src="public/images/cartes/harrypotter.jpg" alt="Harry Potter" />
+                  <img class="gallery-image" src="/images/cartes/harrypotter.jpg" alt="Harry Potter" />
                   <div class="interaction-card"> <!-- Container des boutons d'interaction :  -->
                     <div class="button-card"> <!-- Bouton de like :  -->
                       <svg class="like-button" zaria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -449,7 +447,7 @@
                   </div>
                 </div>
                 <div class="gallery-item" data-type="Gryffondor" data-id="Hermione Granger">
-                  <img class="gallery-image" src="public/images/cartes/hermionegranger.jpg" alt="Hermione Granger" />
+                  <img class="gallery-image" src="/images/cartes/hermionegranger.jpg" alt="Hermione Granger" />
                   <div class="interaction-card">
                     <div class="button-card">
                       <svg class="like-button" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -467,7 +465,7 @@
                   </div>
                 </div>
                 <div class="gallery-item" data-type="Gryffondor" data-id="Albus Dumbledore">
-                  <img class="gallery-image" src="public/images/cartes/albusdumbledore.jpg" alt="Albus Dumbledore" />
+                  <img class="gallery-image" src="/images/cartes/albusdumbledore.jpg" alt="Albus Dumbledore" />
                   <div class="interaction-card">
                     <div class="button-card">
                       <svg class="like-button" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -486,7 +484,7 @@
                   </div>
                 </div>
                 <div class="gallery-item" data-type="Poufsouffle" data-id="Cedric Diggory">
-                  <img class="gallery-image" src="public/images/cartes/cedricdiggory.jpg" alt="Cedric Diggory" />
+                  <img class="gallery-image" src="/images/cartes/cedricdiggory.jpg" alt="Cedric Diggory" />
                   <div class="interaction-card">
                     <div class="button-card">
                       <svg class="like-button" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -504,7 +502,7 @@
                   </div>
                 </div>
                 <div class="gallery-item" data-type="Serpentard" data-id="Drago Malfoy">
-                  <img class="gallery-image" src="public/images/cartes/dragomalfoy.jpg" alt="Drago Malfoy" />
+                  <img class="gallery-image" src="/images/cartes/dragomalfoy.jpg" alt="Drago Malfoy" />
                   <div class="interaction-card">
                     <div class="button-card">
                       <svg class="like-button" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -522,7 +520,7 @@
                   </div>
                 </div>
                 <div class="gallery-item" data-type="Serpentard" data-id="Gregory Goyle">
-                  <img class="gallery-image" src="public/images/cartes/gregorygoyle.jpg" alt="Gregory Goyle" />
+                  <img class="gallery-image" src="/images/cartes/gregorygoyle.jpg" alt="Gregory Goyle" />
                   <div class="interaction-card">
                     <div class="button-card">
                       <svg class="like-button" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -540,7 +538,7 @@
                   </div>
                 </div>
                 <div class="gallery-item" data-type="Serdaigle" data-id="Luna Lovegood">
-                  <img class="gallery-image" src="public/images/cartes/lunalovegood.jpg" alt="Luna Lovegood" />
+                  <img class="gallery-image" src="/images/cartes/lunalovegood.jpg" alt="Luna Lovegood" />
                   <div class="interaction-card">
                     <div class="button-card">
                       <svg class="like-button" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -558,7 +556,7 @@
                   </div>
                 </div>
                 <div class="gallery-item" data-type="Gryffondor" data-id="McGonagall">
-                  <img class="gallery-image" src="public/images/cartes/mcgonagall.jpg" alt="McGonagall" />
+                  <img class="gallery-image" src="/images/cartes/mcgonagall.jpg" alt="McGonagall" />
                   <div class="interaction-card">
                     <div class="button-card">
                       <svg class="like-button" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -576,7 +574,7 @@
                   </div>
                 </div>
                 <div class="gallery-item" data-type="Gryffondor" data-id="Neville Longbottom">
-                  <img class="gallery-image" src="public/images/cartes/nevillelongbottom.jpg"
+                  <img class="gallery-image" src="/images/cartes/nevillelongbottom.jpg"
                     alt="Neville Longbottom" />
                   <div class="interaction-card">
                     <div class="button-card">

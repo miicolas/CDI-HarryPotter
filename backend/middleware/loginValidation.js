@@ -1,35 +1,32 @@
-// routes/login.js
-const express = require("express");
+// middleware/loginValidation.js
 const bcrypt = require("bcrypt");
-const { query } = require("../js/queries");
-const router = express.Router();
+const { query } = require("../config/queries");
 
-router.post("/login", async (req, res) => {
+async function validateLogin(req, res, next) {
   try {
     const { username, password } = req.body;
-    
+
     const result = await query("SELECT * FROM account WHERE username = ?", [
       username,
     ]);
-    
 
     if (result.length === 0) {
       return res.status(400).json({ error: "Invalid username or password" });
     }
 
-    const hashedPassword = result[0].password;
+    const hashedPassword = result[0].password; 
 
     const validPassword = await bcrypt.compare(password, hashedPassword);
-
     if (!validPassword) {
       return res.status(400).json({ error: "Invalid username or password" });
     }
 
-    res.redirect("/");
+    req.user = result[0]; // Ajoute les données de l'utilisateur à l'objet req
+    next(); // Passe au middleware ou à la fonction suivante si la connexion est valide
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Error logging in" });
   }
-});
+}
 
-module.exports = router;
+module.exports = validateLogin;
