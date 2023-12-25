@@ -8,6 +8,7 @@ const signupRoute = require("../routes/signup");
 const loginRoute = require("../routes/login");
 const logoutRoute = require("../routes/logout");
 const profilRoute = require("../routes/profil");
+const indexRoute = require("../routes/index");
 const { query } = require("../config/queries");
 const jwt = require("jsonwebtoken");
 
@@ -25,11 +26,6 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '../views'));
 
 // Routes pour les pages HTML
-app.get("/", (req, res) => {
-  const userLoggedIn = req.cookies.AuthToken || req.user;
-  res.render('index', { userLoggedIn });
-});
-
 app.get("/login", (req, res) => {
   const userLoggedIn = req.cookies.AuthToken || req.user;
   res.render('login', { userLoggedIn}); // Rendre login.ejs
@@ -41,6 +37,7 @@ app.get("/signup", (req, res) => {
 });
 
 
+
 // Route pour la page de profil
 
 // Utilisation des routes
@@ -48,5 +45,8 @@ app.use("/", signupRoute);
 app.use("/", loginRoute);
 app.use("/", logoutRoute);
 app.use("/", profilRoute);
+app.use("/", indexRoute);
+
+
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
