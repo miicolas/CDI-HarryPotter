@@ -36,17 +36,11 @@ app.get("/signup", (req, res) => {
   res.render('signup',{ userLoggedIn }); // Rendre signup.ejs
 });
 
-
-
-// Route pour la page de profil
-
 // Utilisation des routes
 app.use("/", signupRoute); 
 app.use("/", loginRoute);
 app.use("/", logoutRoute);
 app.use("/", profilRoute);
 app.use("/", indexRoute);
-
-
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
