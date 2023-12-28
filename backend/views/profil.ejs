@@ -5,6 +5,8 @@
   <meta charset="UTF-8" />
   <title>Profil</title>
   <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="styles/profil.css" />
+  <link rel="stylesheet" href="styles/layout.css" />
 </head>
 
 <body>
@@ -33,7 +35,6 @@
     <section class="profile-section"> <!-- Section du profil -->
       <section class="profile-container"> <!-- Container du profil -->
         <div class="profile-header"> <!-- Header du profil -->
-          <img class="profile-image" src="/images/IMG_5169.heic" alt="" /> <!-- Image de profil -->
           <h1 class="profile-username"> <%= username %></h1>
           <h3 class="profile-name"><%= name %></h3>
         </div>
@@ -92,172 +93,34 @@
 
         <div class="mycards"> <!-- Container des cartes -->
           <h3>My Cards</h3>
-          <div class="gallery">
-            <div class="gallery-item" data-type="Gryffondor" data-id="Harry Potter"> <!-- Carte :  -->
-
-              <img class="gallery-image" src="/images/cartes/harrypotter.jpg" alt="Harry Potter" />
-              <div class="interaction-card"> <!-- Container des boutons d'interaction :  -->
-                <div class="button-card"> <!-- Bouton de like :  -->
-                  <svg class="like-button" zaria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                    viewBox="0 0 21 19">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M11 4C5.5-1.5-1.5 5.5 4 11l7 7 7-7c5.458-5.458-1.542-12.458-7-7Z" />
-                  </svg>
-                </div>
-                <div class="button-card"> <!-- Bouton de partage :  -->
-                  <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 15">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M1 7.5h11m0 0L8 3.786M12 7.5l-4 3.714M12 1h3c.53 0 1.04.196 1.414.544.375.348.586.82.586 1.313v9.286c0 .492-.21.965-.586 1.313A2.081 2.081 0 0 1 15 14h-3" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div class="gallery-item" data-type="Gryffondor" data-id="Hermione Granger">
-              <img class="gallery-image" src="/images/cartes/hermionegranger.jpg" alt="Hermione Granger" />
-              <div class="interaction-card">
-                <div class="button-card">
-                  <svg class="like-button" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                    viewBox="0 0 21 19">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M11 4C5.5-1.5-1.5 5.5 4 11l7 7 7-7c5.458-5.458-1.542-12.458-7-7Z" />
-                  </svg>
-                </div>
-                <div class="button-card">
-                  <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 15">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M1 7.5h11m0 0L8 3.786M12 7.5l-4 3.714M12 1h3c.53 0 1.04.196 1.414.544.375.348.586.82.586 1.313v9.286c0 .492-.21.965-.586 1.313A2.081 2.081 0 0 1 15 14h-3" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div class="gallery-item" data-type="Gryffondor" data-id="Albus Dumbledore">
-              <img class="gallery-image" src="/images/cartes/albusdumbledore.jpg" alt="Albus Dumbledore" />
-              <div class="interaction-card">
-                <div class="button-card">
-                  <svg class="like-button" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                    viewBox="0 0 21 19">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M11 4C5.5-1.5-1.5 5.5 4 11l7 7 7-7c5.458-5.458-1.542-12.458-7-7Z" />
-                  </svg>
-                </div>
-                <div class="button-card">
-                  <svg class="like-button" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                    viewBox="0 0 18 15">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M1 7.5h11m0 0L8 3.786M12 7.5l-4 3.714M12 1h3c.53 0 1.04.196 1.414.544.375.348.586.82.586 1.313v9.286c0 .492-.21.965-.586 1.313A2.081 2.081 0 0 1 15 14h-3" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div class="gallery-item" data-type="Poufsouffle" data-id="Cedric Diggory">
-              <img class="gallery-image" src="/images/cartes/cedricdiggory.jpg" alt="Cedric Diggory" />
-              <div class="interaction-card">
-                <div class="button-card">
-                  <svg class="like-button" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                    viewBox="0 0 21 19">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M11 4C5.5-1.5-1.5 5.5 4 11l7 7 7-7c5.458-5.458-1.542-12.458-7-7Z" />
-                  </svg>
-                </div>
-                <div class="button-card">
-                  <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 15">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M1 7.5h11m0 0L8 3.786M12 7.5l-4 3.714M12 1h3c.53 0 1.04.196 1.414.544.375.348.586.82.586 1.313v9.286c0 .492-.21.965-.586 1.313A2.081 2.081 0 0 1 15 14h-3" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div class="gallery-item" data-type="Serpentard" data-id="Drago Malfoy">
-              <img class="gallery-image" src="/images/cartes/dragomalfoy.jpg" alt="Drago Malfoy" />
-              <div class="interaction-card">
-                <div class="button-card">
-                  <svg class="like-button" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                    viewBox="0 0 21 19">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M11 4C5.5-1.5-1.5 5.5 4 11l7 7 7-7c5.458-5.458-1.542-12.458-7-7Z" />
-                  </svg>
-                </div>
-                <div class="button-card">
-                  <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 15">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M1 7.5h11m0 0L8 3.786M12 7.5l-4 3.714M12 1h3c.53 0 1.04.196 1.414.544.375.348.586.82.586 1.313v9.286c0 .492-.21.965-.586 1.313A2.081 2.081 0 0 1 15 14h-3" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div class="gallery-item" data-type="Serpentard" data-id="Gregory Goyle">
-              <img class="gallery-image" src="/images/cartes/gregorygoyle.jpg" alt="Gregory Goyle" />
-              <div class="interaction-card">
-                <div class="button-card">
-                  <svg class="like-button" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                    viewBox="0 0 21 19">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M11 4C5.5-1.5-1.5 5.5 4 11l7 7 7-7c5.458-5.458-1.542-12.458-7-7Z" />
-                  </svg>
-                </div>
-                <div class="button-card">
-                  <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 15">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M1 7.5h11m0 0L8 3.786M12 7.5l-4 3.714M12 1h3c.53 0 1.04.196 1.414.544.375.348.586.82.586 1.313v9.286c0 .492-.21.965-.586 1.313A2.081 2.081 0 0 1 15 14h-3" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div class="gallery-item" data-type="Serdaigle" data-id="Luna Lovegood">
-              <img class="gallery-image" src="/images/cartes/lunalovegood.jpg" alt="Luna Lovegood" />
-              <div class="interaction-card">
-                <div class="button-card">
-                  <svg class="like-button" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                    viewBox="0 0 21 19">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M11 4C5.5-1.5-1.5 5.5 4 11l7 7 7-7c5.458-5.458-1.542-12.458-7-7Z" />
-                  </svg>
-                </div>
-                <div class="button-card">
-                  <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 15">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M1 7.5h11m0 0L8 3.786M12 7.5l-4 3.714M12 1h3c.53 0 1.04.196 1.414.544.375.348.586.82.586 1.313v9.286c0 .492-.21.965-.586 1.313A2.081 2.081 0 0 1 15 14h-3" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div class="gallery-item" data-type="Gryffondor" data-id="McGonagall">
-              <img class="gallery-image" src="/images/cartes/mcgonagall.jpg" alt="McGonagall" />
-              <div class="interaction-card">
-                <div class="button-card">
-                  <svg class="like-button" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                    viewBox="0 0 21 19">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M11 4C5.5-1.5-1.5 5.5 4 11l7 7 7-7c5.458-5.458-1.542-12.458-7-7Z" />
-                  </svg>
-                </div>
-                <div class="button-card">
-                  <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 15">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M1 7.5h11m0 0L8 3.786M12 7.5l-4 3.714M12 1h3c.53 0 1.04.196 1.414.544.375.348.586.82.586 1.313v9.286c0 .492-.21.965-.586 1.313A2.081 2.081 0 0 1 15 14h-3" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div class="gallery-item" data-type="Gryffondor" data-id="Neville Longbottom">
-              <img class="gallery-image" src="/images/cartes/nevillelongbottom.jpg" alt="Neville Longbottom" />
-              <div class="interaction-card">
-                <div class="button-card">
-                  <svg class="like-button" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                    viewBox="0 0 21 19">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M11 4C5.5-1.5-1.5 5.5 4 11l7 7 7-7c5.458-5.458-1.542-12.458-7-7Z" />
-                  </svg>
-                </div>
-                <div class="button-card">
-                  <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 15">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M1 7.5h11m0 0L8 3.786M12 7.5l-4 3.714M12 1h3c.53 0 1.04.196 1.414.544.375.348.586.82.586 1.313v9.286c0 .492-.21.965-.586 1.313A2.081 2.081 0 0 1 15 14h-3" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </div>
+            <div class="gallery">
+              <% if (message) { %>
+                <p><%= message %></p>
+              <% } else { %>
+                <% for (let i = 0; i < cards.length; i++) { %>
+                  <!-- Affichage des cartes de l'utilisateur -->
+                  <div class="gallery-item" data-type="<%= cards[i].house %>" data-id="<%= cards[i].altText %>">
+                    <img class="gallery-image" src="<%= cards[i].image %>" alt="<%= cards[i].altText %>" />
+                    <div class="interaction-card">
+                      <div class="button-card">
+                        <svg class="like-button" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                          viewBox="0 0 21 19">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M11 4C5.5-1.5-1.5 5.5 4 11l7 7 7-7c5.458-5.458-1.542-12.458-7-7Z" />
+                        </svg>
+                      </div>
+                      <div class="button-card">
+                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 15">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 7.5h11m0 0L8 3.786M12 7.5l-4 3.714M12 1h3c.53 0 1.04.196 1.414.544.375.348.586.82.586 1.313v9.286c0 .492-.21.965-.586 1.313A2.081 2.081 0 0 1 15 14h-3" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                <% } %>
+              <% } %>
+            </div> 
+          
           <div class="myfriends hidden">
             <h3>My Friends</h3>
             <div class="gallery">
