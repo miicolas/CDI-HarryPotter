@@ -130,3 +130,32 @@ profileOption.forEach(function(option) {
     });
   });
 
+  const exangeIcon = document.getElementById('exangeIcon');
+  const exangeClose = document.getElementById('exangeClose');
+  const exangeOverlay = document.querySelector('.exange-overlay');
+
+  exangeIcon.addEventListener('click', () => {
+    
+    exangeOverlay.style.display = 'block';
+
+    exangeIcon.style.display = 'none';
+    exangeClose.style.display = 'block';
+    console.log('click');
+  }
+  );
+  exangeClose.addEventListener('click', () => {
+    exangeOverlay.style.display = 'none';
+    exangeClose.style.display = 'none';
+    exangeIcon.style.display = 'block';
+  }
+  );
+
+  exangeOverlay.addEventListener('click', () => { 
+    exangeOverlay.style.display = 'none'; 
+    exangeClose.style.display = 'none';
+    exangeIcon.style.display = 'block';
+  });
+
+
+  
+
