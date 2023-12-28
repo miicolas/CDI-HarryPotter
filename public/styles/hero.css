@@ -1,0 +1,152 @@
+/* Hero */
+
+.hero-container {
+    background-image: url(../images/poudlard.mp4);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 150vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.hero-intro {
+    margin-top: 10rem;
+
+}
+
+.hero-intro > * {
+    padding: 1rem;
+    text-align: center;
+    color: white;
+
+}
+
+.hero-title {
+    font-size: 2rem;
+    font-weight: 800;
+    font-style: italic;
+}
+
+.hero-subtitle {
+    font-size: 2.5rem;
+    font-weight: 800;
+    font-style: italic;
+}
+
+.hero-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1.25rem;
+    font-weight: 425;
+    line-height: normal;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.hero-button {
+    display: inline-flex;
+    padding: 1rem 1.5rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    border-radius: 0.375rem;
+    background: #111;
+    border: none;
+    cursor: pointer;
+    transition: ease-in 0.5s;
+    color: white;
+    font-size: 1.25rem;
+
+}
+
+.hero-button:hover {
+    transform: scale(0.98);
+    transition: ease-in 0.2s;
+    background: rgba(217, 217, 217, 0.567);
+    ;
+}
+
+.hero-button > * {
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.5rem;
+    outline: none;
+    text-decoration: none;
+}
+
+.hero-container-description {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    bottom: 0;
+    margin-bottom: 5rem;
+    width: 100%;
+
+}
+
+.top-boxes,
+.bottom-boxes {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+
+}
+
+.container-description {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 15rem;
+    height: 10rem;
+    background: rgba(217, 217, 217, 0.30);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 5px;
+}
+
+.container-description p {
+    color: #111;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 425;
+    line-height: normal;
+    margin: 0;
+}
+
+/* Responsive Hero */
+@media (max-width: 1280px) {
+    .hero-container-description {
+        display: none;
+    }
+    .top-boxes,
+    .bottom-boxes {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container-description {
+        width: 12rem;
+        height: 7rem;
+        margin-bottom: 2rem;
+    }
+
+    .container-description p {
+        font-size: 0.9rem;
+    }
+    .hero-container {
+        height: 100vh;
+    }
+    
+
+}
