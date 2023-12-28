@@ -9,6 +9,7 @@ const loginRoute = require("../routes/login");
 const logoutRoute = require("../routes/logout");
 const profilRoute = require("../routes/profil");
 const indexRoute = require("../routes/index");
+const drawRoute = require("../routes/draw");
 const { query } = require("../config/queries");
 const jwt = require("jsonwebtoken");
 
@@ -42,5 +43,5 @@ app.use("/", loginRoute);
 app.use("/", logoutRoute);
 app.use("/", profilRoute);
 app.use("/", indexRoute);
-
+app.use("/", drawRoute);
 app.listen(port, () => console.log(`Listening on port ${port}`));

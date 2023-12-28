@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <title>Harry Potter</title>
     <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/layout.css" />
+    <link rel="stylesheet" href="styles/hero.css" />
+    <link rel="stylesheet" href="styles/exange.css" />
   </head>
 
   <body>
@@ -66,7 +69,7 @@
                 Découvre le monde d'Harry Potter en collectionnant les cartes de
                 tes personnages préférés
               </p>
-              <a class="hero-button" href="#gallery-section">
+              <a class="button-primary " href="#gallery-section">
                 <!-- Bouton de redirection vers gallery de cartes :  -->
                 Découvrir
               </a>
@@ -116,7 +119,7 @@
         </a>
       </div>
 
-      <div class="exange-button">
+      <div class="exange-button" id="exangeIcon">
         <svg
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
@@ -130,6 +133,18 @@
             d="m14.258 7.985-3.025 3.025A3 3 0 1 1 6.99 6.768l3.026-3.026A3.01 3.01 0 0 1 8.411 2H2.167A2.169 2.169 0 0 0 0 4.167v11.666A2.169 2.169 0 0 0 2.167 18h11.666A2.169 2.169 0 0 0 16 15.833V9.589a3.011 3.011 0 0 1-1.742-1.604Z"
           />
         </svg>
+      </div>
+      <div class="exange-overlay">
+        <div class="close-icon" id="exangeClose">&times;</div>
+        <div class="form-exange">
+          <form action="" method="post"> <!-- Formulaire d'échange de cartes :  -->
+            <label for="card">Carte à échanger</label> <!-- Champ de saisie de la carte à échanger :  -->
+            <input type="text" name="card" id="card" placeholder="Carte à échanger" />
+            <label for="card">Carte recherchée</label> <!-- Champ de saisie de la carte recherchée :  -->
+            <input type="text" name="card" id="card" placeholder="Carte recherchée" />
+            <input class="button-primary " type="submit" value="Echanger" /> <!-- Bouton de validation du formulaire :  -->
+          </form>
+        </div>
       </div>
 
       <section class="tirage" id="tirage">
@@ -172,7 +187,8 @@
               />
             </div>
           </div>
-          <a class="button-tirage">
+          <a class="button-tirage" href="/draw" id="drawButton">
+            
             <!-- Bouton de tirage de cartes :  -->
             <svg
               class="swing"
@@ -197,9 +213,13 @@
                 stroke-linejoin="round"
               />
             </svg>
+            <% if (!userLoggedIn) { %> <!-- Si l'utilisateur n'est pas connecté :  --> 
             <span class="button-text"
               >Connecte toi pour collecter de nouvelles cartes</span
             >
+            <% } else { %> <!-- Si l'utilisateur est connecté :  -->
+            <span class="button-text">Tirer une carte</span>
+            <% } %> 
           </a>
         </div>
       </section>
