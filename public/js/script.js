@@ -150,12 +150,6 @@ profileOption.forEach(function(option) {
   }
   );
 
-  exangeOverlay.addEventListener('click', () => { 
-    exangeOverlay.style.display = 'none'; 
-    exangeClose.style.display = 'none';
-    exangeIcon.style.display = 'block';
-  });
-
 
   
 
