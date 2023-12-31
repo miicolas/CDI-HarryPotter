@@ -37,6 +37,7 @@ app.get("/signup", (req, res) => {
   res.render('signup',{ userLoggedIn }); // Rendre signup.ejs
 });
 
+
 // Utilisation des routes
 app.use("/", signupRoute); 
 app.use("/", loginRoute);

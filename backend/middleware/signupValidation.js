@@ -1,9 +1,9 @@
 // middleware/signupValidation.js
 
 async function validateSignup(req, res, next) {
-    const { username, password, name } = req.body;
+    const { username, password, name, email } = req.body;
   
-    if (!(username && password && name)) {
+    if (!(username && password && name && email)) {
       return res.status(400).json({ error: "All fields are required" });
     }
   
@@ -17,6 +17,9 @@ async function validateSignup(req, res, next) {
   
     if (name.length < 1) {
       return res.status(400).json({ error: "Invalid name" });
+    }
+    if (email.length < 1) {
+      return res.status(400).json({ error: "Invalid email" });
     }
   
     next();

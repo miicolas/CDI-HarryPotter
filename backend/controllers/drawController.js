@@ -41,16 +41,9 @@ async function getDrawCards(req, res) {
     const currentTimeStamp = date.getTime(); 
     console.log("currentTimeStamp", currentTimeStamp);
 
-    
+    await query( "UPDATE account SET lastDraw = ? WHERE id = ?", [currentTimeStamp, userId]);
 
-    res
-      .cookie("drawTime", currentTimeStamp, {
-        // Stockez le timestamp actuel dans le cookie
-        httpOnly: true,
-        secure: false,
-        sameSite: "strict",
-      })
-      .redirect("/profil");
+    res.redirect("/profil");
   } catch (error) {
     console.error(error);
     res.status(500).send("Erreur serveur");

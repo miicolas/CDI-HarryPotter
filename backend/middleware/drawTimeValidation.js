@@ -4,15 +4,17 @@ const { query } = require("../config/queries");
 async function drawTime(req, res, next) {
   try {
     const userId = req.user.id;
-    const lastDrawTime = req.cookies.drawTime; // Récupérer le dernier temps de tirage depuis les cookies
+    const lastDrawTime = await query( "SELECT lastDraw FROM account WHERE id = ?", [userId]);
     const currentTime = Date.now(); // Heure actuelle en millisecondes
 
-    // Vérifier si lastDrawTime est défini dans les cookies
-    if (lastDrawTime) {
+    if (lastDrawTime.length > 0) {
 
-      const elapsedTime = currentTime - lastDrawTime;
+      const elapsedTime = currentTime - lastDrawTime[0].lastDraw;
       const twentyFourHoursInMillis = 24 * 60 * 60 * 1000; 
-
+      // console.log("lastDrawTime:", lastDrawTime); // Vérifiez la valeur de lastDrawTime
+      // console.log("currentTime:", currentTime); // Vérifiez la valeur de currentTime
+      // console.log("elapsedTime:", elapsedTime); // Vérifiez la valeur de elapsedTime
+      // console.log("twentyFourHoursInMillis:", twentyFourHoursInMillis); // Vérifiez la valeur de twentyFourHoursInMillis
       // Vérifiez si 24 heures se sont écoulées depuis le dernier tirage
       if (elapsedTime < twentyFourHoursInMillis) {
         return res
@@ -26,6 +28,8 @@ async function drawTime(req, res, next) {
       await query("UPDATE account SET firstDraw = true WHERE id = ?", [userId]);
 
     }
+
+
 
     next();
   } catch (error) {

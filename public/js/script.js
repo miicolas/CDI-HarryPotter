@@ -7,48 +7,53 @@ function filterType() {
   const filterSerpentard = document.getElementById("filterSerpentard");
 
   filterAll.addEventListener("click", function () {
-      filterCards("Tous");
+    filterCards("Tous");
   });
   filterGryffondor.addEventListener("click", function () {
-      filterCards("Gryffondor");
+    filterCards("Gryffondor");
   });
   filterPoufsouffle.addEventListener("click", function () {
-      filterCards("Poufsouffle");
+    filterCards("Poufsouffle");
   });
   filterSerdaigle.addEventListener("click", function () {
-      filterCards("Serdaigle");
+    filterCards("Serdaigle");
   });
   filterSerpentard.addEventListener("click", function () {
-      filterCards("Serpentard");
+    filterCards("Serpentard");
   });
 }
 function filterCards(selectedType) {
   const galleryItems = document.querySelectorAll(".gallery-item");
   galleryItems.forEach(function (item) {
-      const itemType = item.getAttribute("data-type");
-      if (selectedType === "Tous" || selectedType === itemType) {
-          item.style.display = "block";
-      } else {
-          item.style.display = "none";
-      }
+    const itemType = item.getAttribute("data-type");
+    if (selectedType === "Tous" || selectedType === itemType) {
+      item.style.display = "block";
+    } else {
+      item.style.display = "none";
+    }
   });
 }
 
 function updateFilterButtons() {
-  const filterButtons = [filterAll, filterGryffondor, filterPoufsouffle, filterSerdaigle, filterSerpentard]
+  const filterButtons = [
+    filterAll,
+    filterGryffondor,
+    filterPoufsouffle,
+    filterSerdaigle,
+    filterSerpentard,
+  ];
 
-  filterButtons.forEach(function(button) {
-      button.addEventListener('click', function() {
-          filterButtons.forEach(function(btn) {
-              btn.classList.remove('select');
-              btn.classList.add('unselect');
-          });
-          button.classList.add('select');
-          button.classList.remove('unselect');
+  filterButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      filterButtons.forEach(function (btn) {
+        btn.classList.remove("select");
+        btn.classList.add("unselect");
       });
+      button.classList.add("select");
+      button.classList.remove("unselect");
+    });
   });
 }
-
 
 // Search function
 function searchCard() {
@@ -70,6 +75,15 @@ function searchCard() {
   });
 }
 
+// Email function
+// function emailStorage() {
+//   const savedEmail = localStorage.getItem("savedEmail");
+//   if (savedEmail) {
+//     const emailInput = document.getElementById("email");
+//     emailInput.value = savedEmail;
+//   }
+// }
+
 // CardDetails function
 // function CardDetails (){
 //   const galleryItems = document.querySelectorAll(".gallery-item");
@@ -82,11 +96,11 @@ function searchCard() {
 //   });
 // }
 
-  
 // Call functions
 document.addEventListener("DOMContentLoaded", function () {
   filterType();
   searchCard();
+  // emailStorage();
   // CardDetails();
   updateFilterButtons();
 });
@@ -98,58 +112,53 @@ likeButton.forEach(function (button) {
   });
 });
 
+const menuIcon = document.getElementById("menuIcon");
+const closeIcon = document.getElementById("closeIcon");
+const overlay = document.querySelector(".overlay");
 
-const menuIcon = document.getElementById('menuIcon');
-const closeIcon = document.getElementById('closeIcon');
-const overlay = document.querySelector('.overlay');
-
-
-menuIcon.addEventListener('click', () => {
-  overlay.style.display = 'block';
-  menuIcon.style.display = 'none';
-  closeIcon.style.display = 'block';
-  console.log('click');
+menuIcon.addEventListener("click", () => {
+  overlay.style.display = "block";
+  menuIcon.style.display = "none";
+  closeIcon.style.display = "block";
+  console.log("click");
 });
 
-closeIcon.addEventListener('click', () => {
-  overlay.style.display = 'none';
-  closeIcon.style.display = 'none';
-  menuIcon.style.display = 'block';
+closeIcon.addEventListener("click", () => {
+  overlay.style.display = "none";
+  closeIcon.style.display = "none";
+  menuIcon.style.display = "block";
 });
-
 
 const profileOption = document.querySelectorAll(".profile-option");
 
-profileOption.forEach(function(option) {
-  option.addEventListener("click", function() {
-    profileOption.forEach(function(el) {
+profileOption.forEach(function (option) {
+  option.addEventListener("click", function () {
+    profileOption.forEach(function (el) {
       el.classList.remove("profile-option-selected");
     });
     option.classList.add("profile-option-selected");
-
-    });
   });
+});
 
-  const exangeIcon = document.getElementById('exangeIcon');
-  const exangeClose = document.getElementById('exangeClose');
-  const exangeOverlay = document.querySelector('.exange-overlay');
+const exangeIcon = document.getElementById("exangeIcon");
+const exangeClose = document.getElementById("exangeClose");
+const exangeOverlay = document.querySelector(".exange-overlay");
 
-  exangeIcon.addEventListener('click', () => {
-    
-    exangeOverlay.style.display = 'block';
+exangeIcon.addEventListener("click", () => {
+  exangeOverlay.style.display = "block";
 
-    exangeIcon.style.display = 'none';
-    exangeClose.style.display = 'block';
-    console.log('click');
-  }
-  );
-  exangeClose.addEventListener('click', () => {
-    exangeOverlay.style.display = 'none';
-    exangeClose.style.display = 'none';
-    exangeIcon.style.display = 'block';
-  }
-  );
+  exangeIcon.style.display = "none";
+  exangeClose.style.display = "block";
+  console.log("click");
+});
+exangeClose.addEventListener("click", () => {
+  exangeOverlay.style.display = "none";
+  exangeClose.style.display = "none";
+  exangeIcon.style.display = "block";
+});
 
-
-  
-
+// const emailInput = document.getElementById("email");
+// emailInput.addEventListener("input", function () {
+//   const enteredEmail = emailInput.value;
+//   localStorage.setItem("savedEmail", enteredEmail);
+// });

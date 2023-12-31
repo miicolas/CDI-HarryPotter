@@ -4,21 +4,21 @@ const { query } = require("../config/queries");
 
 async function validateLogin(req, res, next) {
   try {
-    const { username, password } = req.body;
+    const { email, password } = req.body;
 
-    const result = await query("SELECT * FROM account WHERE username = ?", [
-      username,
+    const result = await query("SELECT * FROM account WHERE email = ?", [
+      email,
     ]);
 
     if (result.length === 0) {
-      return res.status(400).json({ error: "Invalid username or password" });
+      return res.status(400).json({ error: "Invalid email or password" });
     }
 
     const hashedPassword = result[0].password; 
 
     const validPassword = await bcrypt.compare(password, hashedPassword);
     if (!validPassword) {
-      return res.status(400).json({ error: "Invalid username or password" });
+      return res.status(400).json({ error: "Invalid email or password" });
     }
 
     req.user = result[0]; // Ajoute les données de l'utilisateur à l'objet req
