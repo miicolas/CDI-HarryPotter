@@ -10,6 +10,8 @@ const logoutRoute = require("../routes/logout");
 const profilRoute = require("../routes/profil");
 const indexRoute = require("../routes/index");
 const drawRoute = require("../routes/draw");
+const settingsRoute = require("../routes/settings");
+const changeInfosRoute = require("../routes/changeInfos");
 const { query } = require("../config/queries");
 const jwt = require("jsonwebtoken");
 
@@ -38,6 +40,7 @@ app.get("/signup", (req, res) => {
 });
 
 
+
 // Utilisation des routes
 app.use("/", signupRoute); 
 app.use("/", loginRoute);
@@ -45,4 +48,6 @@ app.use("/", logoutRoute);
 app.use("/", profilRoute);
 app.use("/", indexRoute);
 app.use("/", drawRoute);
+app.use("/", settingsRoute);
+app.use("/", changeInfosRoute);
 app.listen(port, () => console.log(`Listening on port ${port}`));

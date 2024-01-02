@@ -34,14 +34,11 @@ async function getDrawCards(req, res) {
       }
     }
     
-    // console.log("Drawn", cardsToAdd);
-    // console.log("Already have", cards);
-
     const date = new Date();
     const currentTimeStamp = date.getTime(); 
     console.log("currentTimeStamp", currentTimeStamp);
 
-    await query( "UPDATE account SET lastDraw = ? WHERE id = ?", [currentTimeStamp, userId]);
+    await query("UPDATE account SET lastDraw = ? WHERE id = ?", [currentTimeStamp, userId]);
 
     res.redirect("/profil");
   } catch (error) {

@@ -30,4 +30,4 @@ async function getProfil(req, res) {
     res.status(500).json({ error: "Erreur lors de la récupération du profil de l'utilisateur" });
   }
 }
-module.exports = {   getProfil, };
+module.exports = {   getProfil };
