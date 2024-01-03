@@ -15,7 +15,7 @@ async function getProfilInfos(req, res) {
     // remet lastDraw en format de minutes qu'il reste avec le prochain tirage au sort 
     // Convertir le timestamp en date
     const lastDraw = userInfo[0].lastDraw;
-    const lastDrawDate = new Date(lastDraw);
+    const lastDrawDate = new Date(lastDraw); 
 
     // Obtenir le temps actuel et le temps restant jusqu'au prochain tirage
     const currentTime = new Date().getTime();
@@ -23,13 +23,12 @@ async function getProfilInfos(req, res) {
     const hoursLeft = Math.floor(timeLeft / (60 * 60 * 1000)); // Calcul des heures restantes
     const minutesLeft = Math.floor((timeLeft % (60 * 60 * 1000)) / (60 * 1000)); // Calcul des minutes restantes
 
-
-
-    res.render("settings", {
+    res.status(200).json({
       username: userInfo[0].username,
       name: userInfo[0].name,
       email: userInfo[0].email,
-    minutesLeft: minutesLeft,
+      hoursLeft: hoursLeft,
+      minutesLeft: minutesLeft,
     });
   } catch (error) {
     console.error(error);

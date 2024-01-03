@@ -24,9 +24,6 @@ app.use(cookieParser());
 // Configuration pour servir les fichiers statiques (CSS, JavaScript, images)
 app.use(express.static(path.join(__dirname, "../../public")));
 
-// // Configuration pour utiliser EJS comme moteur de template
-// app.set('view engine', 'ejs');
-// app.set('views', path.join(__dirname, '../views'));
 
 // Routes pour les pages HTML
 app.get("/login", (req, res) => {
@@ -35,14 +32,16 @@ app.get("/login", (req, res) => {
 });
 
 app.get("/signup", (req, res) => {
-  const userLoggedIn = req.cookies.AuthToken || req.user;
   res.sendFile(path.join(__dirname, "../../public/signup.html"));
 });
 
 
 app.get("/profil", authenticateToken, (req, res) => {
-  const userLoggedIn = req.cookies.AuthToken || req.user;
   res.sendFile(path.join(__dirname, "../../public/profil.html"));
+});
+
+app.get("/settings", authenticateToken, (req, res) => {
+  res.sendFile(path.join(__dirname, "../../public/settings.html"));
 });
 
 
