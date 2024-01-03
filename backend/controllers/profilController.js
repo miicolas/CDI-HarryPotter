@@ -21,6 +21,8 @@ async function getProfil(req, res) {
       message = "Vous n'avez pas encore de cartes";
     }
 
+
+
     res.json ({
       username: userInfo[0].username,
       name: userInfo[0].name,

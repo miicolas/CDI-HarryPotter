@@ -52,7 +52,7 @@
               </svg>
             </div>
           </a>
-          
+
           <a href="/settings">
             <div class="profile-navigation-icon"> <!-- Icone de navigation -->
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -95,13 +95,13 @@
 
         <div class="mycards"> <!-- Container des cartes -->
           <h3>My Cards</h3>
-            <div class="gallery">
-              <!-- <% if (message) { %>
+          <div class="gallery">
+            <!-- <% if (message) { %>
                 <p><%= message %></p>
               <% } else { %>
                 <% for (let i = 0; i < cards.length; i++) { %> -->
-                  <!-- Affichage des cartes de l'utilisateur -->
-                  <!-- <div class="gallery-item" data-type="<%= cards[i].house %>" data-id="<%= cards[i].altText %>">
+            <!-- Affichage des cartes de l'utilisateur -->
+            <!-- <div class="gallery-item" data-type="<%= cards[i].house %>" data-id="<%= cards[i].altText %>">
                     <img class="gallery-image" src="<%= cards[i].image %>" alt="<%= cards[i].altText %>" />
                     <div class="interaction-card">
                       <div class="button-card">
@@ -121,9 +121,9 @@
                   </div>
                 <% } %>
               <% } %> -->
-            </div> 
-          
-    
+          </div>
+
+
       </section>
 
     </section>
@@ -153,22 +153,50 @@
 </body>
 <script src="js/script.js" defer></script>
 <script defer>
-  fetch('http://localhost:3000/getprofile')
-    .then(response => response.json())
-    .then(data => {
-      console.log(data);
+fetch('http://localhost:3000/getprofile')
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
 
-      let profileHeader = document.querySelector('.profile-header');
-      profileHeader.innerHTML += `
+    let profileHeader = document.querySelector('.profile-header');
+    profileHeader.innerHTML += `
       <h1 class="profile-username">${data.username}</h1>
       <h3 class="profile-name">${data.name}</h3>
-      `;
+    `;
 
-      
-    })
-    .catch(error => {
-      console.error('Erreur de fetch:', error);
-    });
+    let gallery = document.querySelector('.gallery');
+
+    if (data.message === "") {
+      for (let i = 0; i < data.cards.length; i++) {
+    gallery.innerHTML += `
+    <div class="gallery-item" data-type="${data.cards[i].house}" data-id="${data.cards[i].altText}">
+      <img class="gallery-image" src="${data.cards[i].image}" alt="${data.cards[i].altText}" />
+      <div class="interaction-card">
+        <div class="button-card">
+          <svg class="like-button" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+            viewBox="0 0 21 19">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M11 4C5.5-1.5-1.5 5.5 4 11l7 7 7-7c5.458-5.458-1.542-12.458-7-7Z" />
+          </svg>
+        </div>
+        <div class="button-card">
+          Read More
+        </div>
+      </div>
+    </div>
+  `;
+      }
+    } else {
+      gallery.innerHTML += `
+      <p>${data.message}</p>
+    `;
+}
+    
+  })
+  .catch(error => {
+    console.error('Erreur de fetch:', error);
+  });
+
 </script>
 
 </html>
