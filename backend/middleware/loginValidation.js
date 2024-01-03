@@ -2,6 +2,7 @@
 const bcrypt = require("bcrypt");
 const { query } = require("../config/queries");
 
+
 async function validateLogin(req, res, next) {
   try {
     const { email, password } = req.body;

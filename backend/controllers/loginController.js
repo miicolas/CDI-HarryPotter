@@ -1,5 +1,5 @@
 // controllers/loginController.js
-
+const path = require("path");
 const jwt = require("jsonwebtoken");
 
 async function login(req, res) {
@@ -10,7 +10,7 @@ async function login(req, res) {
       httpOnly: true,
       secure: false,
       sameSite: "strict",
-    }).redirect('/profil');
+    }).redirect('/login');
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Error logging in" });

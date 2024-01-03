@@ -5,14 +5,14 @@ async function authenticateToken(req, res, next) {
   const token = req.cookies.AuthToken; // Récupération du token depuis les cookies
 
   if (!token) {
-    return res.redirect('/'); // Redirection vers la page de connexion si le token est manquant
+    return res.sendFile(path.join(__dirname, "../../frontend/index.html")); 
   }
 
   // Vérification du token
   jwt.verify(token, 'secretKey', (err, decodedToken) => { // Vérification du token
     if (err) {
       console.log ('token invalide', err)
-      return res.redirect('/');
+      return res.sendFile(path.join(__dirname, "../../frontend/index.html")); 
     }
     req.user = decodedToken.user; 
     next();

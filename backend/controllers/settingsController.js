@@ -29,7 +29,6 @@ async function getProfilInfos(req, res) {
       username: userInfo[0].username,
       name: userInfo[0].name,
       email: userInfo[0].email,
-      hoursLeft: hoursLeft,
     minutesLeft: minutesLeft,
     });
   } catch (error) {
