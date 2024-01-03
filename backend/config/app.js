@@ -4,9 +4,7 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const authenticateToken = require('../middleware/authenticateToken');
-const signupRoute = require("../routes/signup");
-const loginRoute = require("../routes/login");
-const logoutRoute = require("../routes/logout");
+const authRoute = require("../routes/auth");
 const profilRoute = require("../routes/profil");
 const indexRoute = require("../routes/index");
 const drawRoute = require("../routes/draw");
@@ -50,9 +48,7 @@ app.get("/profil", authenticateToken, (req, res) => {
 
 
 // Utilisation des routes
-app.use("/", signupRoute); 
-app.use("/", loginRoute);
-app.use("/", logoutRoute);
+app.use("/", authRoute); 
 app.use("/", profilRoute);
 app.use("/", indexRoute);
 app.use("/", drawRoute);

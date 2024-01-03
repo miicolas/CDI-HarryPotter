@@ -1,8 +1,32 @@
-// controllers/signupController.js
-
+// controllers/loginController.js
+const path = require("path");
+const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
-const { query } = require("../config/queries");
 
+async function login(req, res) {
+  try {
+    const user = req.user; 
+    const token = jwt.sign({ user }, "secretKey");
+    res.cookie("AuthToken", token, {
+      httpOnly: true,
+      secure: false,
+      sameSite: "strict",
+    }).redirect('/profil.html');
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Error logging in" });
+  }
+}
+
+async function logout(req, res) {
+  try {
+    // Supprime le cookie d'authentification
+    res.clearCookie("AuthToken").redirect('/');
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Error logging out" });
+  }
+};
 async function signup(req, res) {
   try {
     const { username, password, name, email } = req.body;
@@ -39,6 +63,9 @@ async function signup(req, res) {
   }
 }
 
+
 module.exports = {
+  login,
+  logout,
   signup,
 };
