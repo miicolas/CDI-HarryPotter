@@ -157,8 +157,10 @@ exangeClose.addEventListener("click", () => {
   exangeIcon.style.display = "block";
 });
 
+
 // const emailInput = document.getElementById("email");
 // emailInput.addEventListener("input", function () {
 //   const enteredEmail = emailInput.value;
 //   localStorage.setItem("savedEmail", enteredEmail);
 // });
+

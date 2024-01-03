@@ -12,6 +12,8 @@ const indexRoute = require("../routes/index");
 const drawRoute = require("../routes/draw");
 const settingsRoute = require("../routes/settings");
 const changeInfosRoute = require("../routes/changeInfos");
+const { query } = require("../config/queries");
+const jwt = require("jsonwebtoken");
 
 
 const port = process.env.PORT || 3000;
@@ -31,12 +33,18 @@ app.use(express.static(path.join(__dirname, "../../public")));
 // Routes pour les pages HTML
 app.get("/login", (req, res) => {
   const userLoggedIn = req.cookies.AuthToken || req.user;
-  res.sendFile(path.join(__dirname, "../../frontend/login.html")); 
+  res.sendFile(path.join(__dirname, "../../public/login.html"));
 });
 
 app.get("/signup", (req, res) => {
   const userLoggedIn = req.cookies.AuthToken || req.user;
-  res.sendFile(path.join(__dirname, "../../frontend/signup.html")); 
+  res.sendFile(path.join(__dirname, "../../public/signup.html"));
+});
+
+
+app.get("/profil", authenticateToken, (req, res) => {
+  const userLoggedIn = req.cookies.AuthToken || req.user;
+  res.sendFile(path.join(__dirname, "../../public/profil.html"));
 });
 
 

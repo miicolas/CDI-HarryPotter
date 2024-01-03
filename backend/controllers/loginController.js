@@ -10,7 +10,7 @@ async function login(req, res) {
       httpOnly: true,
       secure: false,
       sameSite: "strict",
-    }).redirect('/login');
+    }).redirect('/profil.html');
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Error logging in" });

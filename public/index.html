@@ -22,13 +22,12 @@
         <!-- Icone du menu burger -->
         <ul class="nav-links">
           <!-- Liste des liens de la navigation -->
-          
+
           <!-- Si l'utilisateur n'est pas connecté :  -->
           <li><a href="/login">Connexion</a></li>
-          
+
           <!-- Si l'utilisateur est connecté :  -->
           <li><a href="/profil">Profil</a></li>
-          
         </ul>
         <div class="overlay">
           <!-- Overlay du menu burger -->
@@ -36,13 +35,12 @@
           <ul class="overlay-content">
             <!-- Liste des liens du menu burger -->
             <li><a href="/">Accueil</a></li>
-            
+
             <!-- Si l'utilisateur n'est pas connecté :  -->
             <li><a href="/login">Connexion</a></li>
-            
+
             <!-- Si l'utilisateur est connecté :  -->
             <li><a href="/profil">Profil</a></li>
-          
           </ul>
         </div>
       </nav>
@@ -69,7 +67,7 @@
                 Découvre le monde d'Harry Potter en collectionnant les cartes de
                 tes personnages préférés
               </p>
-              <a class="button-primary " href="#gallery-section">
+              <a class="button-primary" href="#gallery-section">
                 <!-- Bouton de redirection vers gallery de cartes :  -->
                 Découvrir
               </a>
@@ -137,12 +135,26 @@
       <div class="exange-overlay">
         <div class="close-icon" id="exangeClose">&times;</div>
         <div class="form-exange">
-          <form action="" method="post"> <!-- Formulaire d'échange de cartes :  -->
-            <label for="card">Carte à échanger</label> <!-- Champ de saisie de la carte à échanger :  -->
-            <input type="text" name="card" id="card" placeholder="Carte à échanger" />
-            <label for="card">Carte recherchée</label> <!-- Champ de saisie de la carte recherchée :  -->
-            <input type="text" name="card" id="card" placeholder="Carte recherchée" />
-            <input class="button-primary " type="submit" value="Echanger" /> <!-- Bouton de validation du formulaire :  -->
+          <form action="" method="post">
+            <!-- Formulaire d'échange de cartes :  -->
+            <label for="card">Carte à échanger</label>
+            <!-- Champ de saisie de la carte à échanger :  -->
+            <input
+              type="text"
+              name="card"
+              id="card"
+              placeholder="Carte à échanger"
+            />
+            <label for="card">Carte recherchée</label>
+            <!-- Champ de saisie de la carte recherchée :  -->
+            <input
+              type="text"
+              name="card"
+              id="card"
+              placeholder="Carte recherchée"
+            />
+            <input class="button-primary" type="submit" value="Echanger" />
+            <!-- Bouton de validation du formulaire :  -->
           </form>
         </div>
       </div>
@@ -188,7 +200,6 @@
             </div>
           </div>
           <a class="button-tirage" href="/draw" id="drawButton">
-            
             <!-- Bouton de tirage de cartes :  -->
             <svg
               class="swing"
@@ -213,11 +224,10 @@
                 stroke-linejoin="round"
               />
             </svg>
-           <!-- Si l'utilisateur n'est pas connecté :  --> 
+            <!-- Si l'utilisateur n'est pas connecté :  -->
             <span class="button-text"
               >Connecte toi pour collecter de nouvelles cartes</span
             >
-            
           </a>
         </div>
       </section>
@@ -324,26 +334,23 @@
           <div class="right-gallery">
             <!-- Container de la partie droite de la gallery de cartes :  -->
             <div class="gallery" id="gallery">
-              
               <!-- Boucle pour afficher les cartes :  -->
               <!-- <div class="gallery-item" data-type="<%= cards[i].house %>" data-id="<%= cards[i].altText %>">
                 <img class="gallery-image" src="<%= cards[i].image %>" alt="<%= cards[i].altText %>" />
                 <div class="interaction-card"> -->
-                  <!-- <div class="button-card">
+              <!-- <div class="button-card">
                     <svg class="like-button" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                       viewBox="0 0 21 19">
                       <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M11 4C5.5-1.5-1.5 5.5 4 11l7 7 7-7c5.458-5.458-1.542-12.458-7-7Z" />
                     </svg>
                   </div> -->
-                  <!-- <div class="button-card">
+              <!-- <div class="button-card">
                     Read More
                   </div>
                 </div>
               </div> -->
-              
             </div>
-            
           </div>
         </div>
       </section>
@@ -380,24 +387,28 @@
     </footer>
   </body>
   <script src="js/script.js" defer></script>
-  <script>
-    fetch('http://localhost:3000/') // Mettez à jour l'URL vers votre endpoint correct
-    .then((response) => response.json())
-    .then((data) => {
+  <script defer>
+    fetch("http://localhost:3000/cards")
+      .then((response) => response.json())
+      .then((data) => {
         console.log(data);
-        let gallery = document.getElementById('gallery');
-        data.forEach((item) => {
-            gallery.innerHTML += `
-            <div class="gallery-item" data-type="${item.house}" data-id="${item.altText}">
-                <img class="gallery-image" src="${item.image}" alt="${item.altText}" />
-                <div class="interaction-card">
-                    <div class="button-card">
-                        Read More
-                    </div>
-                </div>
-            </div>
-            `;
-        });
-    });
-</script>
+        let gallery = document.getElementById("gallery");
+
+        for (let i = 0; i < data.length; i++) {
+          gallery.innerHTML += `
+    <div class="gallery-item" data-type="${data[i].house}" data-id="${data[i].altText}">
+      <img class="gallery-image" src="${data[i].image}" alt="${data[i].altText}" />
+      <div class="interaction-card">
+        <div class="button-card">
+          Read More
+        </div>
+      </div>
+    </div>`;
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+        // Gérez l'erreur ici, affichez un message d'erreur ou effectuez une action en conséquence.
+      });
+  </script>
 </html>
