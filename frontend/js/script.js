@@ -124,12 +124,7 @@ document.addEventListener("DOMContentLoaded", function () {
   updateFilterButtons();
 });
 
-const likeButton = document.querySelectorAll(".like-button");
-likeButton.forEach(function (button) {
-  button.addEventListener("click", function () {
-    button.classList.toggle("like-button--active");
-  });
-});
+
 
 const menuIcon = document.getElementById("menuIcon");
 const closeIcon = document.getElementById("closeIcon");
@@ -163,19 +158,22 @@ const exangeIcon = document.getElementById("exangeIcon");
 const exangeClose = document.getElementById("exangeClose");
 const exangeOverlay = document.querySelector(".exange-overlay");
 
-exangeIcon.addEventListener("click", () => {
-  exangeOverlay.style.display = "block";
+if (exangeIcon) {
+  exangeIcon.addEventListener("click", () => {
+    exangeOverlay.style.display = "block";
+    exangeIcon.style.display = "none";
+    exangeClose.style.display = "block";
+    console.log("click");
+  });
+}
 
-  exangeIcon.style.display = "none";
-  exangeClose.style.display = "block";
-  console.log("click");
-});
-exangeClose.addEventListener("click", () => {
-  exangeOverlay.style.display = "none";
-  exangeClose.style.display = "none";
-  exangeIcon.style.display = "block";
-});
-
+if (exangeClose) {
+  exangeClose.addEventListener("click", () => {
+    exangeOverlay.style.display = "none";
+    exangeClose.style.display = "none";
+    exangeIcon.style.display = "block";
+  });
+}
 
 // const emailInput = document.getElementById("email");
 // emailInput.addEventListener("input", function () {
