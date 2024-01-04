@@ -128,22 +128,22 @@
 </body>
 <script src="js/script.js" defer></script>
 <script defer>
-fetch('http://localhost:3000/getprofile')
-  .then(response => response.json())
-  .then(data => {
-    console.log(data);
+  fetch('http://localhost:3000/getprofile')
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
 
-    let profileHeader = document.querySelector('.profile-header');
-    profileHeader.innerHTML += `
+      let profileHeader = document.querySelector('.profile-header');
+      profileHeader.innerHTML += `
       <h1 class="profile-username">${data.username}</h1>
       <h3 class="profile-name">${data.name}</h3>
     `;
 
-    let gallery = document.querySelector('.gallery');
+      let gallery = document.querySelector('.gallery');
 
-    if (data.message === "") {
-      for (let i = 0; i < data.cards.length; i++) {
-    gallery.innerHTML += `
+      if (data.message === "") {
+        for (let i = 0; i < data.cards.length; i++) {
+          gallery.innerHTML += `
     <div class="gallery-item" data-type="${data.cards[i].house}" data-id="${data.cards[i].altText}">
       <img class="gallery-image" src="${data.cards[i].image}" alt="${data.cards[i].altText}" />
       <div class="interaction-card">
@@ -160,17 +160,49 @@ fetch('http://localhost:3000/getprofile')
       </div>
     </div>
   `;
-      }
-    } else {
-      gallery.innerHTML += `
+        }
+      } else {
+        gallery.innerHTML += `
       <p>${data.message}</p>
     `;
-}
-    
-  })
-  .catch(error => {
-    console.error('Erreur de fetch:', error);
-  });
+      } const galleryItems = document.querySelectorAll(".gallery-item");
+      const searchInput = document.getElementById("search");
+
+      searchInput.addEventListener("input", function () {
+        const searchValue = searchInput.value.trim().toLowerCase();
+        console.log("Search value: ", searchValue);
+
+        console.log("Gallery items: ", galleryItems);
+        galleryItems.forEach(function (item) {
+          // Vérifiez que l'élément possède bien un attribut data-id
+          const dataId = item.getAttribute("data-id");
+
+          // Vérifiez si l'attribut data-id est null ou non
+          if (dataId !== null) {
+            const lowerCaseDataId = dataId.toLowerCase();
+            if (lowerCaseDataId.includes(searchValue)) {
+              item.style.display = "block";
+            } else {
+              item.style.display = "none";
+            }
+          } else {
+            // Si l'attribut data-id est null, affichez un message dans la console pour le signaler
+            console.log("Missing data-id attribute");
+          }
+        });
+      });
+      const likeButton = document.querySelectorAll(".like-button");
+      console.log(likeButton);
+      likeButton.forEach(function (button) {
+        button.addEventListener("click", function () {
+          button.classList.toggle("like-button--active");
+        });
+      });
+    })
+
+    .catch(error => {
+      console.error('Erreur de fetch:', error);
+    });
 
 </script>
 

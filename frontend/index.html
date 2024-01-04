@@ -310,8 +310,13 @@
       <li><a href="#">Politique de confidentialité</a></li>
     </ul>
   </footer>
+
+
 </body>
+
+
 <script src="js/script.js" defer></script>
+
 <script defer>
   fetch("http://localhost:3000/cards")
     .then((response) => response.json())
@@ -320,31 +325,32 @@
       let gallery = document.getElementById("gallery");
 
       for (let i = 0; i < data.length; i++) {
-        gallery.innerHTML += `
-    <div class="gallery-item" data-type="${data[i].house}" data-id="${data[i].altText}">
-      <img class="gallery-image" src="${data[i].image}" alt="${data[i].altText}" />
-      <div class="interaction-card">
-        <div class="button-card">
-          Read More
-        </div>
-      </div>
-    </div>`;
+        gallery.innerHTML += 
+        `
+          <div class="gallery-item" data-type="${data[i].house}" data-id="${data[i].altText}">
+            <img class="gallery-image" src="${data[i].image}" alt="${data[i].altText}" />
+            <div class="interaction-card">
+              <div class="button-card">
+                Read More
+              </div>
+            </div>
+          </div>
+        `;
       }
+
       const galleryItems = document.querySelectorAll(".gallery-item");
       const searchInput = document.getElementById("search");
 
       searchInput.addEventListener("input", function () {
         const searchValue = searchInput.value.trim().toLowerCase();
-        console.log("Search value: ", searchValue);
 
-        console.log("Gallery items: ", galleryItems);
         galleryItems.forEach(function (item) {
-          // Vérifiez que l'élément possède bien un attribut data-id
+          
           const dataId = item.getAttribute("data-id");
 
           // Vérifiez si l'attribut data-id est null ou non
           if (dataId !== null) {
-            const lowerCaseDataId = dataId.toLowerCase();
+            const lowerCaseDataId = dataId.toLowerCase(); // Convertissez la valeur de l'attribut data-id en minuscules
             if (lowerCaseDataId.includes(searchValue)) {
               item.style.display = "block";
             } else {
