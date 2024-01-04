@@ -58,17 +58,23 @@
           <p class="login-description">Inscris toi pour collectioner tes cartes</p>
 
 
-          <form action="/signup" method="post"> <!-- Formulaire de login -->
-            <label for="email">Email</label> <!-- Champ de saisie de l'email -->
-            <input type="email" name="email" id="email" placeholder="Email"> <!-- Champ de saisie de l'email -->
-            <label for="username">Nom d'utilisateur</label> <!-- Champ de saisie du nom d'utilisateur -->
-            <input type="text" name="username" id="username" placeholder="Nom d'utilisateur"> <!-- Champ de saisie du nom d'utilisateur -->
-            <label for="name">Nom</label> <!-- Champ de saisie du nom d'utilisateur -->
-            <input type="text" name="name" id="name" placeholder="Nom"> <!-- Champ de saisie du nom d'utilisateur -->
-            <label for="password">Mot de passe</label>  <!-- Champ de saisie du mot de passe -->
-            <input type="password" name="password" id="password" placeholder="Mot de passe"> <!-- Champ de saisie du mot de passe -->
-            <input class="button-input" type="submit" value="Inscription"> <!-- Bouton de validation du formulaire -->
+          <form action="/signup" method="post">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="Adresse mail" autocomplete="email" required>
+
+            
+            <label for="username">Nom d'utilisateur</label>
+            <input type="text" name="username" id="username" placeholder="Nom d'utilisateur" autocomplete="username" required>
+            
+            <label for="name">Nom</label>
+            <input type="text" name="name" id="name" placeholder="Prénom" autocomplete="nickname" required>
+            
+            <label for="password">Mot de passe</label>
+            <input type="password" name="password" id="password" placeholder="Mot de passe" autocomplete="new-password" required>
+            
+            <input class="button-input" type="submit" value="Inscription">
           </form>
+          
 
           <div class="hr"></div> <!-- Ligne de séparation -->
           <a href="/login" class="register-account-btn">

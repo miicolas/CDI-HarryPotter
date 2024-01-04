@@ -65,12 +65,7 @@
               <!-- Formulaire de login -->
               <label for="email">Adresse mail</label>
               <!-- Champ de saisie du nom d'utilisateur -->
-              <input
-                type="email"
-                name="email"
-                id="email"
-                placeholder="Adresse mail"
-              />
+              <input type="email" name="email" id="email" placeholder="Adresse mail" autocomplete="email" required>
               <!-- Champ de saisie du nom d'utilisateur -->
               <label for="password">Mot de passe</label>
               <!-- Champ de saisie du mot de passe -->
@@ -79,6 +74,8 @@
                 name="password"
                 id="password"
                 placeholder="Mot de passe"
+                autocomplete="current-password"
+                required
               />
               <!-- Champ de saisie du mot de passe -->
               <input class="button-input" type="submit" value="Connexion" />
