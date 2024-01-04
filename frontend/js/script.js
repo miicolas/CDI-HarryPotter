@@ -24,8 +24,10 @@ function filterType() {
 }
 function filterCards(selectedType) {
   const galleryItems = document.querySelectorAll(".gallery-item");
+  console.log(galleryItems);
   galleryItems.forEach(function (item) {
     const itemType = item.getAttribute("data-type");
+    
     if (selectedType === "Tous" || selectedType === itemType) {
       item.style.display = "block";
     } else {
@@ -57,19 +59,36 @@ function updateFilterButtons() {
 
 // Search function
 function searchCard() {
-  const searchInput = document.getElementById("search");
   const galleryItems = document.querySelectorAll(".gallery-item");
+  const searchInput = document.getElementById("search");
+
+  
+  console.log(searchInput);
+  console.log(galleryItems);
 
   searchInput.addEventListener("input", function () {
     const searchValue = searchInput.value.trim().toLowerCase();
+    console.log("Search value: ", searchValue);
 
+    console.log("Gallery items: ", galleryItems);
     galleryItems.forEach(function (item) {
-      const dataId = item.getAttribute("data-id").toLowerCase();
+      // Vérifiez que l'élément possède bien un attribut data-id
+      const dataId = item.getAttribute("data-id");
+      console.log("Data ID: ", dataId);
 
-      if (dataId.includes(searchValue)) {
-        item.style.display = "block";
+      // Vérifiez si l'attribut data-id est null ou non
+      if (dataId !== null) {
+        const lowerCaseDataId = dataId.toLowerCase();
+        console.log("Lowercase Data ID: ", lowerCaseDataId);
+
+        if (lowerCaseDataId.includes(searchValue)) {
+          item.style.display = "block";
+        } else {
+          item.style.display = "none";
+        }
       } else {
-        item.style.display = "none";
+        // Si l'attribut data-id est null, affichez un message dans la console pour le signaler
+        console.log("Missing data-id attribute");
       }
     });
   });

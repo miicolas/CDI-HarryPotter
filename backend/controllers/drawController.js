@@ -1,5 +1,4 @@
 // controllers/drawController.js
-const session = require("express-session");
 const { query } = require("../config/queries");
 
 async function getDrawCards(req, res) {

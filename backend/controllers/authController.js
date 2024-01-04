@@ -1,5 +1,4 @@
 // controllers/loginController.js
-const path = require("path");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 

@@ -1,6 +1,5 @@
 // controllers/profilController.js
 const { query } = require("../config/queries");
-const path = require("path");
 
 async function getAllCards(req, res) {
   try {

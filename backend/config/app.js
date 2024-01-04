@@ -22,26 +22,25 @@ app.use(express.json());
 app.use(cookieParser());
 
 // Configuration pour servir les fichiers statiques (CSS, JavaScript, images)
-app.use(express.static(path.join(__dirname, "../../public")));
+app.use(express.static(path.join(__dirname, "../../frontend")));
 
 
 // Routes pour les pages HTML
 app.get("/login", (req, res) => {
-  const userLoggedIn = req.cookies.AuthToken || req.user;
-  res.sendFile(path.join(__dirname, "../../public/login.html"));
+  res.sendFile(path.join(__dirname, "../../frontend/login.html"));
 });
 
 app.get("/signup", (req, res) => {
-  res.sendFile(path.join(__dirname, "../../public/signup.html"));
+  res.sendFile(path.join(__dirname, "../../frontend/signup.html"));
 });
 
 
 app.get("/profil", authenticateToken, (req, res) => {
-  res.sendFile(path.join(__dirname, "../../public/profil.html"));
+  res.sendFile(path.join(__dirname, "../../frontend/profil.html"));
 });
 
 app.get("/settings", authenticateToken, (req, res) => {
-  res.sendFile(path.join(__dirname, "../../public/settings.html"));
+  res.sendFile(path.join(__dirname, "../../frontend/settings.html"));
 });
 
 
