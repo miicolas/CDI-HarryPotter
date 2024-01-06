@@ -1,49 +1,48 @@
 // controllers/drawController.js
-const session = require("express-session");
 const { query } = require("../config/queries");
 
 async function getDrawCards(req, res) {
   try {
-    const userId = req.user.id;
+    const userId = req.user.id; // Récupère l'id de l'utilisateur à partir du token
 
-    const cards = await query(
+    const cards = await query( // Récupère 5 cartes aléatoires
       "SELECT id_card FROM Cards ORDER BY RAND() LIMIT 5"
     );
 
-    const cards_user = await query(
+    const cards_user = await query( // Récupère les cartes de l'utilisateur à partir de l'id
       "SELECT id_card FROM UsersCards WHERE id_user = ?",
       [userId]
     );
 
-    const cardsToAdd = [];
+    const cardsToAdd = []; // Initialise un tableau pour les cartes à ajouter
 
-    for (let i = 0; i < cards.length; i++) { 
-      let cardExists = false;
-      for (let j = 0; j < cards_user.length; j++) {
-        if (cards[i].id_card === cards_user[j].id_card) {
+    for (let i = 0; i < cards.length; i++) { // Parcours les cartes tirées
+      let cardExists = false; // Initialise une variable pour vérifier si la carte existe déjà
+      for (let j = 0; j < cards_user.length; j++) { // Parcours les cartes de l'utilisateur
+        if (cards[i].id_card === cards_user[j].id_card) { // Si la carte tirée existe déjà dans cards_user, cardExists est vrai
           cardExists = true;
-          break;
+          break; 
         }
       }
-      if (!cardExists) {
-        cardsToAdd.push(cards[i]); // Add the card to cardsToAdd if it's not already in cards_user
-        await query("INSERT INTO UsersCards (id_user, id_card) VALUES (?, ?)", [
+      if (!cardExists) { // Si la carte n'existe pas, on l'ajoute à cardsToAdd
+        cardsToAdd.push(cards[i]); //
+        await query("INSERT INTO UsersCards (id_user, id_card) VALUES (?, ?)", [ // Ajoute la carte à la table UsersCards
           userId,
           cards[i].id_card,
-        ]);
+        ]); 
       }
     }
-    
-    // console.log("Drawn", cardsToAdd);
-    // console.log("Already have", cards);
 
-    const date = new Date();
-    const currentTimeStamp = date.getTime(); 
-    console.log("currentTimeStamp", currentTimeStamp);
+    const date = new Date(); // Récupère la date actuelle
+    const currentTimeStamp = date.getTime(); // Récupère le timestamp de la date actuelle
+    // console.log("currentTimeStamp", currentTimeStamp);
 
-    await query( "UPDATE account SET lastDraw = ? WHERE id = ?", [currentTimeStamp, userId]);
-
+    await query("UPDATE account SET lastDraw = ? WHERE id = ?", [
+      currentTimeStamp,
+      userId,
+    ]); // Met à jour le timestamp du dernier tirage
     res.redirect("/profil");
+    
   } catch (error) {
     console.error(error);
     res.status(500).send("Erreur serveur");

@@ -11,42 +11,42 @@
 
   <body>
     <header id="header">
-      <!-- Header :  -->
-      <nav>
-        <!-- Navigation :  -->
-        <a href="/">
-          <img class="logo" src="/images/logo.png" alt="Harry Potter Logo" />
-          <!-- Logo avec lien vers la page d'accueil -->
-        </a>
-        <div class="menu-icon" id="menuIcon">&#9776;</div>
-        <!-- Icone du menu burger -->
-        <ul class="nav-links">
-          <!-- Liste des liens de la navigation -->
-          <% if (!userLoggedIn) { %>
-          <!-- Si l'utilisateur n'est pas connecté :  -->
-          <li><a href="/login">Connexion</a></li>
-          <% } else { %>
-          <!-- Si l'utilisateur est connecté :  -->
-          <li><a href="/profil">Profil</a></li>
-          <% } %>
-        </ul>
-        <div class="overlay">
-          <!-- Overlay du menu burger -->
-          <div class="close-icon" id="closeIcon">&times;</div>
-          <ul class="overlay-content">
-            <!-- Liste des liens du menu burger -->
-            <li><a href="/">Accueil</a></li>
-            <% if (!userLoggedIn) { %>
+        <!-- Header :  -->
+        <nav>
+          <!-- Navigation :  -->
+          <a href="/">
+            <img class="logo" src="/images/logo.png" alt="Harry Potter Logo" />
+            <!-- Logo avec lien vers la page d'accueil -->
+          </a>
+          <div class="menu-icon" id="menuIcon">&#9776;</div>
+          <!-- Icone du menu burger -->
+          <ul class="nav-links">
+            <!-- Liste des liens de la navigation -->
+            
             <!-- Si l'utilisateur n'est pas connecté :  -->
             <li><a href="/login">Connexion</a></li>
-            <% } else { %>
+            
             <!-- Si l'utilisateur est connecté :  -->
             <li><a href="/profil">Profil</a></li>
-            <% } %>
+            
           </ul>
-        </div>
-      </nav>
-    </header>
+          <div class="overlay">
+            <!-- Overlay du menu burger -->
+            <div class="close-icon" id="closeIcon">&times;</div>
+            <ul class="overlay-content">
+              <!-- Liste des liens du menu burger -->
+              <li><a href="/">Accueil</a></li>
+              
+              <!-- Si l'utilisateur n'est pas connecté :  -->
+              <li><a href="/login">Connexion</a></li>
+              
+              <!-- Si l'utilisateur est connecté :  -->
+              <li><a href="/profil">Profil</a></li>
+            
+            </ul>
+          </div>
+        </nav>
+      </header>
 
     <main>
       <section class="form-section">
@@ -61,16 +61,11 @@
               Connecte-toi à ton compte pour pouvoir retrouver tes cartes !
             </p>
 
-            <form action="/login" method="post">
+            <form action="/login" method="post"> <!-- Formulaire de connexion -->
               <!-- Formulaire de login -->
               <label for="email">Adresse mail</label>
               <!-- Champ de saisie du nom d'utilisateur -->
-              <input
-                type="email"
-                name="email"
-                id="email"
-                placeholder="Adresse mail"
-              />
+              <input type="email" name="email" id="email" placeholder="Adresse mail" autocomplete="email" required>
               <!-- Champ de saisie du nom d'utilisateur -->
               <label for="password">Mot de passe</label>
               <!-- Champ de saisie du mot de passe -->
@@ -79,6 +74,8 @@
                 name="password"
                 id="password"
                 placeholder="Mot de passe"
+                autocomplete="current-password"
+                required
               />
               <!-- Champ de saisie du mot de passe -->
               <input class="button-input" type="submit" value="Connexion" />
@@ -87,7 +84,7 @@
 
             <div class="hr"></div>
             <!-- Ligne de séparation -->
-            <a href="/signup" class="register-account-btn">
+            <a href="/signup" class="register-account-btn"> 
               <div class="account-register">
                 <!-- Lien vers la page de création de compte -->
                 <p>Inscription</p>

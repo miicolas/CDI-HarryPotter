@@ -9,7 +9,7 @@ async function authenticateToken(req, res, next) {
   }
 
   // Vérification du token
-  jwt.verify(token, 'secretKey', (err, decodedToken) => { // Vérification du token
+  jwt.verify(token, 'secretKey', (err, decodedToken) => { // Vérification du token avec la clé secrète qui a servi à le créer
     if (err) {
       console.log ('token invalide', err)
       return res.redirect('/');
