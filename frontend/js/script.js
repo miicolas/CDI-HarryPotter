@@ -27,7 +27,7 @@ function filterCards(selectedType) {
   console.log(galleryItems);
   galleryItems.forEach(function (item) {
     const itemType = item.getAttribute("data-type");
-    
+
     if (selectedType === "Tous" || selectedType === itemType) {
       item.style.display = "block";
     } else {
@@ -62,7 +62,6 @@ function searchCard() {
   const galleryItems = document.querySelectorAll(".gallery-item");
   const searchInput = document.getElementById("search");
 
-  
   console.log(searchInput);
   console.log(galleryItems);
 
@@ -115,16 +114,16 @@ function searchCard() {
 //   });
 // }
 
+
 // Call functions
 document.addEventListener("DOMContentLoaded", function () {
   filterType();
   searchCard();
+
   // emailStorage();
   // CardDetails();
   updateFilterButtons();
 });
-
-
 
 const menuIcon = document.getElementById("menuIcon");
 const closeIcon = document.getElementById("closeIcon");

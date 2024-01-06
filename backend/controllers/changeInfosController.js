@@ -27,43 +27,6 @@ async function updateProfilInfos(req, res) {
       }
     }
 
-    
-
-    // if (
-    //   (!username && !password && !name && !email)) { //
-    //   return res.status(400).json("No changes were made");
-    // } else {
-    //   let queryStr = "UPDATE account SET ";
-    //   const values = [];
-
-    //   if (username && username !== user[0].username) {
-    //     queryStr += "username = ?, ";
-    //     values.push(username);
-    //   }
-
-    //   if (password && password.length > 7) {
-    //     const hashedPassword = await hash(password, 10);
-    //     queryStr += "password = ?, ";
-    //     values.push(hashedPassword);
-    //   }
-
-    //   if (name && name !== user[0].name) {
-    //     queryStr += "name = ?, ";
-    //     values.push(name);
-    //   }
-
-    //   if (email && email !== user[0].email) {
-    //     queryStr += "email = ?, ";
-    //     values.push(email);
-    //   }
-
-    //   // Retrait de la virgule finale et ajout de la clause WHERE
-    //   queryStr = queryStr.slice(0, -2); // Pour enlever la dernière virgule et l'espace
-    //   queryStr += " WHERE id = ?";
-    //   values.push(userId);
-
-    //   await query(queryStr, values);
-    // }
     res.redirect('/settings')
     
   } catch (error) {

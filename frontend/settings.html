@@ -67,13 +67,18 @@
 
 </body>
 <script src="js/script.js" defer></script>
-<script defer>
+<script >
     fetch('http://localhost:3000/getuserinfos')
-        .then(response => response.json())
-        .then(data => {
-            console.log(data)
-            let formContainer = document.querySelector('#form');
-            formContainer.innerHTML += `
+        .then(response => {
+                if (!response.ok) { // si la réponse ne se situe pas entre 200 et 299
+                    throw new Error('Network response was not ok.'); 
+                }
+                return response.json(); 
+            })
+        .then(data => { // data contient le JSON renvoyé par le serveur
+            console.log(data) 
+            let formContainer = document.querySelector('#form'); // sélectionner le formulaire
+            formContainer.innerHTML += ` 
                 <p class="login-description">Modification des informations</p>
                 <label for="email">Email</label>
                 <input type="email" name="email" id="email" placeholder="${data.email}">

@@ -26,10 +26,10 @@
         <!-- Liste des liens de la navigation -->
 
         <!-- Si l'utilisateur n'est pas connecté :  -->
-        <li><a href="/login">Connexion</a></li>
+        <li id="loginButton"><a href="/login">Connexion</a></li>
 
         <!-- Si l'utilisateur est connecté :  -->
-        <li><a href="/profil">Profil</a></li>
+        <li id="profilButton"><a href="/profil">Profil</a></li>
       </ul>
       <div class="overlay">
         <!-- Overlay du menu burger -->
@@ -55,8 +55,7 @@
       <!-- Section hero :  -->
       <div class="hero-container">
         <!-- Container du hero :  -->
-
-        <video autoplay muted loop class="video-hero">
+        <video autoplay muted loop class="hero-video">
           <source src="images/poudlard.mp4" type="video/mp4" />
         </video>
         <div class="hero-intro">
@@ -314,11 +313,8 @@
 
 </body>
 
-
-<script src="js/script.js" defer></script>
-
-<script defer>
-  fetch("http://localhost:3000/cards")
+<script >
+  fetch("/cards") 
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
@@ -347,11 +343,10 @@
         galleryItems.forEach(function (item) {
           
           const dataId = item.getAttribute("data-id");
-
-          // Vérifiez si l'attribut data-id est null ou non
+          // Récupérez la valeur de l'attribut data-id de chaque élément de la galerie
           if (dataId !== null) {
             const lowerCaseDataId = dataId.toLowerCase(); // Convertissez la valeur de l'attribut data-id en minuscules
-            if (lowerCaseDataId.includes(searchValue)) {
+            if (lowerCaseDataId.includes(searchValue)) { // Vérifiez si la valeur de l'attribut data-id contient la valeur de la recherche
               item.style.display = "block";
             } else {
               item.style.display = "none";
@@ -362,11 +357,13 @@
           }
         });
       });
+      
+
     })
     .catch((error) => {
       console.error("Error fetching data:", error);
-      // Gérez l'erreur ici, affichez un message d'erreur ou effectuez une action en conséquence.
     });
 </script>
+<script src="js/script.js" defer></script>
 
 </html>
