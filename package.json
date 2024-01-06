@@ -1,4 +1,11 @@
 {
+  
+    "name": "CDI-HARRYPOTTER",
+    "version": "1.0.0",
+    "scripts": {
+      "start": "node ./backend/config/app.js",
+      "dev": "nodemon ./backend/config/app.js" 
+    },
   "dependencies": {
     "bcrypt": "^5.1.1",
     "cookie-parser": "^1.4.6",
