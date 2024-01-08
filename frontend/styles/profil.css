@@ -60,7 +60,8 @@
   text-align: center;
   color: black;
 }
-.profile-options-container {
+.profile-options-container, 
+.profile-drawer-container {
   margin-top: 5rem;
   padding: 0 2rem;
   color: black;
@@ -72,6 +73,7 @@
   width: 100%;
   margin-bottom: 0.5rem;
 }
+
 
 .profile-option:hover {
   background: #d9d9d9;
