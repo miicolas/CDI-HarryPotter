@@ -1,6 +1,7 @@
 // controllers/loginController.js
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
+const { query } = require("../config/queries");
 
 async function login(req, res) {
   try { 
@@ -54,7 +55,7 @@ async function signup(req, res) {
       [email, username, hashedPassword, name]
     );
 
-    res.redirect("/");
+    res.redirect("/login");
 
   } catch (error) {
     console.error(error);

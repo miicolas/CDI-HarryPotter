@@ -1,12 +1,13 @@
 // Filter function
-function filterType() {
-  const filterAll = document.getElementById("filterAll");
+function filterType() { // Récupérez les boutons de filtre
+  const filterAll = document.getElementById("filterAll"); 
   const filterGryffondor = document.getElementById("filterGryffondor");
   const filterPoufsouffle = document.getElementById("filterPoufsouffle");
   const filterSerdaigle = document.getElementById("filterSerdaigle");
   const filterSerpentard = document.getElementById("filterSerpentard");
 
-  filterAll.addEventListener("click", function () {
+  // Ajoutez un écouteur d'événement à chaque bouton de filtre
+  filterAll.addEventListener("click", function () { 
     filterCards("Tous");
   });
   filterGryffondor.addEventListener("click", function () {
@@ -22,13 +23,13 @@ function filterType() {
     filterCards("Serpentard");
   });
 }
-function filterCards(selectedType) {
+function filterCards(selectedType) { // Récupérez tous les éléments de la galerie
   const galleryItems = document.querySelectorAll(".gallery-item");
   console.log(galleryItems);
-  galleryItems.forEach(function (item) {
+  galleryItems.forEach(function (item) { // Parcourez chaque élément de la galerie
     const itemType = item.getAttribute("data-type");
 
-    if (selectedType === "Tous" || selectedType === itemType) {
+    if (selectedType === "Tous" || selectedType === itemType) { // Vérifiez si l'élément est du type sélectionné
       item.style.display = "block";
     } else {
       item.style.display = "none";
@@ -36,8 +37,8 @@ function filterCards(selectedType) {
   });
 }
 
-function updateFilterButtons() {
-  const filterButtons = [
+function updateFilterButtons() { 
+  const filterButtons = [ // Récupérez les boutons de filtre
     filterAll,
     filterGryffondor,
     filterPoufsouffle,
@@ -45,83 +46,57 @@ function updateFilterButtons() {
     filterSerpentard,
   ];
 
-  filterButtons.forEach(function (button) {
-    button.addEventListener("click", function () {
-      filterButtons.forEach(function (btn) {
-        btn.classList.remove("select");
-        btn.classList.add("unselect");
+  filterButtons.forEach(function (button) { // Ajoutez un écouteur d'événement à chaque bouton de filtre
+    button.addEventListener("click", function () { 
+      filterButtons.forEach(function (btn) {  // Parcourez chaque bouton de filtre
+        btn.classList.remove("select"); // Supprimez la classe "select" de tous les boutons de filtre
+        btn.classList.add("unselect"); // Ajoutez la classe "unselect" à tous les boutons de filtre
       });
-      button.classList.add("select");
-      button.classList.remove("unselect");
+      button.classList.add("select"); // Ajoutez la classe "select" au bouton de filtre sélectionné
+      button.classList.remove("unselect"); // Supprimez la classe "unselect" du bouton de filtre sélectionné
     });
   });
 }
 
 // Search function
 function searchCard() {
-  const galleryItems = document.querySelectorAll(".gallery-item");
   const searchInput = document.getElementById("search");
-
   console.log(searchInput);
-  console.log(galleryItems);
 
   searchInput.addEventListener("input", function () {
-    const searchValue = searchInput.value.trim().toLowerCase();
+    const galleryItems = document.querySelectorAll(".gallery-item");
+    console.log(galleryItems);
+    
+    const searchValue = searchInput.value.trim().toLowerCase(); // trim() supprime les espaces avant et après la chaîne de caractères
     console.log("Search value: ", searchValue);
-
     console.log("Gallery items: ", galleryItems);
-    galleryItems.forEach(function (item) {
-      // Vérifiez que l'élément possède bien un attribut data-id
+
+    galleryItems.forEach(function (item) {// Vérifiez que l'élément possède bien un attribut data-id
+  
       const dataId = item.getAttribute("data-id");
       console.log("Data ID: ", dataId);
 
       // Vérifiez si l'attribut data-id est null ou non
       if (dataId !== null) {
-        const lowerCaseDataId = dataId.toLowerCase();
+        const lowerCaseDataId = dataId.toLowerCase(); // Convertissez la valeur de l'attribut data-id en minuscules
         console.log("Lowercase Data ID: ", lowerCaseDataId);
 
-        if (lowerCaseDataId.includes(searchValue)) {
+        if (lowerCaseDataId.includes(searchValue)) { // Vérifiez si la valeur de l'attribut data-id contient la valeur de la recherche
           item.style.display = "block";
         } else {
           item.style.display = "none";
         }
-      } else {
-        // Si l'attribut data-id est null, affichez un message dans la console pour le signaler
+      } else {// Si l'attribut data-id est null, affichez un message dans la console pour le signaler
         console.log("Missing data-id attribute");
       }
     });
   });
 }
 
-// Email function
-// function emailStorage() {
-//   const savedEmail = localStorage.getItem("savedEmail");
-//   if (savedEmail) {
-//     const emailInput = document.getElementById("email");
-//     emailInput.value = savedEmail;
-//   }
-// }
-
-// CardDetails function
-// function CardDetails (){
-//   const galleryItems = document.querySelectorAll(".gallery-item");
-
-//   galleryItems.forEach(function (item) {
-//       item.addEventListener("click", function () {
-//           const cardid = item.dataset.id ;
-//           window.location.href = `///Users/nicolasbecharat/Documents/GitHub/harrypotter/cartes/${cardid}.html`
-//       });
-//   });
-// }
-
-
 // Call functions
 document.addEventListener("DOMContentLoaded", function () {
   filterType();
   searchCard();
-
-  // emailStorage();
-  // CardDetails();
   updateFilterButtons();
 });
 
@@ -173,10 +148,3 @@ if (exangeClose) {
     exangeIcon.style.display = "block";
   });
 }
-
-// const emailInput = document.getElementById("email");
-// emailInput.addEventListener("input", function () {
-//   const enteredEmail = emailInput.value;
-//   localStorage.setItem("savedEmail", enteredEmail);
-// });
-

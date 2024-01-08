@@ -126,8 +126,8 @@
   </footer>
 
 </body>
-<script src="js/script.js" defer></script> 
-<script defer>
+
+<script>
   fetch('/getprofile')
     .then(response => response.json())
     .then(data => {
@@ -171,46 +171,12 @@
           <p>${data.message}</p>
         `;
       } 
-
-      const galleryItems = document.querySelectorAll(".gallery-item");
-      const searchInput = document.getElementById("search");
-
-      searchInput.addEventListener("input", function () {
-        const searchValue = searchInput.value.trim().toLowerCase();
-        console.log("Search value: ", searchValue);
-
-        console.log("Gallery items: ", galleryItems);
-        galleryItems.forEach(function (item) {
-          // Vérifiez que l'élément possède bien un attribut data-id
-          const dataId = item.getAttribute("data-id");
-
-          // Vérifiez si l'attribut data-id est null ou non
-          if (dataId !== null) {
-            const lowerCaseDataId = dataId.toLowerCase();
-            if (lowerCaseDataId.includes(searchValue)) {
-              item.style.display = "block";
-            } else {
-              item.style.display = "none";
-            }
-          } else {
-            // Si l'attribut data-id est null, affichez un message dans la console pour le signaler
-            console.log("Missing data-id attribute");
-          }
-        });
-      });
-      const likeButton = document.querySelectorAll(".like-button");
-      console.log(likeButton);
-      likeButton.forEach(function (button) {
-        button.addEventListener("click", function () {
-          button.classList.toggle("like-button--active");
-        });
-      });
     })
-
     .catch(error => {
       console.error('Erreur de fetch:', error);
     });
 
 </script>
+<script src="js/script.js" ></script> 
 
 </html>
