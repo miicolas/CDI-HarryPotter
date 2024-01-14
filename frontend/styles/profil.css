@@ -5,7 +5,7 @@
   width: 100%;
   align-items: flex-start;
   justify-content: center;
-  padding-top: 2rem;
+  padding: 2rem 0;
 }
 .profile-container {
   display: fixed;
@@ -101,8 +101,6 @@
   color: black;
   background: white;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  font-size: 1.25rem;
-  font-weight: 800;
   line-height: normal;
   border-radius: 1.25rem;
   margin-top: 2rem;
@@ -120,6 +118,13 @@
 .profile-navigation-icon:hover {
   background: #d9d9d9;
   transition: ease-in-out 0.3s;
+}
+
+.button-draw {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
 }
 
 /* Responsive Profil */

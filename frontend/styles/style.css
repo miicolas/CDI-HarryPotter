@@ -1,3 +1,4 @@
+@import url("global.css");
 * {
   margin: 0;
   padding: 0;
@@ -6,35 +7,10 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  background-color: #f5f5f5;
+  background-color: var(--background);
 }
-
-/* :root {
-    --main-text-color: #333533;
-    --main-text-color2: #ffffff;
-    --main-bg-color: #f5f5f5;
-    --main-bg-color2: #242423;
-    --main-accent-color: #bbb8b8;
-    --main-accent-color2: #f94554;
-
-} */
 html {
   scroll-behavior: smooth;
-}
-
-.button-primary {
-  display: inline-flex;
-  padding: 1rem 1.5rem;
-  justify-content: center;
-  align-items: center;
-  gap: 0.625rem;
-  border-radius: 0.375rem;
-  background: #111;
-  border: none;
-  cursor: pointer;
-  transition: ease-in 0.5s;
-  color: white;
-  font-size: 1.25rem;
 }
 
 .bounce-container {
@@ -117,7 +93,8 @@ html {
   justify-content: center;
   align-items: center;
   border-radius: 1.25rem;
-  background: white;
+  background: var(--background);
+  border: 1px solid var(--border);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   width: fit-content;
 }
@@ -126,10 +103,11 @@ html {
   padding: 1.25rem;
   border-radius: 1.25rem;
 }
-.card-tirage:hover {
+.card-tirage:hover, 
+.button-primary:hover {
   transform: scale(0.98);
   transition: ease-in 0.2s;
-  background: rgba(217, 217, 217, 0.3);
+  background: var(--hover);
 }
 
 .gallery-item img,
@@ -144,14 +122,14 @@ html {
   border-radius: 1.25rem;
 }
 
-.button-tirage {
+.button-primary {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem 1rem;
   border-radius: 0.375rem;
-  background: #111;
-  color: #fff;
+  background: var(--foreground);
+  color: var(--secondary);
   font-size: 0.875rem;
   font-weight: 500;
   line-height: 1.5rem;
@@ -162,16 +140,10 @@ html {
   transition: ease-out 0.4s;
 }
 
-.button-tirage:hover {
-  transform: scale(0.98);
-  transition: ease-in 0.2s;
-  background: rgb(217, 217, 217);
-}
-
 .button-tirage:active {
   transform: scale(0.95);
   transition: ease-in 0.2s;
-  background: rgba(217, 217, 217, 0.3);
+  background: var(--hover);
   opacity: 0.8;
 }
 .button-tirage.disabled {
@@ -253,7 +225,7 @@ html {
   display: flex;
   padding: 5rem 0;
   background: white;
-  border: #e2e8f0 1px solid;
+  border: var(--border) 1px solid;
   max-width: 80%;
   border-radius: 1.25rem;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -262,7 +234,7 @@ html {
 .filter {
   display: flex;
   margin-top: 1rem;
-  border: var(--main-accent-color) 1px solid;
+  border: var(--border) 1px solid;
   margin-left: 0.5rem;
   border-radius: 5px;
   flex-wrap: wrap;
@@ -271,7 +243,7 @@ html {
 
 .filter-button button {
   border: none;
-  color: black;
+  color: var(primary);
   cursor: pointer;
   padding: 0.25rem 0.5rem;
   margin-top: 0.25rem;
@@ -279,11 +251,11 @@ html {
 }
 
 .filter-button button.select {
-  background-color: rgba(47, 0, 255, 0.49);
+  background-color: var(--active);
 }
 
 .filter-button button.unselect {
-  background-color: rgba(217, 217, 217, 0.3);
+  background-color: var(--hover);
 }
 
 .search-container {
@@ -313,7 +285,7 @@ html {
 .loop-search {
   height: 1rem;
   width: auto;
-  color: var(--main-accent-color);
+  color: var(--primary);
 }
 
 .filter-container {
@@ -338,7 +310,7 @@ html {
 
 .filters-container > * {
   padding: 0.5rem;
-  background-color: var(--main-accent-color2);
+  background-color: var(--secondary);
   margin-bottom: 1rem;
 }
 
@@ -394,16 +366,7 @@ html {
   margin-bottom: 0.5rem;
   width: 100%;
 }
-/* 
-.interaction-card .button-card {
-    font-size: 1.25em;
-    font-weight: bold;
-    color: var(--main-text-color);
-    background: transparent;
-    border-radius: .125em;
-    transition: background 0.3s;
 
-} */
 .button-card {
   margin: auto;
   border: #e2e8f0 1px solid;
@@ -414,17 +377,26 @@ html {
   padding: 0.25rem;
   margin-bottom: 1rem;
   transition: ease-in-out 0.5s;
-  margin: auto;
   background-color: transparent;
   cursor: pointer;
-}
-.like-button--active {
-  fill: red;
+  color: black;
+  font-size: 1.25rem;
+  font-weight: 500;
+
 }
 
 .button-card:hover {
-  background: #d9d9d9;
+  background: var(--hover);
   transition: ease-in-out 0.3s;
+}
+
+.like-button {
+  cursor: pointer;
+  transition: fill 0.3s ease;
+}
+
+.like-button--active {
+  fill: red;
 }
 
 .button-card > svg {
@@ -440,12 +412,38 @@ html {
   color: red;
   transition: ease-in-out 0.2s;
 }
+
 .gallery-item {
   position: relative;
-  border: #e2e8f0 1px solid;
+  border: var(--border) 1px solid;
   border-radius: 1.25rem;
   height: fit-content;
 }
+
+form input {
+  display: flex;
+  padding: 0.5rem 0.75rem;
+  align-items: center;
+  align-self: stretch;
+  border-radius: 0.375rem;
+  border: 1px solid var(--border);
+  background: var(--background);
+  min-height: 2rem;
+  font-size: 1rem;
+}
+
+.hr {
+  width: 80%;
+  height: 2px;
+  background-color: var(--background);
+  margin: auto;
+  padding: 0 2rem;
+}
+
+.hidden {
+  display: none;
+}
+
 
 /* Responsive Gallery */
 @media (max-width: 1280px) {
@@ -476,26 +474,4 @@ html {
   }
 }
 
-form input {
-  display: flex;
-  padding: 0.5rem 0.75rem;
-  align-items: center;
-  align-self: stretch;
-  border-radius: 0.375rem;
-  border: 1px solid #cbd5e1;
-  background: #fff;
-  min-height: 2rem;
-  font-size: 1rem;
-}
 
-.hr {
-  width: 80%;
-  height: 2px;
-  background-color: #e2e8f0;
-  margin: auto;
-  padding: 0 2rem;
-}
-
-.hidden {
-  display: none;
-}
