@@ -6,7 +6,7 @@ async function updateProfilInfos(req, res) {
     const userId = req.user.id;
     let { username, password, name, email } = req.body;
 
-    const user = await query("SELECT * FROM account WHERE id = ?", [userId]);
+    const user = await query("SELECT * FROM users WHERE id = ?", [userId]);
 
     if ((!username) && (!password) && (!name) && (!email)) { //
       return res.status(400).json("No changes were made");
@@ -17,13 +17,13 @@ async function updateProfilInfos(req, res) {
       }
       if (password && password.length > 7) {
         const hashedPassword = await hash(password, 10);
-        await query("UPDATE account SET password = ? WHERE id = ?", [hashedPassword, userId]);
+        await query("UPDATE users SET password = ? WHERE id = ?", [hashedPassword, userId]);
       }
       if (name && name !== user[0].name) {
-        await query("UPDATE account SET name = ? WHERE id = ?", [name, userId]);
+        await query("UPDATE users SET name = ? WHERE id = ?", [name, userId]);
       } 
       if (email && email !== user[0].email) {
-        await query("UPDATE account SET email = ? WHERE id = ?", [email, userId]);
+        await query("UPDATE users SET email = ? WHERE id = ?", [email, userId]);
       }
     }
 

@@ -7,7 +7,7 @@ async function validateLogin(req, res, next) {
   try {
     const { email, password } = req.body; // Récupère les données de l'utilisateur depuis le corps de la requête
 
-    const result = await query("SELECT * FROM account WHERE email = ?", [ // Vérifie si l'email existe dans la base de données
+    const result = await query("SELECT * FROM Users WHERE email = ?", [ // Vérifie si l'email existe dans la base de données
       email,
     ]);
 

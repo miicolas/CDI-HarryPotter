@@ -1,5 +1,4 @@
 // middleware/signupValidation.js
-
 async function validateSignup(req, res, next) {
     const { username, password, name, email } = req.body;
   

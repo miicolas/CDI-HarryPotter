@@ -37,7 +37,7 @@ async function getDrawCards(req, res) {
     const currentTimeStamp = date.getTime(); // Récupère le timestamp de la date actuelle
     // console.log("currentTimeStamp", currentTimeStamp);
 
-    await query("UPDATE account SET lastDraw = ? WHERE id = ?", [
+    await query("UPDATE Users SET lastDraw = ? WHERE id = ?", [
       currentTimeStamp,
       userId,
     ]); // Met à jour le timestamp du dernier tirage

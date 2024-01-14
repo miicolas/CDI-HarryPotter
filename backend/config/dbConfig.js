@@ -5,7 +5,7 @@ const pool = mysql.createPool({ // create the pool
   host: "localhost",
   user: "root",
   password: "root",
-  database: "nodejs",
+  database: "cdiharrypotter",
   socketPath: "/Applications/MAMP/tmp/mysql/mysql.sock", 
 });
 

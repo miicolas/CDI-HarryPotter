@@ -9,7 +9,7 @@ async function getProfil(req, res) {
     }
 
     const userInfo = await query(
-      "SELECT username, name FROM account WHERE id = ?",
+      "SELECT username, name FROM Users WHERE id = ?",
       [userId]
     ); // Récupère les infos de l'utilisateur à partir de l'id
 
@@ -19,7 +19,7 @@ async function getProfil(req, res) {
     }
 
     const cards_user = await query(
-      "SELECT * FROM cards JOIN UsersCards ON cards.id_card = UsersCards.id_card WHERE id_user = ?",
+      "SELECT * FROM Cards JOIN UsersCards ON cards.id_card = UsersCards.id_card WHERE id_user = ?",
       [userId]
     ); // Récupère les cartes de l'utilisateur à partir de l'id
 

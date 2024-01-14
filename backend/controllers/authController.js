@@ -11,7 +11,7 @@ async function login(req, res) {
       httpOnly: true, 
       secure: false,
       sameSite: "strict",
-    }).redirect('/profil.html'); // Redirige vers la page du profil
+    }).redirect('/profil'); // Redirige vers la page du profil
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Error logging in" });
