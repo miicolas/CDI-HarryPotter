@@ -1,6 +1,6 @@
 // controllers/loginController.js
 const jwt = require("jsonwebtoken");
-const bcrypt = require("bcrypt");
+const utils = require("../lib/utils");
 const { query } = require("../config/queries");
 
 async function login(req, res) {
@@ -32,12 +32,12 @@ async function signup(req, res) {
     const { username, password, name, email } = req.body; // Récupère les données du formulaire d'inscription
 
     const confirmUsername = await query( // Vérifie si le nom d'utilisateur existe déjà
-      "SELECT username, email FROM account WHERE username = ?",
+      "SELECT username, email FROM Users WHERE username = ?",
       [username]
     );
  
     const confirmEmail = await query( // Vérifie si l'email existe déjà
-      "SELECT email FROM account WHERE email = ?",
+      "SELECT email FROM Users WHERE email = ?",
       [email]
     );
 
@@ -48,10 +48,12 @@ async function signup(req, res) {
       return res.status(400).json({ error: "Email already exists" });
     }
 
-    const hashedPassword = await bcrypt.hash(password, 10); // Hash le mot de passe avec 10 tours de salage
+    const hashedPassword = await utils.hashPassword(password); // Hash le mot de passe entré par l'utilisateur
+    console.log (hashedPassword);
 
     await query( // Crée un nouvel utilisateur
-      "INSERT INTO account (email, username, password, name) VALUES  (?, ?, ?, ?)",
+      "INSERT INTO Users (email, username, password, name) VALUES  (?, ?, ?," +
+        " ?)",
       [email, username, hashedPassword, name]
     );
 

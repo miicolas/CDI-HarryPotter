@@ -41,6 +41,9 @@ app.get("/profil", authenticateToken, (req, res) => {
 app.get("/settings", authenticateToken, (req, res) => {
   res.sendFile(path.join(__dirname, "../../frontend/settings.html"));
 });
+app.get("/changeinfos", authenticateToken, (req, res) => {
+  res.sendFile(path.join(__dirname, "../../frontend/settings.html"));
+});
 
 
 

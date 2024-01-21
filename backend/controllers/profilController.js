@@ -51,7 +51,7 @@ async function getProfilSettings(req, res) {
     const userId = req.user.id; // Récupère l'id de l'utilisateur à partir du token
 
     const userInfo = await query(
-      "SELECT username, name, email, lastDraw FROM account WHERE id = ?",
+      "SELECT username, name, email, lastDraw FROM Users WHERE id = ?",
       [userId] // Récupère les infos de l'utilisateur à partir de l'id
     );
     if (userInfo.length === 0) {
