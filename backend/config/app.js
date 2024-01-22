@@ -20,42 +20,14 @@ const __dirname = path.dirname(__filename);  // Permet de récupérer le chemin 
 const app = express(); // Création de l'application express
 const port = process.env.PORT || 3000; // Définition du port d'écoute du serveur
 
-app.use(bodyParser.urlencoded({ extended: true })); // Permet de récupérer les données des formulaires
-app.use(bodyParser.json()); // Permet de récupérer les données des formulaires
-app.use(express.json()); // Permet de récupérer les données des formulaires
-app.use(cookieParser()); // Permet de récupérer les cookies
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(cookieParser());
 
 
 app.use(express.static(path.join(__dirname, "../../frontend"))); // Permet de servir les fichiers statiques du dossier frontend
-// Exemple d'utilisation du middleware pour bloquer l'accès à une route
+// Exemple d'utilisation du middleware pour bloquer l'accès à une rout
 
-app.get('/profil', authenticateToken, (req, res) => {
-  // Si le middleware a réussi la vérification, l'accès à cette route est autorisé
-  // Les informations de l'utilisateur sont disponibles dans req.user
-  res.sendFile(path.join(__dirname, '../../frontend/profil.html'));
-});
-
-
-// HTML pages routes
-// app.get("/login", (req, res) => { 
-//   res.sendFile(path.join(__dirname, "../../frontend/login.html"));
-// });
-
-// app.get("/signup", (req, res) => {
-//   res.sendFile(path.join(__dirname, "../../frontend/signup.html"));
-// });
-
-// app.get("/profil", authenticateToken, (req, res) => {
-//   res.sendFile(path.join(__dirname, "../../frontend/profil.html"));
-// });
-
-// app.get("/settings", authenticateToken, (req, res) => {
-//   res.sendFile(path.join(__dirname, "../../frontend/settings.html"));
-// });
-
-// app.get("/changeinfos", authenticateToken, (req, res) => {
-//   res.sendFile(path.join(__dirname, "../../frontend/settings.html"));
-// });
 
 // Use routes
 app.use("/", authRoute);
