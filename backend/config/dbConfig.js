@@ -1,7 +1,7 @@
 // dbConfig.js
 import mysql from "mysql";
 
-const pool = mysql.createPool({ // create the pool
+const pool = mysql.createPool({ // Création d'un pool de connexion à la base de données 
   host: "localhost",
   user: "root",
   password: "root",

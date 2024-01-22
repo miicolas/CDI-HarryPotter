@@ -1,18 +1,18 @@
 // queries.js
 import pool from "./dbConfig.js";
 
-const query = async (query, values) => { // async function
-  return new Promise((resolve, reject) => { // returns a promise
-    pool.getConnection((err, connection) => { // gets a connection from the pool
-      if (err) { // if there's an error, reject the promise
+const query = async (query, values) => { // query permet d'envoyer une requête à la base de données
+  return new Promise((resolve, reject) => { // query renvoie une promesse qui sera résolue ou rejetée
+    pool.getConnection((err, connection) => { // getConnection permet de récupérer une connexion à la base de données
+      if (err) { // si il y a une erreur, reject la promesse
         reject(err);
-      } else { // if there's no error, run the query
-        connection.query(query, values, (err, rows) => {
-          connection.release(); // release the connection back to the pool
-          if (err) { // if there's an error, reject the promise
+      } else { // sinon on envoie la requête à la base de données
+        connection.query(query, values, (err, rows) => { // query permet d'envoyer une requête à la base de données
+          connection.release(); // on libère la connexion
+          if (err) { // si il y a une erreur, reject la promesse
             reject(err);
           } else {
-            resolve(rows); // if there's no error, resolve the promise
+            resolve(rows); // sinon on résout la promesse avec les données de la requête
           }
         });
       }
