@@ -1,7 +1,6 @@
 // authenticateToken middleware
-const jwt = require('jsonwebtoken');
-
-async function authenticateToken(req, res, next) {
+import jwt from 'jsonwebtoken';
+ export default async function authenticateToken(req, res, next) {
   const token = req.cookies.AuthToken; // Récupération du token depuis les cookies
 
   if (!token) {
@@ -14,9 +13,9 @@ async function authenticateToken(req, res, next) {
       console.log ('token invalide', err)
       return res.redirect('/');
     }
-    req.user = decodedToken.user; 
+    req.user = decodedToken.user;
     next();
   });
-};
+}
 
-module.exports = authenticateToken;
+

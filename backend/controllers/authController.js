@@ -1,9 +1,9 @@
 // controllers/loginController.js
-const jwt = require("jsonwebtoken");
-const utils = require("../lib/utils");
-const { query } = require("../config/queries");
+import { hashPassword } from "../lib/utils.js";
+import { query } from "../config/queries.js";
+import jwt from "jsonwebtoken";
 
-async function login(req, res) {
+export async function login(req, res) {
   try { 
     const user = req.user; // Récupère l'utilisateur authentifié par le middleware authenticateToken 
     const token = jwt.sign({ user }, "secretKey"); // Crée un token avec l'utilisateur authentifié
@@ -18,7 +18,7 @@ async function login(req, res) {
   }
 }
 
-async function logout(req, res) {
+export async function logout(req, res) {
   try {
     // Supprime le cookie d'authentification
     res.clearCookie("AuthToken").redirect('/'); // Supprime le cookie d'authentification et redirige vers la page d'accueil
@@ -27,7 +27,7 @@ async function logout(req, res) {
     res.status(500).json({ error: "Error logging out" });
   }
 };
-async function signup(req, res) {
+export async function signup(req, res) {
   try {
     const { username, password, name, email } = req.body; // Récupère les données du formulaire d'inscription
 
@@ -48,7 +48,7 @@ async function signup(req, res) {
       return res.status(400).json({ error: "Email already exists" });
     }
 
-    const hashedPassword = await utils.hashPassword(password); // Hash le mot de passe entré par l'utilisateur
+    const hashedPassword = await hashPassword(password); // Hash le mot de passe entré par l'utilisateur
     console.log (hashedPassword);
 
     await query( // Crée un nouvel utilisateur
@@ -64,10 +64,3 @@ async function signup(req, res) {
     res.status(500).json({ error: "Error signing up" });
   }
 }
-
-
-module.exports = { 
-  login,
-  logout,
-  signup,
-}; 

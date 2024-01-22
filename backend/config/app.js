@@ -1,18 +1,22 @@
-const express = require("express");
+// app.js
+import express from "express";
+import path from "path";
+import cookieParser from "cookie-parser";
+import bodyParser from "body-parser";
+import authenticateToken from "../middleware/authenticateToken.js";
+import authRoute from "../routes/auth.js";
+import profilRoute from "../routes/profil.js";
+import indexRoute from "../routes/index.js";
+import drawRoute from "../routes/draw.js";
+import changeInfosRoute from "../routes/changeInfos.js"
+import { fileURLToPath } from "url";
+
+
+
+const __filename = fileURLToPath(import.meta.url); // Equivalent to __filename in Node.js
+const __dirname = path.dirname(__filename); // Equivalent to __dirname in Node.js
+
 const app = express();
-const path = require("path");
-const cookieParser = require("cookie-parser");
-const bodyParser = require("body-parser");
-const authenticateToken = require('../middleware/authenticateToken');
-const authRoute = require("../routes/auth");
-const profilRoute = require("../routes/profil");
-const indexRoute = require("../routes/index");
-const drawRoute = require("../routes/draw");
-const changeInfosRoute = require("../routes/changeInfos");
-const { query } = require("../config/queries");
-const jwt = require("jsonwebtoken");
-
-
 const port = process.env.PORT || 3000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -20,11 +24,11 @@ app.use(bodyParser.json());
 app.use(express.json());
 app.use(cookieParser());
 
-// Configuration pour servir les fichiers statiques (CSS, JavaScript, images)
+// Serve static files
 app.use(express.static(path.join(__dirname, "../../frontend")));
 
 
-// Routes pour les pages HTML
+// HTML pages routes
 app.get("/login", (req, res) => {
   res.sendFile(path.join(__dirname, "../../frontend/login.html"));
 });
@@ -33,7 +37,6 @@ app.get("/signup", (req, res) => {
   res.sendFile(path.join(__dirname, "../../frontend/signup.html"));
 });
 
-
 app.get("/profil", authenticateToken, (req, res) => {
   res.sendFile(path.join(__dirname, "../../frontend/profil.html"));
 });
@@ -41,18 +44,17 @@ app.get("/profil", authenticateToken, (req, res) => {
 app.get("/settings", authenticateToken, (req, res) => {
   res.sendFile(path.join(__dirname, "../../frontend/settings.html"));
 });
+
 app.get("/changeinfos", authenticateToken, (req, res) => {
   res.sendFile(path.join(__dirname, "../../frontend/settings.html"));
 });
 
-
-
-// Utilisation des routes
-app.use("/", authRoute); 
+// Use routes
+app.use("/", authRoute);
 app.use("/", profilRoute);
 app.use("/", indexRoute);
 app.use("/", drawRoute);
 app.use("/", changeInfosRoute);
 
-// Lancement du serveur
+// Start the server
 app.listen(port, () => console.log(`Listening on port ${port}`));

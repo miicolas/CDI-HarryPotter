@@ -1,6 +1,6 @@
-const { query } = require("../config/queries");
+import { query } from "../config/queries.js";
 
-async function getProfil(req, res) {
+export async function getProfil(req, res) {
   try {
     const userId = req.user.id; // Récupère l'id de l'utilisateur à partir du token
     if (!userId) {
@@ -46,7 +46,7 @@ async function getProfil(req, res) {
   }
 }
 
-async function getProfilSettings(req, res) {
+export async function getProfilSettings(req, res) {
   try {
     const userId = req.user.id; // Récupère l'id de l'utilisateur à partir du token
 
@@ -91,4 +91,3 @@ async function getProfilSettings(req, res) {
     });
   }
 }
-module.exports = { getProfil, getProfilSettings };

@@ -1,7 +1,7 @@
-const hash = require ("../lib/utils")
-const { query } = require("../config/queries");
+import {hashPassword} from "../lib/utils.js";
+import { query } from "../config/queries.js";
 
-async function updateProfilInfos(req, res) { 
+export async function updateProfilInfos(req, res) {
   try {
     const userId = req.user.id;
     let { username, password, name, email } = req.body;
@@ -16,7 +16,7 @@ async function updateProfilInfos(req, res) {
         await query("UPDATE Users SET username = ? WHERE id = ?", [username, userId]);
       }
       if (password && password.length > 7) {
-        const hashedPassword = await hash.hashPassword(password);
+        const hashedPassword = await hashPassword(password);
         if (hashedPassword === user[0].password) {
           return res.status(400).json({ error: "Le mot de passe n'a pas" +
                 " changé" });
@@ -38,5 +38,3 @@ async function updateProfilInfos(req, res) {
     res.status(500).json({ error: "Erreur dans la mise à jour du profil" });
   }
 }
-
-module.exports = { updateProfilInfos };

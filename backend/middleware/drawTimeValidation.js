@@ -1,7 +1,7 @@
 // controllers/drawController.js
-const { query } = require("../config/queries");
+import { query } from "../config/queries.js";
 
-async function drawTime(req, res, next) {
+export default async function drawTime(req, res, next) {
   try {
     const userId = req.user.id;
     const lastDrawTime = await query( "SELECT lastDraw FROM Users WHERE id = ?", [userId]);
@@ -39,4 +39,3 @@ async function drawTime(req, res, next) {
   }
 }
 
-module.exports = drawTime;

@@ -1,5 +1,5 @@
 // dbConfig.js
-const mysql = require("mysql");
+import mysql from "mysql";
 
 const pool = mysql.createPool({ // create the pool
   host: "localhost",
@@ -9,4 +9,4 @@ const pool = mysql.createPool({ // create the pool
   socketPath: "/Applications/MAMP/tmp/mysql/mysql.sock", 
 });
 
-module.exports = pool;
+export default pool;

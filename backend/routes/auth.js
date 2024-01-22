@@ -1,14 +1,16 @@
-// routes/auth.js
-const express = require("express");
+// routes/auth.js;
+import express from "express";
 const router = express.Router();
-const authController = require("../controllers/authController");
-const authValidation = require("../middleware/authValidation");
+import { login, logout, signup} from "../controllers/authController.js";
+import { validateSignup, validateLogin, validateLogout } from "../middleware/authValidation.js";
 
-router.post("/signup", authValidation.validateSignup, authController.signup); // Vérifie
+
+router.post("/signup", validateSignup, signup); // Vérifie
 // les données du
 // formulaire d'inscription et crée un nouvel utilisateur
-router.get("/logout", authValidation.validateLogout,authController.logout);  // Supprime le token pour déconnecter l'utilisateur
-router.post("/login", authValidation.validateLogin,authController.login);  // Vérifie les données du formulaire de connexion et connecte l'utilisateur
+router.get("/logout", validateLogout, logout);  // Supprime le token
+// pour déconnecter l'utilisateur
+router.post("/login", validateLogin, login);  // Vérifie les
+// données du formulaire de connexion et connecte l'utilisateur
 
-
-module.exports = router;
+export default router;

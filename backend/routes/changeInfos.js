@@ -1,11 +1,12 @@
 // routes/signup.js
 
-const express = require("express");
+import express from "express";
 const router = express.Router();
-const changeInfosController = require("../controllers/changeInfosController");
-const authenticateToken = require("../middleware/authenticateToken");
-const updateInfosValidation = require("../middleware/updateInfosValidation");
+import { updateProfilInfos } from "../controllers/changeInfosController.js";
+import authenticateToken from "../middleware/authenticateToken.js";
+import updateInfosValidation from "../middleware/updateInfosValidation.js";
 
-router.post("/changeinfos", authenticateToken, updateInfosValidation, changeInfosController.updateProfilInfos); // Vérifie le token et met à jour les infos de l'utilisateur
+router.post("/changeinfos", authenticateToken, updateInfosValidation, updateProfilInfos); // Vérifie le token et met à jour les infos de l'utilisateur
 
-module.exports = router;
+
+export default router;

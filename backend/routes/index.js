@@ -1,9 +1,10 @@
 // routes/index.js
-const express = require("express");
+import express from "express";
 const router = express.Router();
-const cardController = require("../controllers/cardController"); 
+import { getAllCards } from "../controllers/cardController.js";
 
 
-router.get("/cards", cardController.getAllCards); // Renvoie toutes les cartes de la base de données
+router.get("/cards", getAllCards); // Renvoie toutes les cartes de la base
+// de données
 
-module.exports = router; 
+export default router;

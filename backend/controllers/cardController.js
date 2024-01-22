@@ -1,7 +1,7 @@
 // controllers/profilController.js
-const { query } = require("../config/queries");
+import { query } from "../config/queries.js";
 
-async function getAllCards(req, res) {
+export async function getAllCards(req, res) {
   try {
     const cards = await query("SELECT image, altText, house FROM cards"); // Récupère toutes les cartes de la base de données
     res.status(200).json(cards);
@@ -11,6 +11,3 @@ async function getAllCards(req, res) {
 }
 }
 
-module.exports = {
-  getAllCards,
-};

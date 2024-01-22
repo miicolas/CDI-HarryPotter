@@ -1,6 +1,6 @@
-const { query } = require("../config/queries");
+import { query } from "../config/queries.js";
 
-async function checkExistingUserData(req, res, next) {
+export async function checkExistingUserData(req, res, next) {
   try {
     const { username, email } = req.body;
     const userId = req.user.id;
@@ -27,4 +27,4 @@ async function checkExistingUserData(req, res, next) {
   }
 }
 
-module.exports =  checkExistingUserData ;
+export default checkExistingUserData;

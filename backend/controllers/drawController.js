@@ -1,7 +1,7 @@
 // controllers/drawController.js
-const { query } = require("../config/queries");
+import { query } from "../config/queries.js";
 
-async function getDrawCards(req, res) {
+export async function getDrawCards(req, res) {
   try {
     const userId = req.user.id; // Récupère l'id de l'utilisateur à partir du token
 
@@ -48,7 +48,3 @@ async function getDrawCards(req, res) {
     res.status(500).send("Erreur serveur");
   }
 }
-
-module.exports = {
-  getDrawCards,
-};

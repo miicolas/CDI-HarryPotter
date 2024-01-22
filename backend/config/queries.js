@@ -1,5 +1,5 @@
 // queries.js
-const pool = require("./dbConfig");
+import pool from "./dbConfig.js";
 
 const query = async (query, values) => { // async function
   return new Promise((resolve, reject) => { // returns a promise
@@ -20,4 +20,4 @@ const query = async (query, values) => { // async function
   });
 };
 
-module.exports = { query }; 
+export { query };

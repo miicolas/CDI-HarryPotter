@@ -1,13 +1,14 @@
 {
-  
-    "name": "CDI-HARRYPOTTER",
-    "version": "1.0.0",
-    "scripts": {
-      "start": "node ./backend/config/app.js",
-      "dev": "nodemon ./backend/config/app.js" 
-    },
+  "name": "CDI-HARRYPOTTER",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node ./backend/config/app.js",
+    "dev": "nodemon ./backend/config/app.js"
+  },
   "dependencies": {
     "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
     "cookie-parser": "^1.4.6",
     "dotenv": "^16.3.1",
     "ejs": "^3.1.9",

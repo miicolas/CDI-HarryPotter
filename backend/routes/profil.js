@@ -1,10 +1,10 @@
 // routes/profil.js
-const express = require("express");
+import express from "express";
 const router = express.Router();
-const authenticateToken = require('../middleware/authenticateToken');
-const profilController = require("../controllers/profilController"); 
+import authenticateToken from "../middleware/authenticateToken.js";
+import { getProfil, getProfilSettings} from "../controllers/profilController.js";
 
-router.get("/getprofile", authenticateToken, profilController.getProfil); // Vérifie le token et renvoie les infos de l'utilisateur du profil
-router.get("/getuserinfos", authenticateToken, profilController.getProfilSettings);  // Vérifie le token et renvoie les infos de l'utilisateur pour les réglages du compte
+router.get("/getprofile", authenticateToken, getProfil); // Vérifie le token et renvoie les infos de l'utilisateur du profil
+router.get("/getuserinfos", authenticateToken, getProfilSettings);  // Vérifie le token et renvoie les infos de l'utilisateur pour les réglages du compte
 
-module.exports = router;
+export default router;
