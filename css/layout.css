@@ -1,0 +1,40 @@
+@import url("global.css");
+
+/*
+Header
+*/
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  align-items: center;
+}
+
+.logo {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+}
+
+li a{
+  font-size: 1rem;
+  color: var(--color-secondary);
+  transition: color 0.5s ease-in;
+}
+
+li a:hover {
+  color: var(--color-secondary-hover);
+  transition: color 0.3s ease-in;
+}
+
+
+
+
+
+

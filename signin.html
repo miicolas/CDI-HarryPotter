@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Connexion</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/signin.css">
+</head>
+<body>
+
+<header class="logo_signin">
+  <nav>
+    <a href="index.html">
+      <div class="logo_container">
+        <img class="logo" src="img/logo.png" alt="logo Harry Potter">
+      </div>
+    </a>
+  </nav>
+</header>
+
+<section id="account">
+  <div class="account_container">
+    <div class="account_content">
+      <div class="account_background">
+        <video class="account_background_content" autoplay muted loop>
+          <source src="img/hero.mp4" type="video/mp4"/>
+        </video>
+      </div>
+    </div>
+    <div class="account_content">
+      <div class="account_tab">
+        <button class="account_tab_button" onclick="openTab(event, 'signin')"
+                id="defaultOpen">Connexion
+        </button>
+        <button class="account_tab_button" onclick="openTab(event, 'signup')"
+        >Inscription
+        </button>
+      </div>
+      <div id="signin" class="tab_content active">
+        <h1>Connecte-toi à ton compte</h1>
+        <p class="tab_content_subtitle">Entre tes informations pour te
+          connecter</p>
+        <form class="account_content_form"
+              action="dashboard.html" method="POST">
+          <div class="account_content_form_content">
+            <label for="email_signin">Email</label>
+            <input type="email" id="email_signin" name="email" required
+                   placeholder="Adresse mail">
+          </div>
+          <div class="account_content_form_content">
+            <label for="password_signin">Mot de passe</label>
+            <input type="password" id="password_signin" name="password" required
+                   placeholder="Mot de passe">
+          </div>
+          <div class="account_content_form_content">
+            <input type="submit" value="Connexion">
+          </div>
+        </form>
+      </div>
+      <div id="signup" class="tab_content">
+        <h1>Inscris toi</h1>
+        <p class="tab_content_subtitle">Complète tes informations</p>
+        <form class="account_content_form" action="dashboard.html"
+              method="POST" id="signup_form">
+          <div class="account_content_form_content">
+            <label for="email_signup">Email</label>
+            <input type="email" id="email_signup" name="email" required
+                   placeholder="Adresse mail">
+          </div>
+          <div class="account_content_form_content">
+            <label for="name">Nom</label>
+            <input type="text" id="name" name="Prénom" required
+                   placeholder="Prénom">
+          </div>
+          <div class="account_content_form_content">
+            <label for="password_signup">Mot de passe</label>
+            <input type="password" id="password_signup" name="password" required
+                   placeholder="Mot de passe">
+          </div>
+          <div class="account_content_form_content">
+            <label for="countries">Select your country</label>
+            <select id="countries" required>
+              <option value="">--Votre pays--</option>
+              <option>United States</option>
+              <option>Canada</option>
+              <option>France</option>
+              <option>Germany</option>
+            </select>
+          </div>
+          <div class="account_content_form_content ">
+            <div class="input_terms">
+              <input id="terms" type="checkbox" value="" required>
+              <label for="terms">J'accepte
+                <a href="#" class="">les termes et les conditions
+                  d'utilisations</a></label>
+            </div>
+
+            <p class="error_form">Le mot de passe n'est pas correct</p>
+
+            <div class="account_content_form_content">
+              <input type="submit" value="Inscription"
+              >
+            </div>
+          </div>
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+<script src="js/signin.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
