@@ -44,6 +44,37 @@
   animation: closeTab 0.5s;
 }
 
+.sideBar_container {
+  padding: 1rem;
+}
+.sideBar_title {
+  text-align: center;
+}
+.sideBar_content {
+  margin-top: 20rem;
+}
+.sideBar_content .sideBar_btn {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.button_sideBar {
+  padding: 1rem;
+  cursor: pointer;
+  text-align: center;
+  color: var(--color-text-2);
+  font-weight: 200;
+  border-top: gray 1px solid;
+  transition: ease-in-out 0.5s;
+}
+
+.button_sideBar:hover {
+  background-color: rgba(0, 0, 0, 0.11);
+  transition: ease-in-out 0.5s;
+}
+
+
 @keyframes openTab {
   0% {
     opacity: 0;

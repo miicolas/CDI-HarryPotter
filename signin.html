@@ -68,6 +68,7 @@
             <input type="email" id="email_signup" name="email" required
                    placeholder="Adresse mail">
           </div>
+
           <div class="account_content_form_content">
             <label for="name">Nom</label>
             <input type="text" id="name" name="Prénom" required
@@ -79,7 +80,13 @@
                    placeholder="Mot de passe">
           </div>
           <div class="account_content_form_content">
-            <label for="countries">Select your country</label>
+            <label for="confirmPassword">Mot de passe</label>
+            <input type="password" id="confirmPassword" name="password"
+                   required
+                   placeholder="Mot de passe de confirmation">
+          </div>
+          <div class="account_content_form_content">
+            <label for="countries">Choisi ton pays</label>
             <select id="countries" required>
               <option value="">--Votre pays--</option>
               <option>United States</option>
@@ -95,12 +102,13 @@
                 <a href="#" class="">les termes et les conditions
                   d'utilisations</a></label>
             </div>
+            <div class="error_form">
+              <ul id="error_list"></ul>
+            </div>
 
-            <p class="error_form">Le mot de passe n'est pas correct</p>
-
+            <p class="success_form">Le formulaire est correct.</p>
             <div class="account_content_form_content">
-              <input type="submit" value="Inscription"
-              >
+              <input type="submit" value="Inscription">
             </div>
           </div>
         </form>

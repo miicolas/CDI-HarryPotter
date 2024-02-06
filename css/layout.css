@@ -16,10 +16,9 @@ nav {
   height: 2.5rem;
 }
 
-ul {
+nav ul {
   display: flex;
   list-style: none;
-  gap: 1rem;
 }
 
 li a{
