@@ -12,17 +12,6 @@
   <link rel="stylesheet" href="css/announcement.css">
   <meta name="description" content="">
 
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
-
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="icon.png">
-
-  <link rel="manifest" href="site.webmanifest">
-  <meta name="theme-color" content="#fafafa">
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 </head>
@@ -37,12 +26,24 @@
     <div class="logo_container">
       <img class="logo" src="img/logo.png" alt="logo Harry Potter">
     </div>
+    <!-- Menu Classique -->
     <ul>
       <li><a href="signin.html">
         <div class="button-primary">Connexion</div>
       </a></li>
-
+      <li><div class="button-secondary dark_mode_button">DarkMode</div></li>
     </ul>
+    <!-- Menu Burger -->
+    <div class="menu_icon" id="menuIcon">&#9776;</div>
+    <div class="overlay" id="overlay">
+      <div class="close_icon" id="closeIcon">&times;</div>
+      <ul class="overlay_content">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="signin.html">Connexion</a></li>
+        <li><div class="button-secondary dark_mode_button">DarkMode</div></li>
+
+      </ul>
+    </div>
   </nav>
 
 </header>
@@ -52,9 +53,8 @@
       <video class="hero_background_content" autoplay muted loop>
         <source src="img/hero.mp4" type="video/mp4"/>
       </video>
-      <div class="fade-out">
-      </div>
     </div>
+
     <div class="hero_title_container">
 
       <img class="hero_title" src="img/logo2.png" alt="Harry Potter">
@@ -85,7 +85,6 @@
     </div>
   </section>
   <section id="rules">
-    <div class="fade-in"></div>
     <div class="rules_container">
       <div class="rules_panel">
         <h2>Les règles du jeu</h2>
@@ -121,21 +120,20 @@
       </div>
       <a href="signin.html">
         <div class="button-primary rules_button">
-          <svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24" ><path d="M23.12,9.91,19.25,6a1,1,0,0,0-1.42,0h0a1,1,0,0,0,0,1.41L21.39,11H1a1,1,0,0,0-1,1H0a1,1,0,0,0,1,1H21.45l-3.62,3.61a1,1,0,0,0,0,1.42h0a1,1,0,0,0,1.42,0l3.87-3.88A3,3,0,0,0,23.12,9.91Z"/></svg>
-
+          <svg xmlns="http://www.w3.org/2000/svg" id="Outline"
+               viewBox="0 0 24 24">
+            <path
+              d="M23.12,9.91,19.25,6a1,1,0,0,0-1.42,0h0a1,1,0,0,0,0,1.41L21.39,11H1a1,1,0,0,0-1,1H0a1,1,0,0,0,1,1H21.45l-3.62,3.61a1,1,0,0,0,0,1.42h0a1,1,0,0,0,1.42,0l3.87-3.88A3,3,0,0,0,23.12,9.91Z"/>
+          </svg>
           Tirer vos premières cartes !
         </div>
       </a>
     </div>
   </section>
-
-
-
-</main>-->
+</main>
 <footer>
 
 </footer>
-<script src="js/app.js"></script>
 <script
   src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="js/app.js"></script>

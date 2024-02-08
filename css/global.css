@@ -1,6 +1,6 @@
 :root {
   --background-color: #12100B;
-  --background-color-dark: #000000;
+  --background-color-dark: rgb(255, 255, 255);
   --color-text: #DA9230;
   --color-text-hover: #91601d;
   --color-text-2: #12100B;
@@ -11,6 +11,15 @@
   --color-primary-hover: #91601d;
   --color-secondary: #e7e7e7;
   --color-secondary-hover: #bbbbbb;
+}
+
+.dark-mode{
+  background-color: var(--background-color-dark);
+  color: var(--color-secondary);
+}
+
+.dark-mode p {
+  color: var(--color-text-2);
 }
 
 .button-primary {
@@ -27,12 +36,37 @@
   display: flex;
   align-items: center;
   margin: auto;
+  font-family: "Apfel Grotezk", sans-serif;
 }
 
 .button-primary:hover {
   transform: scale(0.98);
   background-color: var(--color-primary-hover);
   color: var(--color-text-3-hover);
+  transition: all 0.1s ease-in;
+
+}
+.button-secondary {
+  font-family: "Apfel Grotezk", sans-serif;
+  background-color: transparent;
+  color: var(--color-text);
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  border: var(--color-primary) 2px solid;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  font-size: 1rem; /* 16px */
+  line-height: 1.5rem; /* 24px */
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
+
+.button-secondary:hover {
+  transform: scale(0.98);
+  background-color: var(--color-primary-hover);
+  color: var(--color-text-2-hover);
   transition: all 0.1s ease-in;
 
 }

@@ -26,11 +26,17 @@ function formVerification() {
     e.preventDefault();
 
     let email = document.querySelector("#email_signup");
+    let name = document.querySelector("#name");
     let password = document.querySelector("#password_signup");
     let confirmPassword = document.querySelector("#confirmPassword");
 
+
     const errorList = document.getElementById("error_list");
-    errorList.innerHTML = ""; // Clear any previous errors
+    errorList.innerHTML = "";
+
+    if (name.value === "" || name.value.length < 6) {
+      addErrorToList("Le nom doit contenir au moins 6 caractères");
+    }
 
     if (email.value === "" || email.value.indexOf("@") === -1) {
       addErrorToList("L'adresse email n'est pas valide");
@@ -47,16 +53,14 @@ function formVerification() {
     }
 
     if (errorList.children.length > 0) {
-      // If there are errors, display them and prevent form submission
       const errorMessage = document.querySelector(".error_form");
       errorMessage.style.display = "block";
     } else {
-      // If no errors, submit the form
       const successMessage = document.querySelector(".success_form");
       successMessage.style.display = "block";
       setTimeout(() => {
         form.submit();
-      }, 3000);
+      }, 2000);
     }
 
     console.log("Formulaire envoyé");

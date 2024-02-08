@@ -73,7 +73,7 @@ input[type=email], input[type=password], input[type=submit], input[type=text], s
   background-color: var(--color-secondary);
   color: var(--color-text-2);
   border-radius: 0.5rem;
-  padding: 0.75rem;
+  padding: 0.5rem;
   border: 1px solid var(--color-text-2);
   font-size: 1rem;
   width: 25rem;
@@ -165,6 +165,8 @@ input[type=submit]:hover {
   color: red;
   font-size: 0.75rem;
   padding: 0.25rem;
+  width: 100%;
+  margin-left:0.5rem;
 }
 .success_form {
   display: none;
@@ -173,7 +175,7 @@ input[type=submit]:hover {
   padding: 0.25rem;
 }
 
-success {
+.success {
   border: green 1px solid;
 }
 
@@ -202,5 +204,13 @@ success {
   }
 }
 
-
+/* Reponsive */
+@media (max-width: 1024px) {
+  .account_content.background {
+    display: none;
+  }
+  .account_content {
+    width: 100%;
+  }
+}
 
