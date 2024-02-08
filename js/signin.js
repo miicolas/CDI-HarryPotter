@@ -1,4 +1,7 @@
-document.getElementById("defaultOpen").click();
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("defaultOpen").click();
+  formVerification();
+});
 
 function openTab(e, tabName) {
   let i = 0;
@@ -19,34 +22,55 @@ function openTab(e, tabName) {
 
 function formVerification() {
   const form = document.getElementById("signup_form");
-  console.log (form);
   form.addEventListener("submit", function (e) {
     e.preventDefault();
-    const email = form.email.value;
-    const password = form.password.value;
-    console.log(email, password);
 
-    const errorMessage = document.querySelector(".error_form");
-    console.log(errorMessage);
+    let email = document.querySelector("#email_signup");
+    let name = document.querySelector("#name");
+    let password = document.querySelector("#password_signup");
+    let confirmPassword = document.querySelector("#confirmPassword");
 
-    const regexPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
 
-    if (password.length < 8 || !regexPassword.test(password)) {
+    const errorList = document.getElementById("error_list");
+    errorList.innerHTML = "";
+
+    if (name.value === "" || name.value.length < 6) {
+      addErrorToList("Le nom doit contenir au moins 6 caractères");
+    }
+
+    if (email.value === "" || email.value.indexOf("@") === -1) {
+      addErrorToList("L'adresse email n'est pas valide");
+    }
+
+    const regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[-+_!@#$%^&*.,?]).{8,}$/;
+
+    if (password.value.length < 8 || regexPassword.test(password.value) === false) {
+      addErrorToList("Le mot de passe doit contenir au moins 8 caractères, une majuscule, une minuscule, un chiffre et un caractère spécial");
+    }
+
+    if (password.value !== confirmPassword.value || confirmPassword.value === "") {
+      addErrorToList("Les mots de passe ne correspondent pas");
+    }
+
+    if (errorList.children.length > 0) {
+      const errorMessage = document.querySelector(".error_form");
       errorMessage.style.display = "block";
-      console.log("Mot de passe invalide");
-    }
-    else {
-      // Envoi du formulaire
-      form.submit();
-      console.log("Formulaire envoyé");
+    } else {
+      const successMessage = document.querySelector(".success_form");
+      successMessage.style.display = "block";
+      setTimeout(() => {
+        form.submit();
+      }, 2000);
     }
 
+    console.log("Formulaire envoyé");
   });
+
+  function addErrorToList(errorMessage) {
+    const errorList = document.getElementById("error_list");
+    const errorItem = document.createElement("li");
+    errorItem.textContent = errorMessage;
+    errorList.appendChild(errorItem);
+  }
 }
-
-document.addEventListener("DOMContentLoaded", function () {
-  formVerification();
-
-});
-
 
