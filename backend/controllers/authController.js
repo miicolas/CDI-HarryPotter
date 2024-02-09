@@ -50,7 +50,6 @@ export async function signup(req, res) {
     }
 
     const hashedPassword = await hashPassword(password); // Hash le mot de passe entré par l'utilisateur
-    console.log (hashedPassword);
 
     await query( // Crée un nouvel utilisateur
       "INSERT INTO Users (email, username, password, name) VALUES  (?, ?, ?," +
@@ -58,7 +57,7 @@ export async function signup(req, res) {
       [email, username, hashedPassword, name]
     );
 
-    res.redirect("/login");
+    res.redirect("/login.html");
 
   } catch (error) {
     console.error(error);

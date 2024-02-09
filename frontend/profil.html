@@ -88,17 +88,14 @@
 
             <div class="interaction-search-filter">
                 <!-- Container de la recherche et du filtre -->
-                <div class="search-container"><!-- Container de la recherche -->
-                    <input type="text" id="search"
-                           placeholder="Search for names.."/>
+                <div class="search-container">
+                    <!-- Container de la barre de recherche :  -->
+                    <input type="text" id="search" placeholder="Search for names.." />
                     <button type="submit">
-                        <svg class="loop-search" aria-hidden="true"
-                             xmlns="http://www.w3.org/2000/svg"
-                             fill="transparent"
+                        <svg class="loop-search" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="transparent"
                              viewBox="0 0 20 20">
-                            <path stroke="currentColor" stroke-linecap="round"
-                                  stroke-linejoin="round" stroke-width="2"
-                                  d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                         </svg>
                     </button>
                 </div>
@@ -204,11 +201,9 @@
           <p>${data.message}</p>
         `;
             }
+
             const likeButton = document.querySelectorAll(".like-button");
-            console.log(likeButton);
-
             likeButton.forEach(function (button) {
-
                 button.addEventListener("click", function () {
                     button.classList.toggle("like-button--active");
                 });
@@ -217,9 +212,6 @@
         .catch(error => {
             console.error('Erreur de fetch:', error);
         });
-
-
 </script>
 <script defer src="js/script.js"></script>
-
 </html>

@@ -94,3 +94,5 @@ input[disabled] {
   color: var(--hover);
   cursor: not-allowed;
 }
+
+input[type="text"] {}

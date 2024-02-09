@@ -10,6 +10,12 @@ nav {
 
 .logo {
   height: 3rem;
+  cursor: pointer;
+  transition: scale 0.2s ease-in-out;
+}
+.logo:hover {
+  scale: 0.95;
+  transition: scale 0.2s ease-in-out;
 }
 
 nav ul {
