@@ -30,10 +30,10 @@
     </div>
     <div class="account_content">
       <div class="account_tab">
-        <button class="account_tab_button" onclick="openTab(event, 'signin')"
-                id="defaultOpen">Connexion
+        <button class="account_tab_button active"  data-tab="signin"
+            >Connexion
         </button>
-        <button class="account_tab_button" onclick="openTab(event, 'signup')"
+        <button class="account_tab_button"  data-tab="signup"
         >Inscription
         </button>
       </div>
@@ -119,8 +119,7 @@
   </div>
 
 </section>
-<script src="js/signin.js"></script>
-<script src="js/app.js"></script>
+<script defer src="js/app.js"></script>
 
 </body>
 </html>
