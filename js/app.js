@@ -73,53 +73,10 @@ function navTap() {
   });
 }
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-function openTab(e, tabName) {
-  let i = 0;
-  const tabcontent = document.getElementsByClassName("tab_content");
-  const tabbutton = document.getElementsByClassName("account_tab_button");
-=======
-
-function openTab() {
-  
-// Register event listeners for tab buttons
-document.querySelectorAll(".account_tab_button").forEach(button => {
-  button.addEventListener("click", function() {
-    // Remove 'active' class from all tab buttons
-    document.querySelectorAll(".account_tab_button").forEach(btn => {
-      btn.classList.remove("active");
-    });
-    // Add 'active' class to the clicked tab button
-    button.classList.add("active");
->>>>>>> Stashed changes
-
-    // Hide all tab contents
-    document.querySelectorAll(".tab_content").forEach(content => {
-      content.style.display = "none";
-    });
-
-    // Display the corresponding tab content
-    const tabName = button.dataset.tab;
-    document.getElementById(tabName).style.display = "block";
-  });
-});
-
-// Initially display the first tab content
-document.getElementById("signin").style.display = "block";
-
-}
-=======
-
->>>>>>> Stashed changes
-
 function formVerification() {
   const form = document.getElementById("signup_form");
-<<<<<<< Updated upstream
   if (!form) return;
-=======
-  if (!form) return
->>>>>>> Stashed changes
+
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
@@ -185,12 +142,9 @@ function burgerMenu() {
   const overlay = document.getElementById("overlay");
   const closeIcon = document.getElementById("closeIcon");
 
-<<<<<<< Updated upstream
-  if (!burgerIcon) return;
-=======
+
   if (!burgerIcon) return
 
->>>>>>> Stashed changes
 
   burgerIcon.addEventListener("click", function () {
     overlay.style.display = "flex";
@@ -217,22 +171,13 @@ tabButtons.forEach(button => {
       content.style.display = "none";
     });
 
-<<<<<<< Updated upstream
     const tabName = button.dataset.tab;
     const tabActive = document.getElementById(tabName);
     tabActive.style.display = "block";
   });
-=======
-document.addEventListener("DOMContentLoaded", function () {
-  burgerMenu();
-  darkMode();
-  Carousel();
-  navTap();
-  formVerification();
-
->>>>>>> Stashed changes
 });
 }
+
 
 document.addEventListener("DOMContentLoaded", function () {
   navTap();
