@@ -62,26 +62,49 @@ function navTap() {
   });
 }
 
+<<<<<<< Updated upstream
 function openTab(e, tabName) {
   let i = 0;
   const tabcontent = document.getElementsByClassName("tab_content");
   const tabbutton = document.getElementsByClassName("account_tab_button");
+=======
 
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
+function openTab() {
+  
+// Register event listeners for tab buttons
+document.querySelectorAll(".account_tab_button").forEach(button => {
+  button.addEventListener("click", function() {
+    // Remove 'active' class from all tab buttons
+    document.querySelectorAll(".account_tab_button").forEach(btn => {
+      btn.classList.remove("active");
+    });
+    // Add 'active' class to the clicked tab button
+    button.classList.add("active");
+>>>>>>> Stashed changes
 
-  for (i = 0; i < tabbutton.length; i++) {
-    tabbutton[i].classList.remove("active");
-  }
+    // Hide all tab contents
+    document.querySelectorAll(".tab_content").forEach(content => {
+      content.style.display = "none";
+    });
 
-  document.getElementById(tabName).style.display = "block";
-  e.currentTarget.classList.add("active");
+    // Display the corresponding tab content
+    const tabName = button.dataset.tab;
+    document.getElementById(tabName).style.display = "block";
+  });
+});
+
+// Initially display the first tab content
+document.getElementById("signin").style.display = "block";
+
 }
 
 function formVerification() {
   const form = document.getElementById("signup_form");
+<<<<<<< Updated upstream
   if (!form) return;
+=======
+  if (!form) return
+>>>>>>> Stashed changes
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
@@ -147,7 +170,12 @@ function burgerMenu() {
   const overlay = document.getElementById("overlay");
   const closeIcon = document.getElementById("closeIcon");
 
+<<<<<<< Updated upstream
   if (!burgerIcon) return;
+=======
+  if (!burgerIcon) return
+
+>>>>>>> Stashed changes
 
   burgerIcon.addEventListener("click", function () {
     overlay.style.display = "flex";
@@ -171,9 +199,19 @@ document.querySelectorAll(".account_tab_button").forEach(button => {
       content.style.display = "none";
     });
 
+<<<<<<< Updated upstream
     const tabName = button.dataset.tab;
     document.getElementById(tabName).style.display = "block";
   });
+=======
+document.addEventListener("DOMContentLoaded", function () {
+  burgerMenu();
+  darkMode();
+  Carousel();
+  navTap();
+  formVerification();
+
+>>>>>>> Stashed changes
 });
 
 // Initially display the first tab content
