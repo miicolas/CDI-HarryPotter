@@ -1,16 +1,27 @@
 function darkMode() {
   const darkModeButton = document.querySelectorAll(".dark_mode_button");
+  const rulesContent = document.querySelectorAll(".rules_content");
   const body = document.querySelector("body");
 
   if (localStorage.getItem("darkMode") === "true") {
     body.classList.add("dark-mode");
+    rulesContent.forEach((container) => {
+      container.classList.add("dark-mode");
+    });
   } else {
     body.classList.remove("dark-mode");
+    rulesContent.forEach((container) => {
+      container.classList.remove("dark-mode");
+    });
   }
   darkModeButton.forEach((button) => {
     button.addEventListener("click", function () {
       body.classList.toggle("dark-mode");
+      rulesContent.forEach((container) => {
+        container.classList.toggle("dark-mode");
+      });
       localStorage.setItem("darkMode", body.classList.contains("dark-mode"));
+      localStorage.setItem("darkMode", rulesContent.classList.contains("dark-mode"));
     });
   });
 }
@@ -63,6 +74,7 @@ function navTap() {
 }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 function openTab(e, tabName) {
   let i = 0;
   const tabcontent = document.getElementsByClassName("tab_content");
@@ -97,6 +109,9 @@ document.querySelectorAll(".account_tab_button").forEach(button => {
 document.getElementById("signin").style.display = "block";
 
 }
+=======
+
+>>>>>>> Stashed changes
 
 function formVerification() {
   const form = document.getElementById("signup_form");
@@ -189,19 +204,23 @@ function burgerMenu() {
   });
 }
 function openTab() {
-document.querySelectorAll(".account_tab_button").forEach(button => {
+
+const tabButtons = document.querySelectorAll(".account_tab_button");
+const tabContent = document.querySelectorAll(".tab_content");
+tabButtons.forEach(button => {
   button.addEventListener("click", function() {
-    document.querySelectorAll(".account_tab_button").forEach(btn => {
+    tabButtons.forEach(btn => {
       btn.classList.remove("active");
     });
     button.classList.add("active");
-    document.querySelectorAll(".tab_content").forEach(content => {
+    tabContent.forEach(content => {
       content.style.display = "none";
     });
 
 <<<<<<< Updated upstream
     const tabName = button.dataset.tab;
-    document.getElementById(tabName).style.display = "block";
+    const tabActive = document.getElementById(tabName);
+    tabActive.style.display = "block";
   });
 =======
 document.addEventListener("DOMContentLoaded", function () {
@@ -213,10 +232,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 >>>>>>> Stashed changes
 });
-
-// Initially display the first tab content
-document.getElementById("signin").style.display = "block";
-
 }
 
 document.addEventListener("DOMContentLoaded", function () {

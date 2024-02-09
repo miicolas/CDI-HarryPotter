@@ -45,7 +45,10 @@
   box-shadow: #14213D 0px 0px 10px;
   transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
 }
-
+.rules_content.dark-mode {
+  background: var(--background-color-dark);
+  color: var(--color-text-3);
+}
 .rules_content:hover {
   transform: scale(1.05);
   transition: all 0.3s ease-out;
@@ -109,7 +112,8 @@
   transform: translateX(0.5rem);
 }
 
-.rules_button {
+.button-primary.rules_button {
+  margin-top: 2rem; 
   gap: 1rem;
 
 }

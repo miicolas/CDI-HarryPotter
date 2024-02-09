@@ -13,14 +13,11 @@
   --color-secondary-hover: #bbbbbb;
 }
 
-.dark-mode{
+body.dark-mode{
   background-color: var(--background-color-dark);
   color: var(--color-secondary);
 }
 
-.dark-mode p {
-  color: var(--color-text-2);
-}
 
 .button-primary {
   background-color: var(--color-primary);
