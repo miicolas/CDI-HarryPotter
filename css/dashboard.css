@@ -1,3 +1,5 @@
+@import url("global.css");
+
 #dashboard {
   overflow: hidden;
 }
@@ -82,14 +84,14 @@
   }
   100% {
     opacity: 1;
-    transform: translateX(-0%);
+    transform: translateX(0%);
   }
 }
 
 @keyframes closeTab {
   0% {
     opacity: 1;
-    transform: translateX(-0%);
+    transform: translateX(0%);
   }
   100% {
     opacity: 0;

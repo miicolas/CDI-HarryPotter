@@ -65,6 +65,18 @@
   overflow: hidden;
 }
 
+.tab_content {
+  display: none;
+  padding: 1rem;
+  border: none;
+  animation: fadeEffect 1s;
+}
+
+.tab_content.active {
+  display: block;
+  animation: fadeIn 1s;
+}
+
 .account_content_form > * {
   margin-bottom: 1rem;
 }

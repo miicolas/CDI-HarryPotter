@@ -1,17 +1,18 @@
 function darkMode() {
-  const darkModeButton = document.querySelector(".dark_mode_button");
+  const darkModeButton = document.querySelectorAll(".dark_mode_button");
   const body = document.querySelector("body");
+
   if (localStorage.getItem("darkMode") === "true") {
     body.classList.add("dark-mode");
-  }
-  else {
+  } else {
     body.classList.remove("dark-mode");
   }
-  darkModeButton.addEventListener("click", function () {
-    body.classList.toggle("dark-mode");
-    localStorage.setItem("darkMode", body.classList.contains("dark-mode"));
+  darkModeButton.forEach((button) => {
+    button.addEventListener("click", function () {
+      body.classList.toggle("dark-mode");
+      localStorage.setItem("darkMode", body.classList.contains("dark-mode"));
+    });
   });
-
 }
 
 function Carousel() {
@@ -32,14 +33,15 @@ function Carousel() {
       prevEl: ".swiper-button-prev",
     },
   });
+  if (!swiper) return;
 }
-
 
 function navTap() {
   const btnOpen = document.getElementById("btn_open");
   const btnClose = document.getElementById("btn_close");
   const navContent = document.getElementById("nav_content");
-
+  if (!navContent) return;
+  console.log(btnOpen);
   btnOpen.addEventListener("click", function () {
     btnOpen.style.display = "none";
     navContent.style.display = "block";
@@ -60,7 +62,6 @@ function navTap() {
   });
 }
 
-
 function openTab(e, tabName) {
   let i = 0;
   const tabcontent = document.getElementsByClassName("tab_content");
@@ -80,6 +81,7 @@ function openTab(e, tabName) {
 
 function formVerification() {
   const form = document.getElementById("signup_form");
+  if (!form) return;
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
@@ -87,7 +89,6 @@ function formVerification() {
     let name = document.querySelector("#name");
     let password = document.querySelector("#password_signup");
     let confirmPassword = document.querySelector("#confirmPassword");
-
 
     const errorList = document.getElementById("error_list");
     errorList.innerHTML = "";
@@ -100,13 +101,22 @@ function formVerification() {
       addErrorToList("L'adresse email n'est pas valide");
     }
 
-    const regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[-+_!@#$%^&*.,?]).{8,}$/;
+    const regexPassword =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[-+_!@#$%^&*.,?]).{8,}$/;
 
-    if (password.value.length < 8 || regexPassword.test(password.value) === false) {
-      addErrorToList("Le mot de passe doit contenir au moins 8 caractères, une majuscule, une minuscule, un chiffre et un caractère spécial");
+    if (
+      password.value.length < 8 ||
+      regexPassword.test(password.value) === false
+    ) {
+      addErrorToList(
+        "Le mot de passe doit contenir au moins 8 caractères, une majuscule, une minuscule, un chiffre et un caractère spécial"
+      );
     }
 
-    if (password.value !== confirmPassword.value || confirmPassword.value === "") {
+    if (
+      password.value !== confirmPassword.value ||
+      confirmPassword.value === ""
+    ) {
       addErrorToList("Les mots de passe ne correspondent pas");
     }
 
@@ -133,41 +143,49 @@ function formVerification() {
 }
 
 function burgerMenu() {
-  const burgerIcon = document.getElementById('menuIcon');
-  const overlay = document.getElementById('overlay');
-  const closeIcon = document.getElementById('closeIcon');
+  const burgerIcon = document.getElementById("menuIcon");
+  const overlay = document.getElementById("overlay");
+  const closeIcon = document.getElementById("closeIcon");
 
+  if (!burgerIcon) return;
 
-  burgerIcon.addEventListener('click', function () {
+  burgerIcon.addEventListener("click", function () {
     overlay.style.display = "flex";
     burgerIcon.style.display = "none";
     closeIcon.style.display = "block";
-
-
   });
-  closeIcon.addEventListener('click', function () {
+  closeIcon.addEventListener("click", function () {
     overlay.style.display = "none";
     closeIcon.style.display = "none";
     burgerIcon.style.display = "block";
   });
 }
+function openTab() {
+document.querySelectorAll(".account_tab_button").forEach(button => {
+  button.addEventListener("click", function() {
+    document.querySelectorAll(".account_tab_button").forEach(btn => {
+      btn.classList.remove("active");
+    });
+    button.classList.add("active");
+    document.querySelectorAll(".tab_content").forEach(content => {
+      content.style.display = "none";
+    });
 
-document.addEventListener("DOMContentLoaded", function () {
-  burgerMenu();
-  darkMode();
-  Carousel();
-  navTap();
-  document.getElementById("defaultOpen").click();
-  formVerification();
-
+    const tabName = button.dataset.tab;
+    document.getElementById(tabName).style.display = "block";
+  });
 });
 
+// Initially display the first tab content
+document.getElementById("signin").style.display = "block";
 
+}
 
-
-
-
-
-
-
-
+document.addEventListener("DOMContentLoaded", function () {
+  navTap();
+  openTab();
+  burgerMenu();
+  darkMode();
+  formVerification();
+  Carousel();
+});
