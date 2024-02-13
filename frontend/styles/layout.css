@@ -61,7 +61,35 @@ nav li a:hover {
   width: 100vw;
   height: 100vh;
   z-index: 999;
+  animation: fadeIn 0.5s;
 }
+
+@keyframes fadeIn {
+  from {
+    background-color: #00000000;
+    transform: scale(0.90);
+  }
+  to {
+    background-color: #171717bb;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    background-color: #171717bb;
+    transform: scale(1);
+  }
+  to {
+    background-color: #00000000;
+    transform: scale(0.90);
+  }
+}
+
+.overlay.fadeOut {
+  animation: fadeOut 0.5s;
+}
+
 .close-icon {
   display: none;
   position: fixed;

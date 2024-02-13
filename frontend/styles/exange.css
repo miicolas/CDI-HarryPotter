@@ -36,7 +36,7 @@
   display: none;
   top: 0;
   left: 0;
-  background-color: var(--foreground);
+  background-color: rgba(0, 0, 0, 0.556);
   width: 100vw;
   height: 100vh;
   z-index: 999;
@@ -51,6 +51,7 @@
   width: 50%;
   border-radius: 1.25rem;
   z-index: 999;
+
 }
 
 .form-exange form {
@@ -58,8 +59,17 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: auto;
   gap: 1rem;
   padding: 2rem;
-  width: 100%;
+  width: 50%;
   height: 100%;
+}
+
+
+.login-description {
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-align: center;
+  padding: 2rem;
 }

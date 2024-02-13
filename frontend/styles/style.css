@@ -252,14 +252,22 @@ html {
     padding: 0.25rem 0.5rem;
     margin-top: 0.25rem;
     border-radius: 1.25rem;
+    transition: background-color 0.5s;
 }
 
 .filter-button button.select {
     background-color: var(--active);
+    animation : select 0.5s
 }
 
-.filter-button button.unselect {
-    background-color: var(--hover);
+
+@keyframes select {
+    from {
+        transform: scale(0.95);
+    }
+    to {
+        transform: scale(1);
+    }
 }
 
 .search-container {

@@ -9,9 +9,9 @@ export async function login(req, res) {
     const token = jwt.sign({ user }, "secretKey"); // Crée un token avec l'utilisateur authentifié
     console.log(token);
     res.cookie("AuthToken", token, { // Crée un cookie avec le token
-      httpOnly: true, 
-      secure: false,
-      sameSite: "strict",
+      httpOnly: true,  
+      secure: false, 
+      sameSite: "strict", 
     }).redirect('/profil'); // Redirige vers la page du profil
   } catch (error) {
     console.error(error);
@@ -25,7 +25,7 @@ export async function logout(req, res) {
     res.clearCookie("AuthToken").redirect('/'); // Supprime le cookie d'authentification et redirige vers la page d'accueil
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: "Error logging out" });
+    res.status(500).json({ error: "Erreur dans la déconnexion" });
   }
 };
 export async function signup(req, res) {
@@ -43,10 +43,10 @@ export async function signup(req, res) {
     );
 
     if (confirmUsername.length > 0) { // Si le nom d'utilisateur existe déjà, renvoie une erreur
-      return res.status(400).json({ error: "Username already exists" });
+      return res.status(400).json({ error: "L'utilisateur existe déjà" });
     } 
     if (confirmEmail.length > 0) { // Si l'email existe déjà, renvoie une erreur
-      return res.status(400).json({ error: "Email already exists" });
+      return res.status(400).json({ error: "L'email existe déjà" });
     }
 
     const hashedPassword = await hashPassword(password); // Hash le mot de passe entré par l'utilisateur
@@ -61,6 +61,6 @@ export async function signup(req, res) {
 
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: "Error signing up" });
+    res.status(500).json({ error: "Erreur lors de l'inscription" });
   }
 }

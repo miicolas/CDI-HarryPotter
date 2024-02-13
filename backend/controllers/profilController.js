@@ -54,11 +54,12 @@ export async function getProfilSettings(req, res) {
       "SELECT username, name, email, lastDraw FROM Users WHERE id = ?",
       [userId] // Récupère les infos de l'utilisateur à partir de l'id
     );
+
     if (userInfo.length === 0) {
       // Si l'utilisateur n'a pas d'infos, il n'est pas connecté
       return res.redirect("login");
     }
-
+    
     const lastDraw = userInfo[0].lastDraw; // Récupère la date du dernier tirage
     const currentTime = new Date().getTime(); // Obtenir le temps actuel et le temps restant jusqu'au prochain tirage
     const timeLeft = lastDraw + 24 * 60 * 60 * 1000 - currentTime; // Ajouter 24 heures en millisecondes pour le prochain tirage

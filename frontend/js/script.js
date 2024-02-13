@@ -1,5 +1,4 @@
-// Filter function
-
+// fonction pour le filtre des cartes
 function updateFilterButtons() {
     const filterButtons = document.querySelectorAll(".filter-button button");
     console.log(filterButtons);
@@ -32,7 +31,7 @@ function filterCards(selectedType) {
     });
 }
 
-// Search function
+// fonction de recherche de cartes
 function searchCard() {
     const searchInput = document.getElementById("search");
     console.log(searchInput);
@@ -45,7 +44,7 @@ function searchCard() {
         console.log("Valeur ", searchValue);
         console.log("Items ", galleryItems);
 
-        galleryItems.forEach(function (item) {// Vérifiez que l'élément possède bien un attribut data-id
+        galleryItems.forEach(function (item) {  // Vérifiez que l'élément possède bien un attribut data-id
 
             const dataId = item.getAttribute("data-id");
             console.log("Data id: ", dataId);
@@ -66,6 +65,7 @@ function searchCard() {
     });
 }
 
+//fonction pour le menu burger
 function BurgerMenu() {
     const menuIcon = document.getElementById("menuIcon");
     const closeIcon = document.getElementById("closeIcon");
@@ -80,14 +80,19 @@ function BurgerMenu() {
     });
 
     closeIcon.addEventListener("click", () => {
-        overlay.style.display = "none";
+        overlay.classList.add("fadeOut"); // Ajouter la classe fadeOut
+        setTimeout(() => {
+            
+            overlay.classList.remove("fadeOut"); // Retirer la classe fadeOut après l'animation
+            overlay.style.display = "none";
+            
+        }, 500); // Attendre la fin de l'animation avant de masquer complètement l'overlay
         closeIcon.style.display = "none";
         menuIcon.style.display = "block";
-    });
-
+    });  
 }
 
-
+//fonction pour l'échange de cartes avec le bouton modal
 function exchangeCard() {
     const exchangeIcon = document.getElementById("exangeIcon");
     const exchangeClose = document.getElementById("exangeClose");
@@ -101,7 +106,6 @@ function exchangeCard() {
             console.log("click");
         });
     }
-
     if (exchangeClose) {
         exchangeClose.addEventListener("click", () => {
             exchangeOverlay.style.display = "none";
@@ -111,12 +115,12 @@ function exchangeCard() {
     }
 }
 
-// Call functions
+// fonctions à exécuter
 document.addEventListener("DOMContentLoaded", function () {
     BurgerMenu();
     updateFilterButtons();
     searchCard();
-
+    exchangeCard();
 });
 
     // emailStorage();

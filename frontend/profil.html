@@ -2,157 +2,186 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8"/>
+    <meta charset="UTF-8" />
     <title>Profil</title>
-    <link rel="stylesheet" href="styles/style.css"/>
-    <link rel="stylesheet" href="styles/profil.css"/>
-    <link rel="stylesheet" href="styles/layout.css"/>
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/profil.css" />
+    <link rel="stylesheet" href="styles/layout.css" />
+    <link rel="stylesheet" href="styles/exange.css" />
 </head>
 
 <body>
 
-<header id="header"> <!-- Header :  -->
-    <nav> <!-- Navigation :  -->
-        <a href="/">
-            <img class="logo" src="/images/logo.png" alt="Harry Potter Logo"/>
-            <!-- Logo avec lien vers la page d'accueil -->
-        </a>
-        <div class="menu-icon" id="menuIcon"> &#9776;</div>
-        <!-- Icone du menu burger -->
-        <ul class="nav-links"> <!-- Liste des liens de la navigation -->
-            <li><a href="/profil.html">Profil</a></li>
-        </ul>
-        <div class="overlay"> <!-- Overlay du menu burger -->
-            <div class="close-icon" id="closeIcon">&times;</div>
-            <ul class="overlay-content"> <!-- Liste des liens du menu burger -->
-                <li><a href="/">Accueil</a></li>
+    <header id="header"> <!-- Header :  -->
+        <nav> <!-- Navigation :  -->
+            <a href="/">
+                <img class="logo" src="/images/logo.png" alt="Harry Potter Logo" />
+                <!-- Logo avec lien vers la page d'accueil -->
+            </a>
+            <div class="menu-icon" id="menuIcon"> &#9776;</div>
+            <!-- Icone du menu burger -->
+            <ul class="nav-links"> <!-- Liste des liens de la navigation -->
                 <li><a href="/profil.html">Profil</a></li>
             </ul>
-        </div>
-    </nav>
-</header>
-<main>
-
-    <section class="profile-section"> <!-- Section du profil -->
-        <section class="profile-container"> <!-- Container du profil -->
-            <div class="profile-header"> <!-- Header du profil -->
-
+            <div class="overlay"> <!-- Overlay du menu burger -->
+                <div class="close-icon" id="closeIcon">&times;</div>
+                <ul class="overlay-content"> <!-- Liste des liens du menu burger -->
+                    <li><a href="/">Accueil</a></li>
+                    <li><a href="/profil.html">Profil</a></li>
+                </ul>
             </div>
-            <div class="profile-options-container">
-                <div class="profile-option profile-option-selected"
-                     data-target="my-cards">My cards
-                </div>
-                <div class="profile-option" data-target=my-friends">My friends
-                </div>
-                <div class="profile-option" data-target="favorite">Favorite
-                </div>
-            </div>
-            <div class="profile-drawer-container">
-                <a class="button-primary button-draw" href="/draw"
-                   id="drawButton">
-                    <span class="button-text">Tirage</span>
-                </a>
-            </div>
-            <div class="profile-navigation"> <!-- Navigation du profil -->
+        </nav>
+    </header>
+    <main>
 
-                <a href="/logout">
-                    <div class="profile-navigation-icon">
-                        <!-- Icone de navigation -->
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12"
-                             height="21" viewBox="0 0 12 21" fill="none">
-                            <path d="M9.59679 2.04523L1.91937 10.2266L9.59679 18.408"
-                                  stroke="black" stroke-width="2"
-                                  stroke-linecap="round"
-                                  stroke-linejoin="round"/>
-                        </svg>
+        <section class="profile-section"> <!-- Section du profil -->
+            <section class="profile-container"> <!-- Container du profil -->
+                <div class="profile-header"> <!-- Header du profil -->
+
+                </div>
+                <div class="profile-options-container">
+                    <div class="profile-option profile-option-selected" data-target="my-cards">My cards
                     </div>
-                </a>
+                    <div class="profile-option" data-target=my-friends">Mes amus
+                    </div>
+                    <div class="profile-option" data-target="favorite">Favoris
+                    </div>
+                </div>
+                <div class="profile-drawer-container">
+                    <a class="button-primary button-draw" href="/draw" id="drawButton">
+                        <span class="button-text">Tirage</span>
+                    </a>
+                </div>
+                <div class="profile-navigation"> <!-- Navigation du profil -->
 
-                <a href="/settings">
-                    <div class="profile-navigation-icon">
-                        <!-- Icone de navigation -->
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20"
-                             height="20" viewBox="0 0 20 20" fill="none">
-                            <path
+                    <a href="/logout">
+                        <div class="profile-navigation-icon">
+                            <!-- Icone de navigation -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="21" viewBox="0 0 12 21"
+                                fill="none">
+                                <path d="M9.59679 2.04523L1.91937 10.2266L9.59679 18.408" stroke="black"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </a>
+
+                    <a href="/settings">
+                        <div class="profile-navigation-icon">
+                            <!-- Icone de navigation -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                fill="none">
+                                <path
                                     d="M18.4211 7.3683H17.9758L17.5 6.22093L17.8158 5.90514C18.1118 5.60905 18.2781 5.20751 18.2781 4.78883C18.2781 4.37015 18.1118 3.96861 17.8158 3.67251L16.3263 2.18409C16.0302 1.88808 15.6287 1.72179 15.21 1.72179C14.7913 1.72179 14.3898 1.88808 14.0937 2.18409L13.7779 2.49988L12.6316 2.02409V1.57883C12.6316 1.16006 12.4652 0.758451 12.1691 0.462341C11.873 0.166231 11.4714 -0.00012207 11.0526 -0.00012207H8.94737C8.52861 -0.00012207 8.12699 0.166231 7.83088 0.462341C7.53477 0.758451 7.36842 1.16006 7.36842 1.57883V2.02409L6.22105 2.49988L5.90526 2.18409C5.60917 1.88808 5.20763 1.72179 4.78895 1.72179C4.37027 1.72179 3.96873 1.88808 3.67263 2.18409L2.18526 3.67356C1.88926 3.96966 1.72297 4.3712 1.72297 4.78988C1.72297 5.20856 1.88926 5.6101 2.18526 5.90619L2.50105 6.22198L2.02421 7.3683H1.57895C1.16018 7.3683 0.758573 7.53465 0.462463 7.83076C0.166353 8.12687 0 8.52848 0 8.94725V11.0525C0 11.4713 0.166353 11.8729 0.462463 12.169C0.758573 12.4651 1.16018 12.6315 1.57895 12.6315H2.02421L2.5 13.7788L2.18421 14.0946C1.8882 14.3907 1.72192 14.7923 1.72192 15.2109C1.72192 15.6296 1.8882 16.0312 2.18421 16.3272L3.67368 17.8146C3.96978 18.1106 4.37132 18.2769 4.79 18.2769C5.20868 18.2769 5.61022 18.1106 5.90632 17.8146L6.22211 17.4988L7.36947 17.9746V18.4209C7.36947 18.8395 7.53568 19.241 7.83156 19.537C8.12745 19.8331 8.52879 19.9996 8.94737 19.9999H11.0526C11.4714 19.9999 11.873 19.8335 12.1691 19.5374C12.4652 19.2413 12.6316 18.8397 12.6316 18.4209V17.9757L13.7789 17.4999L14.0947 17.8157C14.3908 18.1117 14.7924 18.278 15.2111 18.278C15.6297 18.278 16.0313 18.1117 16.3274 17.8157L17.8168 16.3272C18.1129 16.0312 18.2791 15.6296 18.2791 15.2109C18.2791 14.7923 18.1129 14.3907 17.8168 14.0946L17.5011 13.7788L17.9768 12.6315H18.4211C18.8398 12.6315 19.2414 12.4651 19.5375 12.169C19.8336 11.8729 20 11.4713 20 11.0525V8.94725C20 8.52848 19.8336 8.12687 19.5375 7.83076C19.2414 7.53465 18.8398 7.3683 18.4211 7.3683ZM10 13.6841C9.51618 13.6841 9.0371 13.5888 8.59011 13.4036C8.14313 13.2185 7.73698 12.9471 7.39487 12.605C7.05276 12.2629 6.78138 11.8568 6.59623 11.4098C6.41108 10.9628 6.31579 10.4837 6.31579 9.99988C6.31579 9.51606 6.41108 9.03698 6.59623 8.58999C6.78138 8.143 7.05276 7.73686 7.39487 7.39475C7.73698 7.05264 8.14313 6.78126 8.59011 6.59611C9.0371 6.41096 9.51618 6.31567 10 6.31567C10.9771 6.31567 11.9142 6.70382 12.6051 7.39475C13.2961 8.08567 13.6842 9.02277 13.6842 9.99988C13.6842 10.977 13.2961 11.9141 12.6051 12.605C11.9142 13.2959 10.9771 13.6841 10 13.6841Z"
-                                    fill="black"/>
-                        </svg>
-                    </div>
-                </a>
-            </div>
-        </section>
-
-
-        <section class="profile-personalisation-container">
-            <!-- Container de la personnalisation du profil -->
-
-            <div class="interaction-search-filter">
-                <!-- Container de la recherche et du filtre -->
-                <div class="search-container">
-                    <!-- Container de la barre de recherche :  -->
-                    <input type="text" id="search" placeholder="Search for names.." />
-                    <button type="submit">
-                        <svg class="loop-search" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="transparent"
-                             viewBox="0 0 20 20">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-                        </svg>
-                    </button>
+                                    fill="black" />
+                            </svg>
+                        </div>
+                    </a>
                 </div>
+            </section>
 
-                <div class="filter-container"> <!-- Container du filtre -->
-                    <div class="filter-button" id="filterType">
-                        <button id="filterAll" class="select">Tous</button>
-                        <button id="filterGryffondor" class="unselect">
-                            Gryffondor
-                        </button>
-                        <button id="filterPoufsouffle" class="unselect">
-                            Poufsouffle
-                        </button>
-                        <button id="filterSerdaigle" class="unselect">
-                            Serdaigle
-                        </button>
-                        <button id="filterSerpentard" class="unselect">
-                            Serpentard
+
+            <section class="profile-personalisation-container">
+                <!-- Container de la personnalisation du profil -->
+
+                <div class="interaction-search-filter">
+                    <!-- Container de la recherche et du filtre -->
+                    <div class="search-container">
+                        <!-- Container de la barre de recherche :  -->
+                        <input type="text" id="search" placeholder="Search for names.." />
+                        <button type="submit">
+                            <svg class="loop-search" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="transparent" viewBox="0 0 20 20">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                            </svg>
                         </button>
                     </div>
+
+                    <div class="filter-container"> <!-- Container du filtre -->
+                        <div class="filter-button" id="filterType">
+                            <button id="filterAll" class="select">Tous</button>
+                            <button id="filterGryffondor" class="unselect">
+                                Gryffondor
+                            </button>
+                            <button id="filterPoufsouffle" class="unselect">
+                                Poufsouffle
+                            </button>
+                            <button id="filterSerdaigle" class="unselect">
+                                Serdaigle
+                            </button>
+                            <button id="filterSerpentard" class="unselect">
+                                Serpentard
+                            </button>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="mycards"> <!-- Container des cartes -->
-                <h3>My Cards</h3>
-                <div class="gallery">
+                <div class="mycards"> <!-- Container des cartes -->
+                    <h3>My Cards</h3>
+                    <div class="gallery">
+                    </div>
                 </div>
-            </div>
 
-        </section>
-    </section>
-
-</main>
-
-<footer class="footer-container"> <!-- Footer :  -->
-    <div class="footer-content"> <!-- Contenu du footer :  -->
-        <a href="#header"> <!-- Bouton de retour en haut de page :  -->
-            <div class="footer-backtop">
-                <!-- Bouton de retour en haut de page :  -->
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                     xmlns="http://www.w3.org/2000/svg">
+            </section>
+            <div class="exange-button" id="exangeIcon">
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                     fill="currentColor" viewBox="0 0 18 18">
                     <path
-                            d="M13.2071 8C12.832 7.62506 12.3234 7.41443 11.7931 7.41443C11.2628 7.41443 10.7541 7.62506 10.3791 8L4.79309 13.586C4.51347 13.8657 4.32306 14.222 4.24593 14.6099C4.16879 14.9978 4.2084 15.3999 4.35974 15.7653C4.51108 16.1307 4.76736 16.443 5.09618 16.6628C5.425 16.8826 5.81159 16.9999 6.20709 17H17.3791C17.7746 16.9999 18.1612 16.8826 18.49 16.6628C18.8188 16.443 19.0751 16.1307 19.2264 15.7653C19.3778 15.3999 19.4174 14.9978 19.3403 14.6099C19.2631 14.222 19.0727 13.8657 18.7931 13.586L13.2071 8Z"
-                            fill="white"/>
+                            d="M17 0h-5.768a1 1 0 1 0 0 2h3.354L8.4 8.182A1.003 1.003 0 1 0 9.818 9.6L16 3.414v3.354a1 1 0 0 0 2 0V1a1 1 0 0 0-1-1Z"/>
+                    <path
+                            d="m14.258 7.985-3.025 3.025A3 3 0 1 1 6.99 6.768l3.026-3.026A3.01 3.01 0 0 1 8.411 2H2.167A2.169 2.169 0 0 0 0 4.167v11.666A2.169 2.169 0 0 0 2.167 18h11.666A2.169 2.169 0 0 0 16 15.833V9.589a3.011 3.011 0 0 1-1.742-1.604Z"/>
                 </svg>
             </div>
-        </a>
+            <div class="exange-overlay">
+                <div class="close-icon" id="exangeClose">&times;</div>
+                <div class="form-exange">
+                    <p class="login-description">Echange de cartes avec un ami
+                    </p>
+                    <form action="" method="post">
+                        
+                        <!-- Formulaire d'échange de cartes :  -->
+                        <label for="card_echange">Carte à échanger</label>
+                        <!-- Champ de saisie de la carte à échanger :  -->
+                        <input type="text" name="card" id="card_echange"
+                               placeholder="Carte à échanger"/>
+                        <label for="card_recherche">Carte recherchée</label>
+                        <!-- Champ de saisie de la carte recherchée :  -->
+                        <input type="text" name="card" id="card_recherche"
+                               placeholder="Carte recherchée"/>
+                        <label for="username">Joueur avec qui échanger</label>
+                        <!-- Champ de saisie du nom d'utilisateur du joueur avec qui échanger :  -->
+                        <input type="text" name="username" id="username"
+                               placeholder="Joueur avec qui échanger"/>
+                        <input class="button-primary" type="submit" value="Echanger"/>
+                        <!-- Bouton de validation du formulaire :  -->
+                    </form>
+                </div>
+            </div>
+        </section>
 
-        <span>© 2023 <a
-                href="#">Harry Potter Game</a> - Tous droits réservés</span>
-        <!-- Texte du footer :  -->
-    </div>
-    <ul> <!-- Liste des liens du footer :  -->
-        <li><a href="#">Mentions légales</a></li>
-        <li><a href="#">Politique de confidentialité</a></li>
-    </ul>
-</footer>
+    </main>
+
+    <footer class="footer-container"> <!-- Footer :  -->
+        <div class="footer-content"> <!-- Contenu du footer :  -->
+            <a href="#header"> <!-- Bouton de retour en haut de page :  -->
+                <div class="footer-backtop">
+                    <!-- Bouton de retour en haut de page :  -->
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M13.2071 8C12.832 7.62506 12.3234 7.41443 11.7931 7.41443C11.2628 7.41443 10.7541 7.62506 10.3791 8L4.79309 13.586C4.51347 13.8657 4.32306 14.222 4.24593 14.6099C4.16879 14.9978 4.2084 15.3999 4.35974 15.7653C4.51108 16.1307 4.76736 16.443 5.09618 16.6628C5.425 16.8826 5.81159 16.9999 6.20709 17H17.3791C17.7746 16.9999 18.1612 16.8826 18.49 16.6628C18.8188 16.443 19.0751 16.1307 19.2264 15.7653C19.3778 15.3999 19.4174 14.9978 19.3403 14.6099C19.2631 14.222 19.0727 13.8657 18.7931 13.586L13.2071 8Z"
+                            fill="white" />
+                    </svg>
+                </div>
+            </a>
+
+            <span>© 2023 <a href="#">Harry Potter Game</a> - Tous droits réservés</span>
+            <!-- Texte du footer :  -->
+        </div>
+        <ul> <!-- Liste des liens du footer :  -->
+            <li><a href="#">Mentions légales</a></li>
+            <li><a href="#">Politique de confidentialité</a></li>
+        </ul>
+    </footer>
 
 </body>
 
@@ -161,57 +190,57 @@
         .then(response => response.json())
         .then(data => {
             console.log(data);
-
             let profileHeader = document.querySelector('.profile-header');
             profileHeader.innerHTML += `
-      <h1 class="profile-username">${data.username}</h1>
-      <h3 class="profile-name">${data.name}</h3>
-    `;
+                <h1 class="profile-username">${data.username}</h1>
+                <h3 class="profile-name">${data.name}</h3>
+                `;
 
-            let gallery = document.querySelector('.gallery');
+                let gallery = document.querySelector('.gallery');
 
-            if (data.message === "") {
-                for (let i = 0; i < data.cards.length; i++) {
+                if (data.message === "") {
+                    for (let i = 0; i < data.cards.length; i++) {
+                        gallery.innerHTML +=
+                            `
+                                <div class="gallery-item" data-type="${data.cards[i].house}" data-id="${data.cards[i].altText}">
+                                    <img class="gallery-image" src="${data.cards[i].image}" alt="${data.cards[i].altText}" />
+                                    <div class="interaction-card">
+                                    
+                                        <div class="button-card">
+                                        <svg class="like-button"
+                                        aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                            viewBox="0 0 21 19">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M11 4C5.5-1.5-1.5 5.5 4 11l7 7 7-7c5.458-5.458-1.542-12.458-7-7Z" />
+                                        </svg>
+                                        </div>
+                                        <a href="#">
+                                        <div class="button-card">
+                                            Read More
+                                        </div>
+                                        </a>
+                                    </div>
+                                </div>
+                             `;
+                    }
+                } else {
                     gallery.innerHTML +=
                         `
-              <div class="gallery-item" data-type="${data.cards[i].house}" data-id="${data.cards[i].altText}">
-                <img class="gallery-image" src="${data.cards[i].image}" alt="${data.cards[i].altText}" />
-                <div class="interaction-card">
-                  
-                    <div class="button-card">
-                      <svg class="like-button"
-                       aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                        viewBox="0 0 21 19">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                          d="M11 4C5.5-1.5-1.5 5.5 4 11l7 7 7-7c5.458-5.458-1.542-12.458-7-7Z" />
-                      </svg>
-                    </div>
-                    <a href="#">
-                      <div class="button-card">
-                        Read More
-                      </div>
-                    </a>
-                </div>
-              </div>
-          `;
+                            <p>${data.message}</p>
+                        `;
                 }
-            } else {
-                gallery.innerHTML +=
-                    `
-          <p>${data.message}</p>
-        `;
-            }
 
-            const likeButton = document.querySelectorAll(".like-button");
-            likeButton.forEach(function (button) {
-                button.addEventListener("click", function () {
-                    button.classList.toggle("like-button--active");
+                const likeButton = document.querySelectorAll(".like-button");
+                likeButton.forEach(function (button) {
+                    button.addEventListener("click", function () {
+                        button.classList.toggle("like-button--active");
+                    });
                 });
-            });
-        })
+            })
         .catch(error => {
             console.error('Erreur de fetch:', error);
         });
 </script>
 <script defer src="js/script.js"></script>
+
 </html>
