@@ -1,12 +1,13 @@
 #rules {
   position: relative;
-  padding: 0 2rem 5rem 2rem;
+  padding: 2rem 2rem 5rem 2rem;
+  background-color: #161410;
 }
 
 .rules_container {
 
-  justify-content: center; /* Aligne au centre horizontalement */
-  align-items: center; /* Aligne au centre verticalement */
+  justify-content: center; 
+  align-items: center;
 
 }
 

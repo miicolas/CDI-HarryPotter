@@ -1,11 +1,11 @@
 @import url("global.css");
 
 #cards {
-    padding: 0 2rem 5rem 2rem;
+    padding: 2rem 5rem
 }
 
 .cards_container {
-    max-width: 48rem;
+    max-width: 52rem;
     height: 32rem;
     border-radius: 0.5rem;
     background-color: var(--background-color-dark);
@@ -45,6 +45,7 @@
     overflow-y: scroll;
     justify-content: center;
     align-items: center;
+    width: 100%;
     
 }
 
@@ -67,4 +68,26 @@
 
 .filter-button {
     gap: 1rem;
+}
+
+.filter-button button {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--color-primary);
+    border-radius: 0.5rem;
+}
+
+.filter-button button.select {
+    background-color: var(--color-primary);
+    color: var(--color-text-3);
+}
+
+@media (max-width: 1024px) {
+    .cards_container {
+        flex-direction: column;
+        height: 42rem;
+    }
+    .filter-button {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
 }

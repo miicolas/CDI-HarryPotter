@@ -3,7 +3,7 @@
   --background-color-dark: rgb(255, 255, 255);
   --color-text: #DA9230;
   --color-text-hover: #91601d;
-  --color-text-2: #12100B;
+  --color-text-2: #303030;
   --color-text-2-hover: #000000;
   --color-text-3: #ffffff;
   --color-text-3-hover: #ded6d6;
@@ -28,8 +28,8 @@ body.dark-mode{
   border-radius: 0.25rem;
   cursor: pointer;
   transition: all 0.3s ease-out;
-  font-size: 1rem; /* 16px */
-  line-height: 1.5rem; /* 24px */
+  font-size: 1rem; 
+  line-height: 1.5rem; 
   display: flex;
   align-items: center;
   margin: auto;
@@ -43,6 +43,11 @@ body.dark-mode{
   transition: all 0.1s ease-in;
 
 }
+
+.button-primary:focus {
+  transform: scale(0.95);
+  transition: all 0.1s ease-in;
+}
 .button-secondary {
   font-family: "Apfel Grotezk", sans-serif;
   background-color: transparent;
@@ -53,11 +58,12 @@ body.dark-mode{
   border-radius: 0.25rem;
   cursor: pointer;
   transition: all 0.3s ease-out;
-  font-size: 1rem; /* 16px */
-  line-height: 1.5rem; /* 24px */
+  font-size: 1rem; 
+  line-height: 1.5rem; 
   display: flex;
   align-items: center;
   margin: auto;
+  font-family: "Apfel Grotezk", sans-serif;
 }
 
 .button-secondary:hover {

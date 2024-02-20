@@ -24,14 +24,12 @@
   </head>
 
   <body>
-    <!-- Add your site or application content here -->
 
     <header>
       <nav>
         <div class="logo_container">
           <img class="logo" src="img/logo.png" alt="logo Harry Potter" />
         </div>
-        <!-- Menu Classique -->
         <ul>
           <li>
             <a href="signin.html">
@@ -40,7 +38,6 @@
           </li>
           <li><div class="button-secondary dark_mode_button">DarkMode</div></li>
         </ul>
-        <!-- Menu Burger -->
         <div class="menu_icon" id="menuIcon">&#9776;</div>
         <div class="overlay" id="overlay">
           <div class="close_icon" id="closeIcon">&times;</div>
@@ -54,8 +51,9 @@
         </div>
       </nav>
     </header>
+
     <main>
-      <section id="hero">
+      <section id="hero"> 
         <div class="hero_background">
           <video class="hero_background_content" autoplay muted loop>
             <source src="img/hero.mp4" type="video/mp4" />
@@ -73,16 +71,34 @@
         <div class="swiper mySwiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
+              <div class="swiper-slide-content">
+                <h2>Collectionnez vos cartes</h2>
+                <p>
+                  Collectionnez vos cartes et échangez-les avec vos amis pour
+                  compléter votre collection.
+                </p>
+              </div>
               <img src="img/SL_WB_RainyHW_Wallpaper_03-2_AS1.jpg" alt="">
             </div>
             <div class="swiper-slide">
+              <div class="swiper-slide-content">
+                <h2>Jouez avec vos amis</h2>
+                <p>
+                  Jouez avec vos amis et gagnez des points pour obtenir des
+                  récompenses.
+                </p>
+              </div>
               <img src="img/SL_WB_RainyHW_Wallpaper_04-2_AS1.jpg" alt="">
             </div>
             <div class="swiper-slide">
+              <div class="swiper-slide-content">
+                <h2>Obtenez des cartes légendaires</h2>
+                <p>
+                  Obtenez des cartes légendaires et devenez le meilleur joueur de
+                  l'univers Harry Potter.
+                </p>
+              </div>
               <img src="img/SL_WB_RainyHW_Wallpaper_05-2_AS1.jpg" alt="">
-            </div>
-            <div class="swiper-slide">
-              <img src="img/SL_WB_RainyHW_Wallpaper_06-2_AS1.jpg" alt="">
             </div>
           </div>
           <div class="swiper-button-next"></div>
@@ -149,60 +165,25 @@
       <section id="cards">
         <div class="cards_container">
           <div class="cards_container_filter">
-            <!-- Container des filtres :  -->
             <div class="filter-button" id="filterType">
-              <!-- Container des filtres par type :  -->
-              <button id="filterAll" class="select">Tous</button>
-              <button id="filterGryffondor" class="unselect">Gryffondor</button>
-              <button id="filterPoufsouffle" class="unselect">
+              <button data-house="Tous" class="select" id="BtnAll">Tous</button>
+              <button data-house="Gryffondor" id="BtnGryff">Gryffondor</button>
+              <button data-house="Poufsouffle" id="BtnPouff">
                 Poufsouffle
               </button>
-              <button id="filterSerdaigle" class="unselect">Serdaigle</button>
-              <button id="filterSerpentard" class="unselect">Serpentard</button>
+              <button data-house="Serdaigle" id="BtnSerdaigle">Serdaigle</button>
+              <button data-house="Serpentard" id="BtnSerpen">Serpentard</button>
             </div>
           </div>
           <div class="cards_container_gallery">
-            <div class="card" data-house="gryffondor" data-id="harrypotter">
-              <img
-                class="card_image"
-                src="/img/cartes/harrypotter.jpg"
-                alt="harrypotter"
-              />
-              <div class="card_buttons">
-                <a href="">
-                  <div class="card_button_readmore">En savoir plus</div>
-                </a>
-              </div>
-            </div>
-            <div class="card" data-house="gryffondor" data-id="harrypotter">
-              <img
-                class="card_image"
-                src="/img/cartes/harrypotter.jpg"
-                alt="harrypotter"
-              />
-              <div class="card_buttons">
-                <a href="">
-                  <div class="card_button_readmore">En savoir plus</div>
-                </a>
-              </div>
-            </div>
-            <div class="card" data-house="gryffondor" data-id="harrypotter">
-              <img
-                class="card_image"
-                src="/img/cartes/harrypotter.jpg"
-                alt="harrypotter"
-              />
-              <div class="card_buttons">
-                <a href="">
-                  <div class="card_button_readmore">En savoir plus</div>
-                </a>
-              </div>
+            
             </div>
           </div>
         </div>
       </section>
     </main>
     <footer></footer>
+    <script src="api/getCards.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/app.js"></script>
   </body>

@@ -53,8 +53,8 @@ video {
     height:100vh;
   }
   .hero_background {
-  height: 100%; /* Set the height to 100% to fill the entire section */
-    width: auto; /* Set the height to 100% to fill the entire section */
+    height: 100%;
+    width: auto; 
   }
   video {
     height: 100%;
