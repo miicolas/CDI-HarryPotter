@@ -17,5 +17,8 @@ router.get("/settings", authenticateToken, (req, res) => { // Si le middleware a
 router.get("/changeinfos", authenticateToken, (req, res) => { // Si le middleware a réussi la vérification, l'accès à cette route est autorisé
     res.sendFile(path.join(__dirname, "../../frontend/settings.html"));
 });
+router.get("/friends", authenticateToken, (req, res) => { // Si le middleware a réussi la vérification, l'accès à cette route est autorisé
+    res.sendFile(path.join(__dirname, "../../frontend/friends.html"));
+});
 
 export default router;

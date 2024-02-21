@@ -15,9 +15,7 @@ function darkMode() {
     });
     labelForm.forEach((form) => {
       form.classList.add("dark-mode");
-    }
-    );
-
+    });
   } else {
     body.classList.remove("dark-mode");
     rulesContent.forEach((container) => {
@@ -28,8 +26,7 @@ function darkMode() {
     });
     labelForm.forEach((form) => {
       form.classList.remove("dark-mode");
-    }
-    );
+    });
   }
   darkModeButton.forEach((button) => {
     button.addEventListener("click", function () {
@@ -42,12 +39,20 @@ function darkMode() {
       });
       labelForm.forEach((form) => {
         form.classList.toggle("dark-mode");
-      }
-      );
+      });
       localStorage.setItem("darkMode", body.classList.contains("dark-mode"));
-      localStorage.setItem("darkMode", rulesContent.classList.contains("dark-mode"));
-      localStorage.setItem("darkMode", titleForm.classList.contains("dark-mode"));
-      localStorage.setItem("darkMode", labelForm.classList.contains("dark-mode"));
+      localStorage.setItem(
+        "darkMode",
+        rulesContent.classList.contains("dark-mode")
+      );
+      localStorage.setItem(
+        "darkMode",
+        titleForm.classList.contains("dark-mode")
+      );
+      localStorage.setItem(
+        "darkMode",
+        labelForm.classList.contains("dark-mode")
+      );
     });
   });
 }
@@ -153,7 +158,7 @@ function navTap() {
 //     }console.log("Formulaire envoyé");
 
 //     window.location.replace("/signup");
-    
+
 //   });
 
 //   function addErrorToList(errorMessage) {
@@ -169,11 +174,9 @@ function formVerificationLogin() {
   if (!formLogin) return;
 
   formLogin.addEventListener("submit", function (e) {
-    e.preventDefault()
+    e.preventDefault();
     let email = document.querySelector("#email_login");
     let password = document.querySelector("#password_login");
-
-
 
     const errorList = document.getElementById("error_list");
     errorList.innerHTML = "";
@@ -212,9 +215,7 @@ function burgerMenu() {
   const overlay = document.getElementById("overlay");
   const closeIcon = document.getElementById("closeIcon");
 
-
-  if (!burgerIcon) return
-
+  if (!burgerIcon) return;
 
   burgerIcon.addEventListener("click", function () {
     overlay.style.display = "flex";
@@ -228,72 +229,96 @@ function burgerMenu() {
   });
 }
 function openTab() {
+  const tabButtons = document.querySelectorAll(".account_tab_button");
+  const tabContent = document.querySelectorAll(".tab_content");
+  tabButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      tabButtons.forEach((btn) => {
+        btn.classList.remove("active");
+      });
+      button.classList.add("active");
+      tabContent.forEach((content) => {
+        content.style.display = "none";
+      });
 
-const tabButtons = document.querySelectorAll(".account_tab_button");
-const tabContent = document.querySelectorAll(".tab_content");
-tabButtons.forEach(button => {
-  button.addEventListener("click", function() {
-    tabButtons.forEach(btn => {
-      btn.classList.remove("active");
+      const tabName = button.dataset.tab;
+      const tabActive = document.getElementById(tabName);
+      tabActive.style.display = "block";
     });
-    button.classList.add("active");
-    tabContent.forEach(content => {
-      content.style.display = "none";
-    });
-
-    const tabName = button.dataset.tab;
-    const tabActive = document.getElementById(tabName);
-    tabActive.style.display = "block";
   });
-});
 }
 
-
 function filterCards() {
-  const filterAll = document.getElementById('BtnAll');
-  const filterGryff = document.getElementById('BtnGryff');
-  const filterPouff = document.getElementById('BtnPouff');
-  const filterSerdaigle = document.getElementById('BtnSerdaigle');
-  const filterSerpentard = document.getElementById('BtnSerpen');
+  const filterAll = document.getElementById("BtnAll");
+  const filterGryff = document.getElementById("BtnGryff");
+  const filterPouff = document.getElementById("BtnPouff");
+  const filterSerdaigle = document.getElementById("BtnSerdaigle");
+  const filterSerpentard = document.getElementById("BtnSerpen");
 
-  const filterButtons = [filterAll, filterGryff, filterPouff, filterSerdaigle, filterSerpentard];
+  if (!filterAll) return;
+
+  const filterButtons = [
+    filterAll,
+    filterGryff,
+    filterPouff,
+    filterSerdaigle,
+    filterSerpentard,
+  ];
 
   filterButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-          filterButtons.forEach((btn) => {  
-              btn.classList.remove("select");
-          });
-          button.classList.add("select");
-
-          const maison = button.getAttribute("data-house");
-          console.log(maison);
-
-          filterCardsByType(maison);
+    button.addEventListener("click", () => {
+      filterButtons.forEach((btn) => {
+        btn.classList.remove("select");
       });
+      button.classList.add("select");
+
+      const maison = button.getAttribute("data-house");
+      console.log(maison);
+
+      filterCardsByType(maison);
+    });
   });
 
   function filterCardsByType(maison) {
-      const cards = document.querySelectorAll('.card');
-      cards.forEach((card) => {
-          const cardType = card.getAttribute("data-house");
-          if (maison === "Tous" || maison === cardType) {
-              card.style.display = "block";
-          } else {
-              card.style.display = "none";
-          }
-      });
+    const cards = document.querySelectorAll(".card");
+    cards.forEach((card) => {
+      const cardType = card.getAttribute("data-house");
+      if (maison === "Tous" || maison === cardType) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+    });
   }
 }
 
+function buttonFriends() {
+  // Dans votre frontend JavaScript où vous gérez les clics sur le bouton "Accepter"
+  const acceptButtons = document.querySelectorAll(".acceptButton");
+  if (!acceptButtons) return;
+  acceptButtons.forEach((button) => {
+    button.addEventListener("click", function (event) {
+      console.log(button);
+      event.preventDefault();
+      const username = button.closest(".friend").getAttribute("data-username");
+      // Utilisez le nom d'utilisateur pour construire l'URL de la requête
+      window.location.href = `/acceptFriend?friend=${username}`;
+    });
+  });
+}
 
 document.addEventListener("DOMContentLoaded", function () {
+  
   navTap();
   openTab();
   burgerMenu();
   darkMode();
   formVerificationLogin();
+  
   // formVerificationSignup();
   // Carousel();
   filterCards();
+  setTimeout(() => {
+    buttonFriends();
+  }, 1000);
 });
-

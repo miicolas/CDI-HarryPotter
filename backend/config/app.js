@@ -8,6 +8,7 @@ import indexRoute from "../routes/index.js";
 import drawRoute from "../routes/draw.js";
 import changeInfosRoute from "../routes/changeInfos.js"
 import protectedRoutes from "../routes/protectedRoutes.js"
+import friendsRoute from "../routes/friends.js"
 import { fileURLToPath } from "url";
 
 
@@ -33,6 +34,7 @@ app.use("/", profilRoute);
 app.use("/", indexRoute);
 app.use("/", drawRoute);
 app.use("/", changeInfosRoute);
+app.use("/", friendsRoute);
 
 // Protected routes
 app.use("/", protectedRoutes)
