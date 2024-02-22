@@ -7,7 +7,6 @@ export async function login(req, res) {
   try { 
     const user = req.user; // Récupère l'utilisateur authentifié par le middleware authenticateToken 
     const token = jwt.sign({ user }, "secretKey"); // Crée un token avec l'utilisateur authentifié
-    console.log(token);
     res.cookie("AuthToken", token, { // Crée un cookie avec le token
       httpOnly: true,  
       secure: false, 

@@ -295,16 +295,29 @@ function filterCards() {
 function buttonFriends() {
   // Dans votre frontend JavaScript où vous gérez les clics sur le bouton "Accepter"
   const acceptButtons = document.querySelectorAll(".acceptButton");
-  if (!acceptButtons) return;
-  acceptButtons.forEach((button) => {
-    button.addEventListener("click", function (event) {
-      console.log(button);
-      event.preventDefault();
-      const username = button.closest(".friend").getAttribute("data-username");
-      // Utilisez le nom d'utilisateur pour construire l'URL de la requête
-      window.location.href = `/acceptFriend?friend=${username}`;
+  const deleteButtons = document.querySelectorAll(".deleteButton");
+  if (!deleteButtons) return;
+  if (acceptButtons) {
+    acceptButtons.forEach((button) => {
+      button.addEventListener("click", function (event) {
+        event.preventDefault();
+        const username = button.closest(".friend").getAttribute("data-username");
+        // Utilisez le nom d'utilisateur pour construire l'URL de la requête
+        window.location.href = `/acceptFriend?friend=${username}`;
+      });
     });
-  });
+  }
+  if (deleteButtons){
+    deleteButtons.forEach((button) => {
+      button.addEventListener("click", function (event) {
+        event.preventDefault();
+        const username = button.closest(".friend").getAttribute("data-username");
+        // Utilisez le nom d'utilisateur pour construire l'URL de la requête
+        window.location.href = `/deletefriend?friend=${username}`;
+      });
+    });
+  
+  }
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -320,5 +333,5 @@ document.addEventListener("DOMContentLoaded", function () {
   filterCards();
   setTimeout(() => {
     buttonFriends();
-  }, 1000);
+  }, 100);
 });

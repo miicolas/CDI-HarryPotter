@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="stylesheet" href="css/hero.css" />
+    <link rel="stylesheet" href="css/friends.css" />
     <link rel="stylesheet" href="css/dashboard.css" />
   </head>
   <body id="dashboard">
@@ -72,20 +73,33 @@
       </nav>
     </header>
     <main>
-      <form action="addfriend" method="post">
-        <input type="text" name="friend" id="friend" placeholder="Ajouter un ami">
-        <button type="submit">Ajouter</button>
-      </form>
+      <h1>Friends</h1>
+      <div class="friends_container">
+        <div class="friends_request_container">
+          
+        </div>
+        <div class="friends_add_accepted">
+          <div class="friends_add_container">
+            <form action="/addfriend" method="post">
+              <input
+                type="text"
+                name="friend"
+                id="friend"
+                placeholder="Ajouter un ami"
+              />
+              <button type="submit">Ajouter</button>
+            </form>
+          </div>
+          <div class="friends_accepted_container"></div>
+        </div>
+      </div>
+      
       <div>
-        <h1>Friends</h1>
-        <div class="friends_container_list"></div>
+        
+        
       </div>
     </main>
     <script src="api/getFriends.js"></script>
     <script src="js/app.js"></script>
-    
-
-
   </body>
 </html>
- 
