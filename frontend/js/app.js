@@ -320,6 +320,21 @@ function buttonFriends() {
   }
 }
 
+function cardInfo (){
+  const card = document.querySelectorAll(".card_button_readmore");
+  console.log(card);
+  if (!card) return;
+  card.forEach((card) => {
+    card.addEventListener("click", function () {
+      const cardId = card.closest(".card").getAttribute("data-id");
+      console.log(cardId);
+      // renvoie sur la page de la carte
+      window.location.href = `/cards/${cardId}`;
+    });
+  });
+
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   
   navTap();
@@ -331,6 +346,8 @@ document.addEventListener("DOMContentLoaded", function () {
   // formVerificationSignup();
   // Carousel();
   filterCards();
+  setTimeout(() => {
+    cardInfo();}, 1000);
   setTimeout(() => {
     buttonFriends();
   }, 100);

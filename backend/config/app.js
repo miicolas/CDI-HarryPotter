@@ -4,7 +4,7 @@ import path from "path";
 import cookieParser from "cookie-parser";
 import authRoute from "../routes/auth.js";
 import profilRoute from "../routes/profil.js";
-import indexRoute from "../routes/index.js";
+import cardRoute from "../routes/card.js";
 import drawRoute from "../routes/draw.js";
 import changeInfosRoute from "../routes/changeInfos.js"
 import protectedRoutes from "../routes/protectedRoutes.js"
@@ -31,7 +31,7 @@ app.use(express.static(path.join(__dirname, "../../frontend"))); // Permet de se
 // Use routes
 app.use("/", authRoute);
 app.use("/", profilRoute);
-app.use("/", indexRoute);
+app.use("/", cardRoute);
 app.use("/", drawRoute);
 app.use("/", changeInfosRoute);
 app.use("/", friendsRoute);

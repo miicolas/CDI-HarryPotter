@@ -11,3 +11,13 @@ export async function getAllCards(req, res) {
 }
 }
 
+export async function getCard(req, res) {
+  try {
+    const cardId = req.params.id;
+    const card = await query("SELECT * FROM cards WHERE id_card = ?", [cardId]);
+    res.status(200).json(card);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Erreur serveur");
+  }
+}
