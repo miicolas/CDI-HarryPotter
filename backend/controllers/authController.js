@@ -32,8 +32,8 @@ export async function signup(req, res) {
   try {
     const { username_signup, password_signup, email_signup } = req.body;
 
-    const confirmUsername = await query("SELECT username, email FROM Users WHERE username = ?", [username_signup]);
-    const confirmEmail = await query("SELECT email FROM Users WHERE email = ?", [email_signup]);
+    const confirmUsername = await query("SELECT username, email FROM db.users WHERE username = ?", [username_signup]);
+    const confirmEmail = await query("SELECT email FROM db.users WHERE email = ?", [email_signup]);
 
     if (confirmUsername.length > 0) {
       return res.status(400).json({ error: "L'utilisateur existe déjà" });
@@ -45,7 +45,7 @@ export async function signup(req, res) {
     const hashedPassword = hashPassword(password_signup);
 
     await query(
-      "INSERT INTO Users (email, username, password) VALUES (?, ?, ?)",
+      "INSERT INTO db.users (email, username, password) VALUES (?, ?, ?)",
       [email_signup, username_signup, hashedPassword]
     );
 

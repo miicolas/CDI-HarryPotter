@@ -10,7 +10,7 @@ export async function getProfil(req, res) {
     console.log(userId);
 
     const userInfo = await query(
-      "SELECT username, lastDraw FROM Users WHERE id = ?",
+      "SELECT username, lastDraw FROM db.users WHERE id = ?",
       [userId]
     ); // Récupère les infos de l'utilisateur à partir de l'id
 
@@ -21,12 +21,12 @@ export async function getProfil(req, res) {
     }
 
     const numberCards = await query(
-      "SELECT COUNT(*) FROM UsersCards WHERE id_user = ?",
+      "SELECT COUNT(*) FROM db.userscards WHERE id_user = ?",
       [userId]
     ); // Récupère le nombre de cartes de l'utilisateur à partir de l'id
 
     const cards_user = await query(
-      "SELECT * FROM Cards JOIN UsersCards ON cards.id_card = UsersCards.id_card WHERE id_user = ?",
+      "SELECT * FROM db.cards JOIN db.userscards ON db.cards.id_card = db.userscards.id_card WHERE id_user = ?",
       [userId]
     ); // Récupère les cartes de l'utilisateur à partir de l'id
 
@@ -79,7 +79,7 @@ export async function getProfilSettings(req, res) {
     const userId = req.user.id; // Récupère l'id de l'utilisateur à partir du token
 
     const userInfo = await query(
-      "SELECT username, email, lastDraw FROM Users WHERE id = ?",
+      "SELECT username, email, lastDraw FROM db.users WHERE id = ?",
       [userId] // Récupère les infos de l'utilisateur à partir de l'id
     );
 

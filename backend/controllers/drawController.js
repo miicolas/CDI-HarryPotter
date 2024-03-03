@@ -7,14 +7,14 @@ export async function getDrawCards(req, res) {
 
     const cards = await query(`
       SELECT id_card, rarity 
-      FROM Cards 
+      FROM db.cards 
       ORDER BY RAND() * rarity DESC 
       LIMIT 5
     `);
     console.log(cards);
 
     const cards_user = await query( // Récupère les cartes de l'utilisateur à partir de l'id
-      "SELECT id_card FROM UsersCards WHERE id_user = ?",
+      "SELECT id_card FROM db.userscards WHERE id_user = ?",
       [userId]
     );
 
@@ -30,7 +30,7 @@ export async function getDrawCards(req, res) {
       }
       if (!cardExists) { // Si la carte n'existe pas, on l'ajoute à cardsToAdd
         cardsToAdd.push(cards[i]); //
-        await query("INSERT INTO UsersCards (id_user, id_card) VALUES (?, ?)", [ // Ajoute la carte à la table UsersCards
+        await query("INSERT INTO db.userscards (id_user, id_card) VALUES (?, ?)", [ // Ajoute la carte à la table UsersCards
           userId,
           cards[i].id_card,
         ]); 
@@ -42,7 +42,7 @@ export async function getDrawCards(req, res) {
     const currentTimeStamp = date.getTime(); // Récupère le timestamp de la date actuelle
     // console.log("currentTimeStamp", currentTimeStamp);
 
-    await query("UPDATE Users SET lastDraw = ? WHERE id = ?", [
+    await query("UPDATE db.users SET lastDraw = ? WHERE id = ?", [
       currentTimeStamp,
       userId,
     ]); // Met à jour le timestamp du dernier tirage

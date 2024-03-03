@@ -28,6 +28,7 @@
   padding: 1rem;
   background-color: white;
   border-radius: 0.5rem;
+  gap: 1rem;
 }
 
 .friends_accepted_container {
@@ -35,7 +36,11 @@
   padding: 1rem;
   background-color: white;
   border-radius: 0.5rem;
+  gap: 1rem;
+  
 }
+
+
 
 .friend {
   display: flex;
@@ -45,6 +50,7 @@
   background-color: var(--color-secondary);
   border-radius: 0.5rem;
   justify-content: space-between;
+  
 }
 
 .friend_buttons {
@@ -54,10 +60,11 @@
   
 }
 
-.friend_button {
+.card_button_readmore {
   padding: 0.5rem 1rem;
   border: 1px solid var(--color-primary);
   border-radius: 0.5rem;
+  cursor: pointer;
 }
 
 .acceptButton {
@@ -68,6 +75,14 @@
 .deleteButton {
   background-color: var(--color-secondary);
   color: var(--color-text);
+}
+
+.friends_accepted_content {
+  gap: 1rem;
+}
+.friends_request_content {
+  gap: 1rem;
+
 }
 
 

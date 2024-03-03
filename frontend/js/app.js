@@ -326,6 +326,7 @@ function cardInfo (){
   if (!card) return;
   card.forEach((card) => {
     card.addEventListener("click", function () {
+      console.log(card, "card appjs")
       const cardId = card.closest(".card").getAttribute("data-id");
       console.log(cardId, "cardId appjs")
       // renvoie sur la page de la carte

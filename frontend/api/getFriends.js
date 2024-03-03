@@ -1,36 +1,35 @@
-fetch("/getFriends")
-  .then((response) => response.json())
-  .then((data) => {
-    const friendsListPending = document.querySelector(
-      ".friends_request_container"
-    );
-    const friendsList = document.querySelector(".friends_accepted_container");
+function fetchFriends() {
+  return fetch("/getFriends")
+  .then((response) => response.json());
+}
 
-    // Boucle pour les amis en attente
-    for (let i = 0; i < data.usernamefriendsPending.length; i++) {
-      friendsListPending.innerHTML += `
-        <div class="friend" data-username="${data.usernamefriendsPending[i].username}">
-          <div class="friend_username">${data.usernamefriendsPending[i].username}</div>
-          <div class="friend_buttons">
-            <div class="friend_button deleteButton">Décliner</div>
-            <div class="friend_button acceptButton">Accepter</div>
-          </div>
+async function displayFriends() {
+  const data = await fetchFriends();
+  const friendsListPending = document.querySelector(".friends_request_content");
+  const friendsList = document.querySelector(".friends_accepted_content");
+
+  for (let i = 0; i < data.usernamefriendsPending.length; i++) {
+    friendsListPending.innerHTML += `
+      <div class="friend" data-username="${data.usernamefriendsPending[i].username}">
+        <div class="friend_username">${data.usernamefriendsPending[i].username}</div>
+        <div class="friend_buttons">
+          <div class="card_button_readmore deleteButton">Décliner</div>
+          <div class="card_button_readmore acceptButton">Accepter</div>
         </div>
-      `;
-    }
+      </div>
+    `;
+  }
 
-    for (let i = 0; i < data.usernamefriends.length; i++) {
-      friendsList.innerHTML += `
-        <div class="friend" data-username="${data.usernamefriends[i].username}">
-          <div class="friend_username">${data.usernamefriends[i].username}</div>
-          <div class="friend_buttons">
-              <div class="friend_button deleteButton">Supprimer</div>
-
-          </div>
+  for (let i = 0; i < data.usernamefriends.length; i++) {
+    friendsList.innerHTML += `
+      <div class="friend" data-username="${data.usernamefriends[i].username}">
+        <div class="friend_username">${data.usernamefriends[i].username}</div>
+        <div class="friend_buttons">
+            <div class="card_button_readmore deleteButton">Supprimer</div>
         </div>
-      `;
-    }
-  })
-  .catch((error) => {
-    console.error("Error fetching data:", error);
-  });
+      </div>
+    `;
+  }
+}
+
+displayFriends();
